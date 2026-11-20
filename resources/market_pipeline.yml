@@ -1,0 +1,22 @@
+# Lakeflow Spark Declarative Pipeline for the market vision (Fenabrave PDFs -> bronze/silver/gold).
+# Triggered by the market_monthly job (resources/market_job.yml) after the download task.
+resources:
+  pipelines:
+    market_pipeline:
+      name: market_pipeline_${bundle.target}
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      continuous: false
+      root_path: ../src/market/pipeline
+      libraries:
+        - glob:
+            include: ../src/market/pipeline/transformations/**
+        - glob:
+            include: ../src/market/synthetic/market_synthetic_registrations.py  # adds its own folder to sys.path
+      configuration:
+        market.landing_path: /Volumes/${var.catalog}/${var.schema}/raw_landing/fenabrave/
+        # months that are expected to have no brand ranking (2004-01 is a 6-page "previa" edition)
+        market.known_no_brand_table_months: "2004-01"
+        market.known_no_model_table_months: "2004-01"
+        market.known_missing_months: ""

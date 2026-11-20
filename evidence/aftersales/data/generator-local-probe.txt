@@ -1,0 +1,12 @@
+# claim:   synthetic generator is deterministic, follows D1 calendar/grid rules, meets the fill-rate target and contains no legacy/real-brand data
+# command: python3 -I tests/aftersales/probe_generator_local.py <pos1-data-eng src/aftersales/synthetic (working tree)> <registrations.csv> <work> <old demo CSVs> <brands.txt>
+# date:    2026-11-20 17:25 UTC  data-eng HEAD: 4580813 + uncommitted WIP  qa git: 038ffd7
+
+byte-identical across 2 runs: True 2a127c608768778c
+dealers 12 parts 60 headers ['dealer_id', 'dealer_name', 'city', 'state', 'region', 'opened_on', 'fleet_share'] ['part_id', 'part_name', 'category_id', 'category_name', 'unit_price_brl', 'unit_cost_brl', 'is_critical']
+daily header ['sale_date', 'dealer_id', 'part_id', 'demand_units', 'sold_units', 'lost_units']
+rows 2070720 expected 2070720 range 2019-01-01 2026-11-15
+sunday_bad 0 lost_bad 0 demand_before_opened_on 0
+fill_rate_last4w 0.9085 (D1 target 0.88..0.97)
+yearly demand / lost share {2019: (2785, 0.024), 2020: (21916, 0.027), 2021: (76749, 0.006), 2022: (167161, 0.005), 2023: (285268, 0.008), 2024: (432030, 0.003), 2025: (585955, 0.009), 2026: (641621, 0.062)}
+leak: legacy codes 0 of 176 | legacy dealer names 0 of 9 | real brands 0 of 89 | cloudfront False

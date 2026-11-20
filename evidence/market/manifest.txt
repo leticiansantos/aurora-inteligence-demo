@@ -1,0 +1,21 @@
+# claim:    download manifest by status x origin; candidate URLs without a file
+# command:  tests/market/run_market_checks.sh (info queries below)
+# target:   demo (classic_stable.auto_intelligence)
+# git_sha:  ebddd10
+# date:     2026-11-20 15:01 UTC
+# result:   INFO
+
+## status x origin
+status,origin,n,url_months
+downloaded,discovery,8,8
+downloaded,seed,277,276
+not_found,discovery,22,10
+
+## url months with no downloaded file
+url_month,attempts
+2026-10-01,"[""not_found 404"",""not_found 404"",""not_found 404""]"
+2026-11-01,"[""not_found 404"",""not_found 404"",""not_found 404""]"
+
+## duplicates (same content, other URL)
+source_url,duplicate_of
+

@@ -1,0 +1,39 @@
+# claim:    in both views share = units / segment_total_units, shares sum to 100% per month x segment,
+# command:  tests/market/sql/10_share_sanity.sql (violations query: 0 rows = PASS)
+# target:   demo (classic_stable.auto_intelligence)
+# git_sha:  ebddd10
+# date:     2026-11-20 15:01 UTC
+# result:   PASS
+
+## violations: 0
+view_name,violation,ref_month,segment,value
+
+## sql
+-- claim: in both views share = units / segment_total_units, shares sum to 100% per month x segment,
+--        the residual row has rank NULL and is never synthetic, and rank = dense_rank by units desc (ties share a rank)
+-- returns: offending rows
+WITH v AS (
+  SELECT 'real' AS view_name, * FROM classic_stable.auto_intelligence.market_share_real
+  UNION ALL
+  SELECT 'with_aurora', * FROM classic_stable.auto_intelligence.market_share_with_aurora
+)
+SELECT view_name, 'share_sum_ne_1' AS violation, CAST(ref_month AS STRING) AS ref_month, segment, round(sum(share), 6) AS value
+FROM v GROUP BY view_name, ref_month, segment HAVING abs(sum(share) - 1) > 0.0001
+UNION ALL
+SELECT view_name, 'share_ne_units_over_total', CAST(ref_month AS STRING), segment, share
+FROM v WHERE share IS NULL OR share < 0 OR share > 1 OR abs(share - units / segment_total_units) > 0.000001
+UNION ALL
+SELECT view_name, 'bad_residual_row', CAST(ref_month AS STRING), segment, rank
+FROM v WHERE is_residual AND (rank IS NOT NULL OR is_synthetic)
+UNION ALL
+SELECT view_name, 'ranked_row_without_rank', CAST(ref_month AS STRING), segment, rank
+FROM v WHERE NOT is_residual AND (rank IS NULL OR rank < 1)
+UNION ALL
+SELECT a.view_name, 'rank_not_dense_by_units', CAST(a.ref_month AS STRING), a.segment, a.rank
+FROM v a JOIN v b ON a.view_name = b.view_name AND a.ref_month = b.ref_month AND a.segment = b.segment
+WHERE NOT a.is_residual AND NOT b.is_residual
+  AND ((a.units > b.units AND a.rank >= b.rank) OR (a.units = b.units AND a.rank <> b.rank))
+UNION ALL
+SELECT view_name, 'dense_rank_gap', CAST(ref_month AS STRING), segment, max(rank)
+FROM v WHERE NOT is_residual GROUP BY view_name, ref_month, segment
+HAVING min(rank) <> 1 OR max(rank) <> count(DISTINCT units)

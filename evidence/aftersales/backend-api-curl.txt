@@ -1,0 +1,53 @@
+# Backend API check vs Lakebase DEV fixture (synthetic), 2026-11-20T17:24:52Z; schemas aftersales_lb_dev / aftersales_app_dev
+$ GET filters
+{"dealers":[{"id":"D001","name":"Aurora Motors Campinas","city":"Campinas","state":"SP"},{"id":"D002","name":"Aurora Motors Curitiba","city":"Curitiba","state":"PR"},{"id":"D003","name":"Aurora Motors Recife","city":"Recife","state":"PE"}],"categories":[{"id":"filters","name":"Filtros"},{"id":"brakes","name":"Freios"}],"horizons":[14,28,56],"defaultHorizon":28,"meta":{"forecastDate":"2026-11-16","dataThrough":"2026-11-15","modelVersion":"aftersales_demand_forecaster@champion v1","syncedAt":"2026
+$ GET summary
+{"meta":{"query":{"dealer":null,"category":null,"horizon":28},"forecastDate":"2026-11-16","dataThrough":"2026-11-15","modelVersion":"aftersales_demand_forecaster@champion v1","syncedAt":"2026-11-20T17:19:05.940Z","synthetic":true},"kpis":{"partsAtRisk":{"value":12,"previous":null},"lostSalesAvoidedBrl":{"value":25545,"previous":null},"fillRate":{"value":0.9130434782608695,"previous":null},"daysOfStock":{"value":10.5,"previous":null}},"riskDistribution":{"critical":9,"high":3,"medium":0,"low":0}}
+$ GET summary?dealer=D001&category=brakes&horizon=14
+{"meta":{"query":{"dealer":"D001","category":"brakes","horizon":14},"forecastDate":"2026-11-16","dataThrough":"2026-11-15","modelVersion":"aftersales_demand_forecaster@champion v1","syncedAt":"2026-11-20T17:19:05.940Z","synthetic":true},"kpis":{"partsAtRisk":{"value":0,"previous":null},"lostSalesAvoidedBrl":{"value":180,"previous":null},"fillRate":{"value":0.9130434782608695,"previous":null},"daysOfStock":{"value":14.7,"previous":null}},"riskDistribution":{"critical":0,"high":0,"medium":1,"low":
+$ GET forecast?dealer=D001&horizon=56
+{"meta":{"query":{"dealer":"D001","category":null,"horizon":56},"forecastDate":"2026-11-16","dataThrough":"2026-11-15","modelVersion":"aftersales_demand_forecaster@champion v1","syncedAt":"2026-11-20T17:19:05.940Z","synthetic":true},"series":[{"weekStart":"2026-05-18","actualUnits":44,"forecastUnits":null,"lowerUnits":null,"upperUnits":null,"isFuture":false},{"weekStart":"2026-05-25","actualUnits":48,"forecastUnits":null,"lowerUnits":null,"upperUnits":null,"isFuture":false},{"weekStart":"2026-06
+$ GET risk?minLevel=high&limit=2
+{"meta":{"query":{"dealer":null,"category":null,"horizon":28},"forecastDate":"2026-11-16","dataThrough":"2026-11-15","modelVersion":"aftersales_demand_forecaster@champion v1","syncedAt":"2026-11-20T17:19:05.940Z","synthetic":true},"rows":[{"key":"D001:P002","dealerId":"D001","dealerName":"Aurora Motors Campinas","partId":"P002","partName":"Disco de freio dianteiro","categoryId":"brakes","categoryName":"Freios","stockUnits":6,"onOrderUnits":0,"forecastUnits":20,"daysOfStock":8.4,"leadTimeDays":7,
+$ GET summary?horizon=7
+{"error":{"code":"invalid_parameter","message":"Valor inválido para \"horizon\". Use um de: 14, 28, 56.","param":"horizon"}} [400]
+$ GET summary?horizon=028
+{"error":{"code":"invalid_parameter","message":"Valor inválido para \"horizon\". Use um de: 14, 28, 56.","param":"horizon"}} [400]
+$ GET risk?dealer=ZZ
+{"error":{"code":"invalid_parameter","message":"Valor inválido para \"dealer\".","param":"dealer"}} [400]
+$ GET risk?limit=0
+{"error":{"code":"invalid_parameter","message":"Parâmetro \"limit\" deve ser um inteiro entre 1 e 200.","param":"limit"}} [400]
+$ GET requests?dealer=NOPE
+{"error":{"code":"invalid_parameter","message":"Valor inválido para \"dealer\".","param":"dealer"}} [400]
+$ GET requests?dealer=D001
+{"requests":[]} [200]
+$ POST {"dealerId":"D001","partId":"P002","type":"reorder","quantity":14,"note":" urgente "}
+{"request":{"id":"55867f19-0921-4653-87a5-e31b222ee423","dealerId":"D001","dealerName":"Aurora Motors Campinas","partId":"P002","partName":"Disco de freio dianteiro","type":"reorder","quantity":14,"fromDealerId":null,"note":"urgente","horizonDays":28,"riskLevel":"critical","lostSalesBrl":4480,"forecastDate":"2026-11-16","status":"open","createdAt":"2026-11-20T17:25:02.916Z","updatedAt":"2026-11-20
+$ POST {"dealerId":"D001","partId":"P002","type":"reorder","quantity":3}
+{"error":{"code":"duplicate_request","message":"Já existe um pedido ativo para esta loja, peça e tipo."}} [409]
+$ POST {"dealerId":"D001","partId":"P001","type":"transfer","fromDealerId":"D002","quantity":9999}
+{"error":{"code":"invalid_parameter","message":"A loja de origem tem apenas 3 unidade(s) em estoque.","param":"quantity"}} [400]
+$ POST {"dealerId":"D001","partId":"P001","type":"transfer","fromDealerId":"D002","quantity":1}
+{"request":{"id":"e4b4efcd-74e8-46d1-9f6f-b47a84ad2fe4","dealerId":"D001","dealerName":"Aurora Motors Campinas","partId":"P001","partName":"Pastilha de freio dianteira","type":"transfer","quantity":1,"fromDealerId":"D002","note":null,"horizonDays":28,"riskLevel":"critical","lostSalesBrl":3060,"forecastDate":"2026-11-16","status":"open","createdAt":"2026-11-20T17:25:07.635Z","updatedAt":"2026-11-20
+$ POST {"dealerId":"D001","partId":"P002","type":"reorder","quantity":"5"}
+{"error":{"code":"invalid_parameter","message":"Campo \"quantity\" deve ser um número inteiro entre 1 e 100000.","param":"quantity"}} [400]
+$ POST {"dealerId":"X","partId":"P002","type":"reorder","quantity":5}
+{"error":{"code":"invalid_parameter","message":"Loja desconhecida.","param":"dealerId"}} [400]
+$ POST {"dealerId":"D001","partId":"P002","type":"reorder","quantity":5,"zz":1}
+{"error":{"code":"invalid_parameter","message":"Campo desconhecido: \"zz\".","param":"zz"}} [400]
+$ POST notjson
+{"error":{"code":"invalid_parameter","message":"Corpo da requisição inválido ou grande demais.","param":"body"}} [400]
+$ POST 1MB body
+{"error":{"code":"invalid_parameter","message":"Corpo da requisição grande demais (máximo 16 KB).","param":"body"}} [400]
+$ race: 10 parallel POST D003/P004 reorder
+   1 201
+   9 409
+$ GET requests/abc
+{"error":{"code":"invalid_parameter","message":"Identificador de pedido inválido.","param":"id"}} [400]
+$ GET requests/123e4567-e89b-12d3-a456-426614174000
+{"error":{"code":"not_found","message":"Pedido não encontrado."}} [404]
+$ SQL (aftersales_app_dev)
+ open   |     3
+
+ CREATE UNIQUE INDEX aftersales_requests_one_active ON aftersales_app_dev.aftersales_replenishment_requests USING btree (dealer_id, part_id, type) WHERE (status = ANY (ARRAY['open'::text, 'approved'::text, 'in_transit'::text]))
+

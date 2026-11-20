@@ -1,0 +1,1577 @@
+# Market API vs SQL oracle — http://localhost:8903 — months 2026-09-01, 2023-03-01, 2007-06-01, 2004-01-01
+# server: team/mkv1-backend @eb93a60, local :8903; qa harness @4481330; 2026-11-20 15:59 UTC
+# checks: 1411  FAIL: 0
+# brand/model names masked (BRAND_/MODEL_<sha6>); Aurora Motors and the residual kept
+
+## Defaults and coverage (latest month from API = 2026-09-01)
+PASS  summary defaults meta.query                                                    api={'segment': 'total', 'period': '24m', 'view': 'with_aurora', 'month': '2026-09-01'} sql={'segment': 'total', 'period': '24m', 'view': 'with_aurora', 'month': '2026-09-01'}
+PASS  coverage.firstMonth                                                            api='2003-01-01'             sql='2003-01-01'
+PASS  coverage.monthsCount                                                           api=285                      sql=285
+
+## Summary 2026-09 automoveis real
+PASS  summary 2026-09 automoveis real http                                           api=200                      sql=200
+PASS  summary 2026-09 automoveis real month                                          api='2026-09-01'             sql='2026-09-01'
+PASS  summary 2026-09 automoveis real meta.query                                     api={'segment': 'automoveis', 'period': '24m', 'view': 'real', 'month': '2026-09-01'} sql={'segment': 'automoveis', 'period': '24m', 'view': 'real', 'month': '2026-09-01'}
+PASS  summary 2026-09 automoveis real previousYearMonth                              api='2025-09-01'             sql='2025-09-01'
+PASS  summary 2026-09 automoveis real market.realUnits                               api=216366                   sql=216366
+PASS  summary 2026-09 automoveis real market.auroraUnits                             api=None                     sql=None
+PASS  summary 2026-09 automoveis real market.totalUnits                              api=216366                   sql=216366
+PASS  summary 2026-09 automoveis real market.previousYearUnits                       api=178548                   sql=178548
+PASS  summary 2026-09 automoveis real market.yoyPct                                  api=0.21180858928691437      sql=0.21180858928691437
+PASS  summary 2026-09 automoveis real aurora (expect null)                           api=None                     sql=None
+
+## Summary 2026-09 automoveis with_aurora
+PASS  summary 2026-09 automoveis with_aurora http                                    api=200                      sql=200
+PASS  summary 2026-09 automoveis with_aurora month                                   api='2026-09-01'             sql='2026-09-01'
+PASS  summary 2026-09 automoveis with_aurora meta.query                              api={'segment': 'automoveis', 'period': '24m', 'view': 'with_aurora', 'month': '2026-09-01'} sql={'segment': 'automoveis', 'period': '24m', 'view': 'with_aurora', 'month': '2026-09-01'}
+PASS  summary 2026-09 automoveis with_aurora previousYearMonth                       api='2025-09-01'             sql='2025-09-01'
+PASS  summary 2026-09 automoveis with_aurora market.realUnits                        api=216366                   sql=216366
+PASS  summary 2026-09 automoveis with_aurora market.auroraUnits                      api=6692                     sql=6692
+PASS  summary 2026-09 automoveis with_aurora market.totalUnits                       api=223058                   sql=223058
+PASS  summary 2026-09 automoveis with_aurora market.previousYearUnits                api=184156                   sql=184156
+PASS  summary 2026-09 automoveis with_aurora market.yoyPct                           api=0.21124481417928287      sql=0.21124481417928287
+PASS  summary 2026-09 automoveis with_aurora aurora present                          api=True                     sql=True
+PASS  summary 2026-09 automoveis with_aurora aurora.units                            api=6692                     sql=6692
+PASS  summary 2026-09 automoveis with_aurora aurora.share                            api=0.03000116561611778      sql=0.03000116561611778
+PASS  summary 2026-09 automoveis with_aurora aurora.rank                             api=12                       sql=12
+PASS  summary 2026-09 automoveis with_aurora aurora.rankedBrands                     api=22                       sql=22
+PASS  summary 2026-09 automoveis with_aurora aurora.previousYearShare                api=0.030452442494406914     sql=0.030452442494406914
+PASS  summary 2026-09 automoveis with_aurora aurora.shareChangePp                    api=-0.00045127687828913285  sql=-0.00045127687828913285
+
+## Summary 2026-09 comerciais_leves real
+PASS  summary 2026-09 comerciais_leves real http                                     api=200                      sql=200
+PASS  summary 2026-09 comerciais_leves real month                                    api='2026-09-01'             sql='2026-09-01'
+PASS  summary 2026-09 comerciais_leves real meta.query                               api={'segment': 'comerciais_leves', 'period': '24m', 'view': 'real', 'month': '2026-09-01'} sql={'segment': 'comerciais_leves', 'period': '24m', 'view': 'real', 'month': '2026-09-01'}
+PASS  summary 2026-09 comerciais_leves real previousYearMonth                        api='2025-09-01'             sql='2025-09-01'
+PASS  summary 2026-09 comerciais_leves real market.realUnits                         api=52355                    sql=52355
+PASS  summary 2026-09 comerciais_leves real market.auroraUnits                       api=None                     sql=None
+PASS  summary 2026-09 comerciais_leves real market.totalUnits                        api=52355                    sql=52355
+PASS  summary 2026-09 comerciais_leves real market.previousYearUnits                 api=52822                    sql=52822
+PASS  summary 2026-09 comerciais_leves real market.yoyPct                            api=-0.008841013214191062    sql=-0.008841013214191062
+PASS  summary 2026-09 comerciais_leves real aurora (expect null)                     api=None                     sql=None
+
+## Summary 2026-09 comerciais_leves with_aurora
+PASS  summary 2026-09 comerciais_leves with_aurora http                              api=200                      sql=200
+PASS  summary 2026-09 comerciais_leves with_aurora month                             api='2026-09-01'             sql='2026-09-01'
+PASS  summary 2026-09 comerciais_leves with_aurora meta.query                        api={'segment': 'comerciais_leves', 'period': '24m', 'view': 'with_aurora', 'month': '2026-09-01'} sql={'segment': 'comerciais_leves', 'period': '24m', 'view': 'with_aurora', 'month': '2026-09-01'}
+PASS  summary 2026-09 comerciais_leves with_aurora previousYearMonth                 api='2025-09-01'             sql='2025-09-01'
+PASS  summary 2026-09 comerciais_leves with_aurora market.realUnits                  api=52355                    sql=52355
+PASS  summary 2026-09 comerciais_leves with_aurora market.auroraUnits                api=None                     sql=None
+PASS  summary 2026-09 comerciais_leves with_aurora market.totalUnits                 api=52355                    sql=52355
+PASS  summary 2026-09 comerciais_leves with_aurora market.previousYearUnits          api=52822                    sql=52822
+PASS  summary 2026-09 comerciais_leves with_aurora market.yoyPct                     api=-0.008841013214191062    sql=-0.008841013214191062
+PASS  summary 2026-09 comerciais_leves with_aurora aurora (expect null)              api=None                     sql=None
+
+## Summary 2026-09 total real
+PASS  summary 2026-09 total real http                                                api=200                      sql=200
+PASS  summary 2026-09 total real month                                               api='2026-09-01'             sql='2026-09-01'
+PASS  summary 2026-09 total real meta.query                                          api={'segment': 'total', 'period': '24m', 'view': 'real', 'month': '2026-09-01'} sql={'segment': 'total', 'period': '24m', 'view': 'real', 'month': '2026-09-01'}
+PASS  summary 2026-09 total real previousYearMonth                                   api='2025-09-01'             sql='2025-09-01'
+PASS  summary 2026-09 total real market.realUnits                                    api=268721                   sql=268721
+PASS  summary 2026-09 total real market.auroraUnits                                  api=None                     sql=None
+PASS  summary 2026-09 total real market.totalUnits                                   api=268721                   sql=268721
+PASS  summary 2026-09 total real market.previousYearUnits                            api=231370                   sql=231370
+PASS  summary 2026-09 total real market.yoyPct                                       api=0.16143406664649684      sql=0.16143406664649684
+PASS  summary 2026-09 total real aurora (expect null)                                api=None                     sql=None
+
+## Summary 2026-09 total with_aurora
+PASS  summary 2026-09 total with_aurora http                                         api=200                      sql=200
+PASS  summary 2026-09 total with_aurora month                                        api='2026-09-01'             sql='2026-09-01'
+PASS  summary 2026-09 total with_aurora meta.query                                   api={'segment': 'total', 'period': '24m', 'view': 'with_aurora', 'month': '2026-09-01'} sql={'segment': 'total', 'period': '24m', 'view': 'with_aurora', 'month': '2026-09-01'}
+PASS  summary 2026-09 total with_aurora previousYearMonth                            api='2025-09-01'             sql='2025-09-01'
+PASS  summary 2026-09 total with_aurora market.realUnits                             api=268721                   sql=268721
+PASS  summary 2026-09 total with_aurora market.auroraUnits                           api=6692                     sql=6692
+PASS  summary 2026-09 total with_aurora market.totalUnits                            api=275413                   sql=275413
+PASS  summary 2026-09 total with_aurora market.previousYearUnits                     api=236978                   sql=236978
+PASS  summary 2026-09 total with_aurora market.yoyPct                                api=0.1621880512115048       sql=0.1621880512115048
+PASS  summary 2026-09 total with_aurora aurora present                               api=True                     sql=True
+PASS  summary 2026-09 total with_aurora aurora.units                                 api=6692                     sql=6692
+PASS  summary 2026-09 total with_aurora aurora.share                                 api=0.02429805419497264      sql=0.02429805419497264
+PASS  summary 2026-09 total with_aurora aurora.rank                                  api=12                       sql=12
+PASS  summary 2026-09 total with_aurora aurora.rankedBrands                          api=34                       sql=34
+PASS  summary 2026-09 total with_aurora aurora.previousYearShare                     api=0.023664643975390122     sql=0.023664643975390122
+PASS  summary 2026-09 total with_aurora aurora.shareChangePp                         api=0.0006334102195825198    sql=0.0006334102195825198
+
+## Summary 2023-03 automoveis real
+PASS  summary 2023-03 automoveis real http                                           api=200                      sql=200
+PASS  summary 2023-03 automoveis real month                                          api='2023-03-01'             sql='2023-03-01'
+PASS  summary 2023-03 automoveis real meta.query                                     api={'segment': 'automoveis', 'period': '24m', 'view': 'real', 'month': '2023-03-01'} sql={'segment': 'automoveis', 'period': '24m', 'view': 'real', 'month': '2023-03-01'}
+PASS  summary 2023-03 automoveis real previousYearMonth                              api='2022-03-01'             sql='2022-03-01'
+PASS  summary 2023-03 automoveis real market.realUnits                               api=146174                   sql=146174
+PASS  summary 2023-03 automoveis real market.auroraUnits                             api=None                     sql=None
+PASS  summary 2023-03 automoveis real market.totalUnits                              api=146174                   sql=146174
+PASS  summary 2023-03 automoveis real market.previousYearUnits                       api=108244                   sql=108244
+PASS  summary 2023-03 automoveis real market.yoyPct                                  api=0.35041203207568095      sql=0.35041203207568095
+PASS  summary 2023-03 automoveis real aurora (expect null)                           api=None                     sql=None
+
+## Summary 2023-03 automoveis with_aurora
+PASS  summary 2023-03 automoveis with_aurora http                                    api=200                      sql=200
+PASS  summary 2023-03 automoveis with_aurora month                                   api='2023-03-01'             sql='2023-03-01'
+PASS  summary 2023-03 automoveis with_aurora meta.query                              api={'segment': 'automoveis', 'period': '24m', 'view': 'with_aurora', 'month': '2023-03-01'} sql={'segment': 'automoveis', 'period': '24m', 'view': 'with_aurora', 'month': '2023-03-01'}
+PASS  summary 2023-03 automoveis with_aurora previousYearMonth                       api='2022-03-01'             sql='2022-03-01'
+PASS  summary 2023-03 automoveis with_aurora market.realUnits                        api=146174                   sql=146174
+PASS  summary 2023-03 automoveis with_aurora market.auroraUnits                      api=5653                     sql=5653
+PASS  summary 2023-03 automoveis with_aurora market.totalUnits                       api=151827                   sql=151827
+PASS  summary 2023-03 automoveis with_aurora market.previousYearUnits                api=112333                   sql=112333
+PASS  summary 2023-03 automoveis with_aurora market.yoyPct                           api=0.351579678277977        sql=0.351579678277977
+PASS  summary 2023-03 automoveis with_aurora aurora present                          api=True                     sql=True
+PASS  summary 2023-03 automoveis with_aurora aurora.units                            api=5653                     sql=5653
+PASS  summary 2023-03 automoveis with_aurora aurora.share                            api=0.037233166696305664     sql=0.037233166696305664
+PASS  summary 2023-03 automoveis with_aurora aurora.rank                             api=10                       sql=10
+PASS  summary 2023-03 automoveis with_aurora aurora.rankedBrands                     api=22                       sql=22
+PASS  summary 2023-03 automoveis with_aurora aurora.previousYearShare                api=0.036400701485761085     sql=0.036400701485761085
+PASS  summary 2023-03 automoveis with_aurora aurora.shareChangePp                    api=0.0008324652105445793    sql=0.0008324652105445793
+
+## Summary 2023-03 comerciais_leves real
+PASS  summary 2023-03 comerciais_leves real http                                     api=200                      sql=200
+PASS  summary 2023-03 comerciais_leves real month                                    api='2023-03-01'             sql='2023-03-01'
+PASS  summary 2023-03 comerciais_leves real meta.query                               api={'segment': 'comerciais_leves', 'period': '24m', 'view': 'real', 'month': '2023-03-01'} sql={'segment': 'comerciais_leves', 'period': '24m', 'view': 'real', 'month': '2023-03-01'}
+PASS  summary 2023-03 comerciais_leves real previousYearMonth                        api='2022-03-01'             sql='2022-03-01'
+PASS  summary 2023-03 comerciais_leves real market.realUnits                         api=40409                    sql=40409
+PASS  summary 2023-03 comerciais_leves real market.auroraUnits                       api=None                     sql=None
+PASS  summary 2023-03 comerciais_leves real market.totalUnits                        api=40409                    sql=40409
+PASS  summary 2023-03 comerciais_leves real market.previousYearUnits                 api=26660                    sql=26660
+PASS  summary 2023-03 comerciais_leves real market.yoyPct                            api=0.5157164291072769       sql=0.5157164291072769
+PASS  summary 2023-03 comerciais_leves real aurora (expect null)                     api=None                     sql=None
+
+## Summary 2023-03 comerciais_leves with_aurora
+PASS  summary 2023-03 comerciais_leves with_aurora http                              api=200                      sql=200
+PASS  summary 2023-03 comerciais_leves with_aurora month                             api='2023-03-01'             sql='2023-03-01'
+PASS  summary 2023-03 comerciais_leves with_aurora meta.query                        api={'segment': 'comerciais_leves', 'period': '24m', 'view': 'with_aurora', 'month': '2023-03-01'} sql={'segment': 'comerciais_leves', 'period': '24m', 'view': 'with_aurora', 'month': '2023-03-01'}
+PASS  summary 2023-03 comerciais_leves with_aurora previousYearMonth                 api='2022-03-01'             sql='2022-03-01'
+PASS  summary 2023-03 comerciais_leves with_aurora market.realUnits                  api=40409                    sql=40409
+PASS  summary 2023-03 comerciais_leves with_aurora market.auroraUnits                api=None                     sql=None
+PASS  summary 2023-03 comerciais_leves with_aurora market.totalUnits                 api=40409                    sql=40409
+PASS  summary 2023-03 comerciais_leves with_aurora market.previousYearUnits          api=26660                    sql=26660
+PASS  summary 2023-03 comerciais_leves with_aurora market.yoyPct                     api=0.5157164291072769       sql=0.5157164291072769
+PASS  summary 2023-03 comerciais_leves with_aurora aurora (expect null)              api=None                     sql=None
+
+## Summary 2023-03 total real
+PASS  summary 2023-03 total real http                                                api=200                      sql=200
+PASS  summary 2023-03 total real month                                               api='2023-03-01'             sql='2023-03-01'
+PASS  summary 2023-03 total real meta.query                                          api={'segment': 'total', 'period': '24m', 'view': 'real', 'month': '2023-03-01'} sql={'segment': 'total', 'period': '24m', 'view': 'real', 'month': '2023-03-01'}
+PASS  summary 2023-03 total real previousYearMonth                                   api='2022-03-01'             sql='2022-03-01'
+PASS  summary 2023-03 total real market.realUnits                                    api=186583                   sql=186583
+PASS  summary 2023-03 total real market.auroraUnits                                  api=None                     sql=None
+PASS  summary 2023-03 total real market.totalUnits                                   api=186583                   sql=186583
+PASS  summary 2023-03 total real market.previousYearUnits                            api=134904                   sql=134904
+PASS  summary 2023-03 total real market.yoyPct                                       api=0.38307981972365535      sql=0.38307981972365535
+PASS  summary 2023-03 total real aurora (expect null)                                api=None                     sql=None
+
+## Summary 2023-03 total with_aurora
+PASS  summary 2023-03 total with_aurora http                                         api=200                      sql=200
+PASS  summary 2023-03 total with_aurora month                                        api='2023-03-01'             sql='2023-03-01'
+PASS  summary 2023-03 total with_aurora meta.query                                   api={'segment': 'total', 'period': '24m', 'view': 'with_aurora', 'month': '2023-03-01'} sql={'segment': 'total', 'period': '24m', 'view': 'with_aurora', 'month': '2023-03-01'}
+PASS  summary 2023-03 total with_aurora previousYearMonth                            api='2022-03-01'             sql='2022-03-01'
+PASS  summary 2023-03 total with_aurora market.realUnits                             api=186583                   sql=186583
+PASS  summary 2023-03 total with_aurora market.auroraUnits                           api=5653                     sql=5653
+PASS  summary 2023-03 total with_aurora market.totalUnits                            api=192236                   sql=192236
+PASS  summary 2023-03 total with_aurora market.previousYearUnits                     api=138993                   sql=138993
+PASS  summary 2023-03 total with_aurora market.yoyPct                                api=0.3830624563826954       sql=0.3830624563826954
+PASS  summary 2023-03 total with_aurora aurora present                               api=True                     sql=True
+PASS  summary 2023-03 total with_aurora aurora.units                                 api=5653                     sql=5653
+PASS  summary 2023-03 total with_aurora aurora.share                                 api=0.02940656276659939      sql=0.02940656276659939
+PASS  summary 2023-03 total with_aurora aurora.rank                                  api=10                       sql=10
+PASS  summary 2023-03 total with_aurora aurora.rankedBrands                          api=30                       sql=30
+PASS  summary 2023-03 total with_aurora aurora.previousYearShare                     api=0.029418747706719043     sql=0.029418747706719043
+PASS  summary 2023-03 total with_aurora aurora.shareChangePp                         api=-1.2184940119654153e-05  sql=-1.2184940119654153e-05
+
+## Summary 2007-06 automoveis real
+PASS  summary 2007-06 automoveis real http                                           api=200                      sql=200
+PASS  summary 2007-06 automoveis real month                                          api='2007-06-01'             sql='2007-06-01'
+PASS  summary 2007-06 automoveis real meta.query                                     api={'segment': 'automoveis', 'period': '24m', 'view': 'real', 'month': '2007-06-01'} sql={'segment': 'automoveis', 'period': '24m', 'view': 'real', 'month': '2007-06-01'}
+PASS  summary 2007-06 automoveis real previousYearMonth                              api='2006-06-01'             sql='2006-06-01'
+PASS  summary 2007-06 automoveis real market.realUnits                               api=169429                   sql=169429
+PASS  summary 2007-06 automoveis real market.auroraUnits                             api=None                     sql=None
+PASS  summary 2007-06 automoveis real market.totalUnits                              api=169429                   sql=169429
+PASS  summary 2007-06 automoveis real market.previousYearUnits                       api=124384                   sql=124384
+PASS  summary 2007-06 automoveis real market.yoyPct                                  api=0.36214464882943154      sql=0.36214464882943154
+PASS  summary 2007-06 automoveis real aurora (expect null)                           api=None                     sql=None
+
+## Summary 2007-06 automoveis with_aurora
+PASS  summary 2007-06 automoveis with_aurora http                                    api=200                      sql=200
+PASS  summary 2007-06 automoveis with_aurora month                                   api='2007-06-01'             sql='2007-06-01'
+PASS  summary 2007-06 automoveis with_aurora meta.query                              api={'segment': 'automoveis', 'period': '24m', 'view': 'with_aurora', 'month': '2007-06-01'} sql={'segment': 'automoveis', 'period': '24m', 'view': 'with_aurora', 'month': '2007-06-01'}
+PASS  summary 2007-06 automoveis with_aurora previousYearMonth                       api='2006-06-01'             sql='2006-06-01'
+PASS  summary 2007-06 automoveis with_aurora market.realUnits                        api=169429                   sql=169429
+PASS  summary 2007-06 automoveis with_aurora market.auroraUnits                      api=None                     sql=None
+PASS  summary 2007-06 automoveis with_aurora market.totalUnits                       api=169429                   sql=169429
+PASS  summary 2007-06 automoveis with_aurora market.previousYearUnits                api=124384                   sql=124384
+PASS  summary 2007-06 automoveis with_aurora market.yoyPct                           api=0.36214464882943154      sql=0.36214464882943154
+PASS  summary 2007-06 automoveis with_aurora aurora (expect null)                    api=None                     sql=None
+
+## Summary 2007-06 comerciais_leves real
+PASS  summary 2007-06 comerciais_leves real http                                     api=200                      sql=200
+PASS  summary 2007-06 comerciais_leves real month                                    api='2007-06-01'             sql='2007-06-01'
+PASS  summary 2007-06 comerciais_leves real meta.query                               api={'segment': 'comerciais_leves', 'period': '24m', 'view': 'real', 'month': '2007-06-01'} sql={'segment': 'comerciais_leves', 'period': '24m', 'view': 'real', 'month': '2007-06-01'}
+PASS  summary 2007-06 comerciais_leves real previousYearMonth                        api='2006-06-01'             sql='2006-06-01'
+PASS  summary 2007-06 comerciais_leves real market.realUnits                         api=19348                    sql=19348
+PASS  summary 2007-06 comerciais_leves real market.auroraUnits                       api=None                     sql=None
+PASS  summary 2007-06 comerciais_leves real market.totalUnits                        api=19348                    sql=19348
+PASS  summary 2007-06 comerciais_leves real market.previousYearUnits                 api=16480                    sql=16480
+PASS  summary 2007-06 comerciais_leves real market.yoyPct                            api=0.17402912621359223      sql=0.17402912621359223
+PASS  summary 2007-06 comerciais_leves real aurora (expect null)                     api=None                     sql=None
+
+## Summary 2007-06 comerciais_leves with_aurora
+PASS  summary 2007-06 comerciais_leves with_aurora http                              api=200                      sql=200
+PASS  summary 2007-06 comerciais_leves with_aurora month                             api='2007-06-01'             sql='2007-06-01'
+PASS  summary 2007-06 comerciais_leves with_aurora meta.query                        api={'segment': 'comerciais_leves', 'period': '24m', 'view': 'with_aurora', 'month': '2007-06-01'} sql={'segment': 'comerciais_leves', 'period': '24m', 'view': 'with_aurora', 'month': '2007-06-01'}
+PASS  summary 2007-06 comerciais_leves with_aurora previousYearMonth                 api='2006-06-01'             sql='2006-06-01'
+PASS  summary 2007-06 comerciais_leves with_aurora market.realUnits                  api=19348                    sql=19348
+PASS  summary 2007-06 comerciais_leves with_aurora market.auroraUnits                api=None                     sql=None
+PASS  summary 2007-06 comerciais_leves with_aurora market.totalUnits                 api=19348                    sql=19348
+PASS  summary 2007-06 comerciais_leves with_aurora market.previousYearUnits          api=16480                    sql=16480
+PASS  summary 2007-06 comerciais_leves with_aurora market.yoyPct                     api=0.17402912621359223      sql=0.17402912621359223
+PASS  summary 2007-06 comerciais_leves with_aurora aurora (expect null)              api=None                     sql=None
+
+## Summary 2007-06 total real
+PASS  summary 2007-06 total real http                                                api=200                      sql=200
+PASS  summary 2007-06 total real month                                               api='2007-06-01'             sql='2007-06-01'
+PASS  summary 2007-06 total real meta.query                                          api={'segment': 'total', 'period': '24m', 'view': 'real', 'month': '2007-06-01'} sql={'segment': 'total', 'period': '24m', 'view': 'real', 'month': '2007-06-01'}
+PASS  summary 2007-06 total real previousYearMonth                                   api='2006-06-01'             sql='2006-06-01'
+PASS  summary 2007-06 total real market.realUnits                                    api=188777                   sql=188777
+PASS  summary 2007-06 total real market.auroraUnits                                  api=None                     sql=None
+PASS  summary 2007-06 total real market.totalUnits                                   api=188777                   sql=188777
+PASS  summary 2007-06 total real market.previousYearUnits                            api=140864                   sql=140864
+PASS  summary 2007-06 total real market.yoyPct                                       api=0.3401365856428895       sql=0.3401365856428895
+PASS  summary 2007-06 total real aurora (expect null)                                api=None                     sql=None
+
+## Summary 2007-06 total with_aurora
+PASS  summary 2007-06 total with_aurora http                                         api=200                      sql=200
+PASS  summary 2007-06 total with_aurora month                                        api='2007-06-01'             sql='2007-06-01'
+PASS  summary 2007-06 total with_aurora meta.query                                   api={'segment': 'total', 'period': '24m', 'view': 'with_aurora', 'month': '2007-06-01'} sql={'segment': 'total', 'period': '24m', 'view': 'with_aurora', 'month': '2007-06-01'}
+PASS  summary 2007-06 total with_aurora previousYearMonth                            api='2006-06-01'             sql='2006-06-01'
+PASS  summary 2007-06 total with_aurora market.realUnits                             api=188777                   sql=188777
+PASS  summary 2007-06 total with_aurora market.auroraUnits                           api=None                     sql=None
+PASS  summary 2007-06 total with_aurora market.totalUnits                            api=188777                   sql=188777
+PASS  summary 2007-06 total with_aurora market.previousYearUnits                     api=140864                   sql=140864
+PASS  summary 2007-06 total with_aurora market.yoyPct                                api=0.3401365856428895       sql=0.3401365856428895
+PASS  summary 2007-06 total with_aurora aurora (expect null)                         api=None                     sql=None
+
+## Summary 2004-01 automoveis real
+PASS  summary 2004-01 automoveis real http                                           api=200                      sql=200
+PASS  summary 2004-01 automoveis real month                                          api='2004-01-01'             sql='2004-01-01'
+PASS  summary 2004-01 automoveis real meta.query                                     api={'segment': 'automoveis', 'period': '24m', 'view': 'real', 'month': '2004-01-01'} sql={'segment': 'automoveis', 'period': '24m', 'view': 'real', 'month': '2004-01-01'}
+PASS  summary 2004-01 automoveis real previousYearMonth                              api='2003-01-01'             sql='2003-01-01'
+PASS  summary 2004-01 automoveis real market.realUnits                               api=87489                    sql=87489
+PASS  summary 2004-01 automoveis real market.auroraUnits                             api=None                     sql=None
+PASS  summary 2004-01 automoveis real market.totalUnits                              api=87489                    sql=87489
+PASS  summary 2004-01 automoveis real market.previousYearUnits                       api=96383                    sql=96383
+PASS  summary 2004-01 automoveis real market.yoyPct                                  api=-0.09227768382391088     sql=-0.09227768382391088
+PASS  summary 2004-01 automoveis real aurora (expect null)                           api=None                     sql=None
+
+## Summary 2004-01 automoveis with_aurora
+PASS  summary 2004-01 automoveis with_aurora http                                    api=200                      sql=200
+PASS  summary 2004-01 automoveis with_aurora month                                   api='2004-01-01'             sql='2004-01-01'
+PASS  summary 2004-01 automoveis with_aurora meta.query                              api={'segment': 'automoveis', 'period': '24m', 'view': 'with_aurora', 'month': '2004-01-01'} sql={'segment': 'automoveis', 'period': '24m', 'view': 'with_aurora', 'month': '2004-01-01'}
+PASS  summary 2004-01 automoveis with_aurora previousYearMonth                       api='2003-01-01'             sql='2003-01-01'
+PASS  summary 2004-01 automoveis with_aurora market.realUnits                        api=87489                    sql=87489
+PASS  summary 2004-01 automoveis with_aurora market.auroraUnits                      api=None                     sql=None
+PASS  summary 2004-01 automoveis with_aurora market.totalUnits                       api=87489                    sql=87489
+PASS  summary 2004-01 automoveis with_aurora market.previousYearUnits                api=96383                    sql=96383
+PASS  summary 2004-01 automoveis with_aurora market.yoyPct                           api=-0.09227768382391088     sql=-0.09227768382391088
+PASS  summary 2004-01 automoveis with_aurora aurora (expect null)                    api=None                     sql=None
+
+## Summary 2004-01 comerciais_leves real
+PASS  summary 2004-01 comerciais_leves real http                                     api=200                      sql=200
+PASS  summary 2004-01 comerciais_leves real month                                    api='2004-01-01'             sql='2004-01-01'
+PASS  summary 2004-01 comerciais_leves real meta.query                               api={'segment': 'comerciais_leves', 'period': '24m', 'view': 'real', 'month': '2004-01-01'} sql={'segment': 'comerciais_leves', 'period': '24m', 'view': 'real', 'month': '2004-01-01'}
+PASS  summary 2004-01 comerciais_leves real previousYearMonth                        api='2003-01-01'             sql='2003-01-01'
+PASS  summary 2004-01 comerciais_leves real market.realUnits                         api=13620                    sql=13620
+PASS  summary 2004-01 comerciais_leves real market.auroraUnits                       api=None                     sql=None
+PASS  summary 2004-01 comerciais_leves real market.totalUnits                        api=13620                    sql=13620
+PASS  summary 2004-01 comerciais_leves real market.previousYearUnits                 api=10224                    sql=10224
+PASS  summary 2004-01 comerciais_leves real market.yoyPct                            api=0.3321596244131455       sql=0.3321596244131455
+PASS  summary 2004-01 comerciais_leves real aurora (expect null)                     api=None                     sql=None
+
+## Summary 2004-01 comerciais_leves with_aurora
+PASS  summary 2004-01 comerciais_leves with_aurora http                              api=200                      sql=200
+PASS  summary 2004-01 comerciais_leves with_aurora month                             api='2004-01-01'             sql='2004-01-01'
+PASS  summary 2004-01 comerciais_leves with_aurora meta.query                        api={'segment': 'comerciais_leves', 'period': '24m', 'view': 'with_aurora', 'month': '2004-01-01'} sql={'segment': 'comerciais_leves', 'period': '24m', 'view': 'with_aurora', 'month': '2004-01-01'}
+PASS  summary 2004-01 comerciais_leves with_aurora previousYearMonth                 api='2003-01-01'             sql='2003-01-01'
+PASS  summary 2004-01 comerciais_leves with_aurora market.realUnits                  api=13620                    sql=13620
+PASS  summary 2004-01 comerciais_leves with_aurora market.auroraUnits                api=None                     sql=None
+PASS  summary 2004-01 comerciais_leves with_aurora market.totalUnits                 api=13620                    sql=13620
+PASS  summary 2004-01 comerciais_leves with_aurora market.previousYearUnits          api=10224                    sql=10224
+PASS  summary 2004-01 comerciais_leves with_aurora market.yoyPct                     api=0.3321596244131455       sql=0.3321596244131455
+PASS  summary 2004-01 comerciais_leves with_aurora aurora (expect null)              api=None                     sql=None
+
+## Summary 2004-01 total real
+PASS  summary 2004-01 total real http                                                api=200                      sql=200
+PASS  summary 2004-01 total real month                                               api='2004-01-01'             sql='2004-01-01'
+PASS  summary 2004-01 total real meta.query                                          api={'segment': 'total', 'period': '24m', 'view': 'real', 'month': '2004-01-01'} sql={'segment': 'total', 'period': '24m', 'view': 'real', 'month': '2004-01-01'}
+PASS  summary 2004-01 total real previousYearMonth                                   api='2003-01-01'             sql='2003-01-01'
+PASS  summary 2004-01 total real market.realUnits                                    api=101109                   sql=101109
+PASS  summary 2004-01 total real market.auroraUnits                                  api=None                     sql=None
+PASS  summary 2004-01 total real market.totalUnits                                   api=101109                   sql=101109
+PASS  summary 2004-01 total real market.previousYearUnits                            api=106607                   sql=106607
+PASS  summary 2004-01 total real market.yoyPct                                       api=-0.05157259842224249     sql=-0.05157259842224249
+PASS  summary 2004-01 total real aurora (expect null)                                api=None                     sql=None
+
+## Summary 2004-01 total with_aurora
+PASS  summary 2004-01 total with_aurora http                                         api=200                      sql=200
+PASS  summary 2004-01 total with_aurora month                                        api='2004-01-01'             sql='2004-01-01'
+PASS  summary 2004-01 total with_aurora meta.query                                   api={'segment': 'total', 'period': '24m', 'view': 'with_aurora', 'month': '2004-01-01'} sql={'segment': 'total', 'period': '24m', 'view': 'with_aurora', 'month': '2004-01-01'}
+PASS  summary 2004-01 total with_aurora previousYearMonth                            api='2003-01-01'             sql='2003-01-01'
+PASS  summary 2004-01 total with_aurora market.realUnits                             api=101109                   sql=101109
+PASS  summary 2004-01 total with_aurora market.auroraUnits                           api=None                     sql=None
+PASS  summary 2004-01 total with_aurora market.totalUnits                            api=101109                   sql=101109
+PASS  summary 2004-01 total with_aurora market.previousYearUnits                     api=106607                   sql=106607
+PASS  summary 2004-01 total with_aurora market.yoyPct                                api=-0.05157259842224249     sql=-0.05157259842224249
+PASS  summary 2004-01 total with_aurora aurora (expect null)                         api=None                     sql=None
+
+## Brands 2026-09 automoveis view=real (limit=25, period=24m)
+PASS  brands 2026-09 automoveis real http                                            api=200                      sql=200
+PASS  brands month 2026-09 automoveis view=real totalUnits                           api=216366                   sql=216366
+PASS  brands month 2026-09 automoveis view=real non-residual rows = min(limit, brands) api=21                       sql=21
+PASS  brands month 2026-09 automoveis view=real residual row present iff residual>0  api=1                        sql=1
+PASS  brands month 2026-09 automoveis view=real residual is last row                 api=True                     sql=True
+PASS  brands month 2026-09 automoveis view=real residual rank null                   api=None                     sql=None
+PASS  brands month 2026-09 automoveis view=real residual label                       api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2026-09 automoveis view=real residual units                       api=4866                     sql=4866
+PASS  brands month 2026-09 automoveis view=real residual share                       api=0.022489670280912897     sql=0.022489670280912897
+PASS  brands month 2026-09 automoveis view=real every brand row units/share/dense_rank == SQL (21 rows) api='ok'                     sql='ok'
+PASS  brands month 2026-09 automoveis view=real rows sorted by units desc            api=True                     sql=True
+PASS  brands month 2026-09 automoveis view=real othersUnits = sum(cut brands)        api=0                        sql=0
+PASS  brands month 2026-09 automoveis view=real sum(rows.units)+othersUnits == totalUnits api=216366                   sql=216366
+PASS  brands month 2026-09 automoveis view=real sum(rows.share)+others/total == 1    api=1.0                      sql=1.0
+PASS  brands month 2026-09 automoveis view=real no Aurora row in view real           api=False                    sql=False
+PASS  brands period from                                                             api='2024-10-01'             sql='2024-10-01'
+PASS  brands 24m->2026-09 automoveis view=real totalUnits                            api=4304051                  sql=4304051
+PASS  brands 24m->2026-09 automoveis view=real non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2026-09 automoveis view=real residual row present iff residual>0   api=1                        sql=1
+PASS  brands 24m->2026-09 automoveis view=real residual is last row                  api=True                     sql=True
+PASS  brands 24m->2026-09 automoveis view=real residual rank null                    api=None                     sql=None
+PASS  brands 24m->2026-09 automoveis view=real residual label                        api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2026-09 automoveis view=real residual units                        api=61657                    sql=61657
+PASS  brands 24m->2026-09 automoveis view=real residual share                        api=0.014325341405108815     sql=0.014325341405108815
+PASS  brands 24m->2026-09 automoveis view=real every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2026-09 automoveis view=real rows sorted by units desc             api=True                     sql=True
+PASS  brands 24m->2026-09 automoveis view=real othersUnits = sum(cut brands)         api=8671                     sql=8671
+PASS  brands 24m->2026-09 automoveis view=real no cut brand outsells a shown one     api=True                     sql=True
+PASS  brands 24m->2026-09 automoveis view=real sum(rows.units)+othersUnits == totalUnits api=4304051                  sql=4304051
+PASS  brands 24m->2026-09 automoveis view=real sum(rows.share)+others/total == 1     api=1.0                      sql=1.0
+PASS  brands 24m->2026-09 automoveis view=real no Aurora row in view real            api=False                    sql=False
+
+## Brands 2026-09 automoveis view=with_aurora (limit=25, period=24m)
+PASS  brands 2026-09 automoveis with_aurora http                                     api=200                      sql=200
+PASS  brands month 2026-09 automoveis view=with_aurora totalUnits                    api=223058                   sql=223058
+PASS  brands month 2026-09 automoveis view=with_aurora non-residual rows = min(limit, brands) api=22                       sql=22
+PASS  brands month 2026-09 automoveis view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2026-09 automoveis view=with_aurora residual is last row          api=True                     sql=True
+PASS  brands month 2026-09 automoveis view=with_aurora residual rank null            api=None                     sql=None
+PASS  brands month 2026-09 automoveis view=with_aurora residual label                api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2026-09 automoveis view=with_aurora residual units                api=4866                     sql=4866
+PASS  brands month 2026-09 automoveis view=with_aurora residual share                api=0.02181495395816335      sql=0.02181495395816335
+PASS  brands month 2026-09 automoveis view=with_aurora every brand row units/share/dense_rank == SQL (22 rows) api='ok'                     sql='ok'
+PASS  brands month 2026-09 automoveis view=with_aurora rows sorted by units desc     api=True                     sql=True
+PASS  brands month 2026-09 automoveis view=with_aurora othersUnits = sum(cut brands) api=0                        sql=0
+PASS  brands month 2026-09 automoveis view=with_aurora sum(rows.units)+othersUnits == totalUnits api=223058                   sql=223058
+PASS  brands month 2026-09 automoveis view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2024-10-01'             sql='2024-10-01'
+PASS  brands 24m->2026-09 automoveis view=with_aurora totalUnits                     api=4450832                  sql=4450832
+PASS  brands 24m->2026-09 automoveis view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2026-09 automoveis view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2026-09 automoveis view=with_aurora residual is last row           api=True                     sql=True
+PASS  brands 24m->2026-09 automoveis view=with_aurora residual rank null             api=None                     sql=None
+PASS  brands 24m->2026-09 automoveis view=with_aurora residual label                 api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2026-09 automoveis view=with_aurora residual units                 api=61657                    sql=61657
+PASS  brands 24m->2026-09 automoveis view=with_aurora residual share                 api=0.013852915589714462     sql=0.013852915589714462
+PASS  brands 24m->2026-09 automoveis view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2026-09 automoveis view=with_aurora rows sorted by units desc      api=True                     sql=True
+PASS  brands 24m->2026-09 automoveis view=with_aurora othersUnits = sum(cut brands)  api=13859                    sql=13859
+PASS  brands 24m->2026-09 automoveis view=with_aurora no cut brand outsells a shown one api=True                     sql=True
+PASS  brands 24m->2026-09 automoveis view=with_aurora sum(rows.units)+othersUnits == totalUnits api=4450832                  sql=4450832
+PASS  brands 24m->2026-09 automoveis view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+
+## Brands 2026-09 comerciais_leves view=real (limit=25, period=24m)
+PASS  brands 2026-09 comerciais_leves real http                                      api=200                      sql=200
+PASS  brands month 2026-09 comerciais_leves view=real totalUnits                     api=52355                    sql=52355
+PASS  brands month 2026-09 comerciais_leves view=real non-residual rows = min(limit, brands) api=21                       sql=21
+PASS  brands month 2026-09 comerciais_leves view=real residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2026-09 comerciais_leves view=real residual is last row           api=True                     sql=True
+PASS  brands month 2026-09 comerciais_leves view=real residual rank null             api=None                     sql=None
+PASS  brands month 2026-09 comerciais_leves view=real residual label                 api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2026-09 comerciais_leves view=real residual units                 api=15                       sql=15
+PASS  brands month 2026-09 comerciais_leves view=real residual share                 api=0.00028650558685894376   sql=0.00028650558685894376
+PASS  brands month 2026-09 comerciais_leves view=real every brand row units/share/dense_rank == SQL (21 rows) api='ok'                     sql='ok'
+PASS  brands month 2026-09 comerciais_leves view=real rows sorted by units desc      api=True                     sql=True
+PASS  brands month 2026-09 comerciais_leves view=real othersUnits = sum(cut brands)  api=0                        sql=0
+PASS  brands month 2026-09 comerciais_leves view=real sum(rows.units)+othersUnits == totalUnits api=52355                    sql=52355
+PASS  brands month 2026-09 comerciais_leves view=real sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands month 2026-09 comerciais_leves view=real no Aurora row in view real     api=False                    sql=False
+PASS  brands period from                                                             api='2024-10-01'             sql='2024-10-01'
+PASS  brands 24m->2026-09 comerciais_leves view=real totalUnits                      api=1136718                  sql=1136718
+PASS  brands 24m->2026-09 comerciais_leves view=real non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2026-09 comerciais_leves view=real residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2026-09 comerciais_leves view=real residual is last row            api=True                     sql=True
+PASS  brands 24m->2026-09 comerciais_leves view=real residual rank null              api=None                     sql=None
+PASS  brands 24m->2026-09 comerciais_leves view=real residual label                  api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2026-09 comerciais_leves view=real residual units                  api=746                      sql=746
+PASS  brands 24m->2026-09 comerciais_leves view=real residual share                  api=0.0006562753470957616    sql=0.0006562753470957616
+PASS  brands 24m->2026-09 comerciais_leves view=real every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2026-09 comerciais_leves view=real rows sorted by units desc       api=True                     sql=True
+PASS  brands 24m->2026-09 comerciais_leves view=real othersUnits = sum(cut brands)   api=41                       sql=41
+PASS  brands 24m->2026-09 comerciais_leves view=real no cut brand outsells a shown one api=True                     sql=True
+PASS  brands 24m->2026-09 comerciais_leves view=real sum(rows.units)+othersUnits == totalUnits api=1136718                  sql=1136718
+PASS  brands 24m->2026-09 comerciais_leves view=real sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands 24m->2026-09 comerciais_leves view=real no Aurora row in view real      api=False                    sql=False
+
+## Brands 2026-09 comerciais_leves view=with_aurora (limit=25, period=24m)
+PASS  brands 2026-09 comerciais_leves with_aurora http                               api=200                      sql=200
+PASS  brands month 2026-09 comerciais_leves view=with_aurora totalUnits              api=52355                    sql=52355
+PASS  brands month 2026-09 comerciais_leves view=with_aurora non-residual rows = min(limit, brands) api=21                       sql=21
+PASS  brands month 2026-09 comerciais_leves view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2026-09 comerciais_leves view=with_aurora residual is last row    api=True                     sql=True
+PASS  brands month 2026-09 comerciais_leves view=with_aurora residual rank null      api=None                     sql=None
+PASS  brands month 2026-09 comerciais_leves view=with_aurora residual label          api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2026-09 comerciais_leves view=with_aurora residual units          api=15                       sql=15
+PASS  brands month 2026-09 comerciais_leves view=with_aurora residual share          api=0.00028650558685894376   sql=0.00028650558685894376
+PASS  brands month 2026-09 comerciais_leves view=with_aurora every brand row units/share/dense_rank == SQL (21 rows) api='ok'                     sql='ok'
+PASS  brands month 2026-09 comerciais_leves view=with_aurora rows sorted by units desc api=True                     sql=True
+PASS  brands month 2026-09 comerciais_leves view=with_aurora othersUnits = sum(cut brands) api=0                        sql=0
+PASS  brands month 2026-09 comerciais_leves view=with_aurora sum(rows.units)+othersUnits == totalUnits api=52355                    sql=52355
+PASS  brands month 2026-09 comerciais_leves view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2024-10-01'             sql='2024-10-01'
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora totalUnits               api=1136718                  sql=1136718
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora residual is last row     api=True                     sql=True
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora residual rank null       api=None                     sql=None
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora residual label           api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora residual units           api=746                      sql=746
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora residual share           api=0.0006562753470957616    sql=0.0006562753470957616
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora rows sorted by units desc api=True                     sql=True
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora othersUnits = sum(cut brands) api=41                       sql=41
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora no cut brand outsells a shown one api=True                     sql=True
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora sum(rows.units)+othersUnits == totalUnits api=1136718                  sql=1136718
+PASS  brands 24m->2026-09 comerciais_leves view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+
+## Brands 2026-09 total view=real (limit=25, period=24m)
+PASS  brands 2026-09 total real http                                                 api=200                      sql=200
+PASS  brands month 2026-09 total view=real totalUnits                                api=268721                   sql=268721
+PASS  brands month 2026-09 total view=real non-residual rows = min(limit, brands)    api=25                       sql=25
+PASS  brands month 2026-09 total view=real residual row present iff residual>0       api=1                        sql=1
+PASS  brands month 2026-09 total view=real residual is last row                      api=True                     sql=True
+PASS  brands month 2026-09 total view=real residual rank null                        api=None                     sql=None
+PASS  brands month 2026-09 total view=real residual label                            api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2026-09 total view=real residual units                            api=4881                     sql=4881
+PASS  brands month 2026-09 total view=real residual share                            api=0.018163820468069112     sql=0.018163820468069112
+PASS  brands month 2026-09 total view=real every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands month 2026-09 total view=real rows sorted by units desc                 api=True                     sql=True
+PASS  brands month 2026-09 total view=real othersUnits = sum(cut brands)             api=1760                     sql=1760
+PASS  brands month 2026-09 total view=real no cut brand outsells a shown one         api=True                     sql=True
+PASS  brands month 2026-09 total view=real sum(rows.units)+othersUnits == totalUnits api=268721                   sql=268721
+PASS  brands month 2026-09 total view=real sum(rows.share)+others/total == 1         api=1.0                      sql=1.0
+PASS  brands month 2026-09 total view=real no Aurora row in view real                api=False                    sql=False
+PASS  brands period from                                                             api='2024-10-01'             sql='2024-10-01'
+PASS  brands 24m->2026-09 total view=real totalUnits                                 api=5440769                  sql=5440769
+PASS  brands 24m->2026-09 total view=real non-residual rows = min(limit, brands)     api=25                       sql=25
+PASS  brands 24m->2026-09 total view=real residual row present iff residual>0        api=1                        sql=1
+PASS  brands 24m->2026-09 total view=real residual is last row                       api=True                     sql=True
+PASS  brands 24m->2026-09 total view=real residual rank null                         api=None                     sql=None
+PASS  brands 24m->2026-09 total view=real residual label                             api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2026-09 total view=real residual units                             api=62403                    sql=62403
+PASS  brands 24m->2026-09 total view=real residual share                             api=0.011469518371391985     sql=0.011469518371391985
+PASS  brands 24m->2026-09 total view=real every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2026-09 total view=real rows sorted by units desc                  api=True                     sql=True
+PASS  brands 24m->2026-09 total view=real othersUnits = sum(cut brands)              api=42086                    sql=42086
+PASS  brands 24m->2026-09 total view=real no cut brand outsells a shown one          api=True                     sql=True
+PASS  brands 24m->2026-09 total view=real sum(rows.units)+othersUnits == totalUnits  api=5440769                  sql=5440769
+PASS  brands 24m->2026-09 total view=real sum(rows.share)+others/total == 1          api=1.0                      sql=1.0
+PASS  brands 24m->2026-09 total view=real no Aurora row in view real                 api=False                    sql=False
+
+## Brands 2026-09 total view=with_aurora (limit=25, period=24m)
+PASS  brands 2026-09 total with_aurora http                                          api=200                      sql=200
+PASS  brands month 2026-09 total view=with_aurora totalUnits                         api=275413                   sql=275413
+PASS  brands month 2026-09 total view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands month 2026-09 total view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2026-09 total view=with_aurora residual is last row               api=True                     sql=True
+PASS  brands month 2026-09 total view=with_aurora residual rank null                 api=None                     sql=None
+PASS  brands month 2026-09 total view=with_aurora residual label                     api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2026-09 total view=with_aurora residual units                     api=4881                     sql=4881
+PASS  brands month 2026-09 total view=with_aurora residual share                     api=0.017722474973948216     sql=0.017722474973948216
+PASS  brands month 2026-09 total view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands month 2026-09 total view=with_aurora rows sorted by units desc          api=True                     sql=True
+PASS  brands month 2026-09 total view=with_aurora othersUnits = sum(cut brands)      api=2634                     sql=2634
+PASS  brands month 2026-09 total view=with_aurora no cut brand outsells a shown one  api=True                     sql=True
+PASS  brands month 2026-09 total view=with_aurora sum(rows.units)+othersUnits == totalUnits api=275413                   sql=275413
+PASS  brands month 2026-09 total view=with_aurora sum(rows.share)+others/total == 1  api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2024-10-01'             sql='2024-10-01'
+PASS  brands 24m->2026-09 total view=with_aurora totalUnits                          api=5587550                  sql=5587550
+PASS  brands 24m->2026-09 total view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2026-09 total view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2026-09 total view=with_aurora residual is last row                api=True                     sql=True
+PASS  brands 24m->2026-09 total view=with_aurora residual rank null                  api=None                     sql=None
+PASS  brands 24m->2026-09 total view=with_aurora residual label                      api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2026-09 total view=with_aurora residual units                      api=62403                    sql=62403
+PASS  brands 24m->2026-09 total view=with_aurora residual share                      api=0.011168222208302386     sql=0.011168222208302386
+PASS  brands 24m->2026-09 total view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2026-09 total view=with_aurora rows sorted by units desc           api=True                     sql=True
+PASS  brands 24m->2026-09 total view=with_aurora othersUnits = sum(cut brands)       api=49189                    sql=49189
+PASS  brands 24m->2026-09 total view=with_aurora no cut brand outsells a shown one   api=True                     sql=True
+PASS  brands 24m->2026-09 total view=with_aurora sum(rows.units)+othersUnits == totalUnits api=5587550                  sql=5587550
+PASS  brands 24m->2026-09 total view=with_aurora sum(rows.share)+others/total == 1   api=1.0                      sql=1.0
+
+## Brands 2023-03 automoveis view=real (limit=25, period=24m)
+PASS  brands 2023-03 automoveis real http                                            api=200                      sql=200
+PASS  brands month 2023-03 automoveis view=real totalUnits                           api=146174                   sql=146174
+PASS  brands month 2023-03 automoveis view=real non-residual rows = min(limit, brands) api=21                       sql=21
+PASS  brands month 2023-03 automoveis view=real residual row present iff residual>0  api=1                        sql=1
+PASS  brands month 2023-03 automoveis view=real residual is last row                 api=True                     sql=True
+PASS  brands month 2023-03 automoveis view=real residual rank null                   api=None                     sql=None
+PASS  brands month 2023-03 automoveis view=real residual label                       api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2023-03 automoveis view=real residual units                       api=987                      sql=987
+PASS  brands month 2023-03 automoveis view=real residual share                       api=0.006752226798199406     sql=0.006752226798199406
+PASS  brands month 2023-03 automoveis view=real every brand row units/share/dense_rank == SQL (21 rows) api='ok'                     sql='ok'
+PASS  brands month 2023-03 automoveis view=real rows sorted by units desc            api=True                     sql=True
+PASS  brands month 2023-03 automoveis view=real othersUnits = sum(cut brands)        api=0                        sql=0
+PASS  brands month 2023-03 automoveis view=real sum(rows.units)+othersUnits == totalUnits api=146174                   sql=146174
+PASS  brands month 2023-03 automoveis view=real sum(rows.share)+others/total == 1    api=1.0                      sql=1.0
+PASS  brands month 2023-03 automoveis view=real no Aurora row in view real           api=False                    sql=False
+PASS  brands period from                                                             api='2021-04-01'             sql='2021-04-01'
+PASS  brands 24m->2023-03 automoveis view=real totalUnits                            api=3077757                  sql=3077757
+PASS  brands 24m->2023-03 automoveis view=real non-residual rows = min(limit, brands) api=24                       sql=24
+PASS  brands 24m->2023-03 automoveis view=real residual row present iff residual>0   api=1                        sql=1
+PASS  brands 24m->2023-03 automoveis view=real residual is last row                  api=True                     sql=True
+PASS  brands 24m->2023-03 automoveis view=real residual rank null                    api=None                     sql=None
+PASS  brands 24m->2023-03 automoveis view=real residual label                        api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2023-03 automoveis view=real residual units                        api=14167                    sql=14167
+PASS  brands 24m->2023-03 automoveis view=real residual share                        api=0.0046030274644814385    sql=0.0046030274644814385
+PASS  brands 24m->2023-03 automoveis view=real every brand row units/share/dense_rank == SQL (24 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2023-03 automoveis view=real rows sorted by units desc             api=True                     sql=True
+PASS  brands 24m->2023-03 automoveis view=real othersUnits = sum(cut brands)         api=0                        sql=0
+PASS  brands 24m->2023-03 automoveis view=real sum(rows.units)+othersUnits == totalUnits api=3077757                  sql=3077757
+PASS  brands 24m->2023-03 automoveis view=real sum(rows.share)+others/total == 1     api=1.0                      sql=1.0
+PASS  brands 24m->2023-03 automoveis view=real no Aurora row in view real            api=False                    sql=False
+
+## Brands 2023-03 automoveis view=with_aurora (limit=25, period=24m)
+PASS  brands 2023-03 automoveis with_aurora http                                     api=200                      sql=200
+PASS  brands month 2023-03 automoveis view=with_aurora totalUnits                    api=151827                   sql=151827
+PASS  brands month 2023-03 automoveis view=with_aurora non-residual rows = min(limit, brands) api=22                       sql=22
+PASS  brands month 2023-03 automoveis view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2023-03 automoveis view=with_aurora residual is last row          api=True                     sql=True
+PASS  brands month 2023-03 automoveis view=with_aurora residual rank null            api=None                     sql=None
+PASS  brands month 2023-03 automoveis view=with_aurora residual label                api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2023-03 automoveis view=with_aurora residual units                api=987                      sql=987
+PASS  brands month 2023-03 automoveis view=with_aurora residual share                api=0.0065008200122507855    sql=0.0065008200122507855
+PASS  brands month 2023-03 automoveis view=with_aurora every brand row units/share/dense_rank == SQL (22 rows) api='ok'                     sql='ok'
+PASS  brands month 2023-03 automoveis view=with_aurora rows sorted by units desc     api=True                     sql=True
+PASS  brands month 2023-03 automoveis view=with_aurora othersUnits = sum(cut brands) api=0                        sql=0
+PASS  brands month 2023-03 automoveis view=with_aurora sum(rows.units)+othersUnits == totalUnits api=151827                   sql=151827
+PASS  brands month 2023-03 automoveis view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2021-04-01'             sql='2021-04-01'
+PASS  brands 24m->2023-03 automoveis view=with_aurora totalUnits                     api=3173769                  sql=3173769
+PASS  brands 24m->2023-03 automoveis view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2023-03 automoveis view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2023-03 automoveis view=with_aurora residual is last row           api=True                     sql=True
+PASS  brands 24m->2023-03 automoveis view=with_aurora residual rank null             api=None                     sql=None
+PASS  brands 24m->2023-03 automoveis view=with_aurora residual label                 api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2023-03 automoveis view=with_aurora residual units                 api=14167                    sql=14167
+PASS  brands 24m->2023-03 automoveis view=with_aurora residual share                 api=0.004463777924606359     sql=0.004463777924606359
+PASS  brands 24m->2023-03 automoveis view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2023-03 automoveis view=with_aurora rows sorted by units desc      api=True                     sql=True
+PASS  brands 24m->2023-03 automoveis view=with_aurora othersUnits = sum(cut brands)  api=0                        sql=0
+PASS  brands 24m->2023-03 automoveis view=with_aurora sum(rows.units)+othersUnits == totalUnits api=3173769                  sql=3173769
+PASS  brands 24m->2023-03 automoveis view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+
+## Brands 2023-03 comerciais_leves view=real (limit=25, period=24m)
+PASS  brands 2023-03 comerciais_leves real http                                      api=200                      sql=200
+PASS  brands month 2023-03 comerciais_leves view=real totalUnits                     api=40409                    sql=40409
+PASS  brands month 2023-03 comerciais_leves view=real non-residual rows = min(limit, brands) api=21                       sql=21
+PASS  brands month 2023-03 comerciais_leves view=real residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2023-03 comerciais_leves view=real residual is last row           api=True                     sql=True
+PASS  brands month 2023-03 comerciais_leves view=real residual rank null             api=None                     sql=None
+PASS  brands month 2023-03 comerciais_leves view=real residual label                 api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2023-03 comerciais_leves view=real residual units                 api=5                        sql=5
+PASS  brands month 2023-03 comerciais_leves view=real residual share                 api=0.000123734811551882     sql=0.000123734811551882
+PASS  brands month 2023-03 comerciais_leves view=real every brand row units/share/dense_rank == SQL (21 rows) api='ok'                     sql='ok'
+PASS  brands month 2023-03 comerciais_leves view=real rows sorted by units desc      api=True                     sql=True
+PASS  brands month 2023-03 comerciais_leves view=real othersUnits = sum(cut brands)  api=0                        sql=0
+PASS  brands month 2023-03 comerciais_leves view=real sum(rows.units)+othersUnits == totalUnits api=40409                    sql=40409
+PASS  brands month 2023-03 comerciais_leves view=real sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands month 2023-03 comerciais_leves view=real no Aurora row in view real     api=False                    sql=False
+PASS  brands period from                                                             api='2021-04-01'             sql='2021-04-01'
+PASS  brands 24m->2023-03 comerciais_leves view=real totalUnits                      api=790445                   sql=790445
+PASS  brands 24m->2023-03 comerciais_leves view=real non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2023-03 comerciais_leves view=real residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2023-03 comerciais_leves view=real residual is last row            api=True                     sql=True
+PASS  brands 24m->2023-03 comerciais_leves view=real residual rank null              api=None                     sql=None
+PASS  brands 24m->2023-03 comerciais_leves view=real residual label                  api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2023-03 comerciais_leves view=real residual units                  api=38                       sql=38
+PASS  brands 24m->2023-03 comerciais_leves view=real residual share                  api=4.807418605975115e-05    sql=4.807418605975115e-05
+PASS  brands 24m->2023-03 comerciais_leves view=real every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2023-03 comerciais_leves view=real rows sorted by units desc       api=True                     sql=True
+PASS  brands 24m->2023-03 comerciais_leves view=real othersUnits = sum(cut brands)   api=9                        sql=9
+PASS  brands 24m->2023-03 comerciais_leves view=real no cut brand outsells a shown one api=True                     sql=True
+PASS  brands 24m->2023-03 comerciais_leves view=real sum(rows.units)+othersUnits == totalUnits api=790445                   sql=790445
+PASS  brands 24m->2023-03 comerciais_leves view=real sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands 24m->2023-03 comerciais_leves view=real no Aurora row in view real      api=False                    sql=False
+
+## Brands 2023-03 comerciais_leves view=with_aurora (limit=25, period=24m)
+PASS  brands 2023-03 comerciais_leves with_aurora http                               api=200                      sql=200
+PASS  brands month 2023-03 comerciais_leves view=with_aurora totalUnits              api=40409                    sql=40409
+PASS  brands month 2023-03 comerciais_leves view=with_aurora non-residual rows = min(limit, brands) api=21                       sql=21
+PASS  brands month 2023-03 comerciais_leves view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2023-03 comerciais_leves view=with_aurora residual is last row    api=True                     sql=True
+PASS  brands month 2023-03 comerciais_leves view=with_aurora residual rank null      api=None                     sql=None
+PASS  brands month 2023-03 comerciais_leves view=with_aurora residual label          api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2023-03 comerciais_leves view=with_aurora residual units          api=5                        sql=5
+PASS  brands month 2023-03 comerciais_leves view=with_aurora residual share          api=0.000123734811551882     sql=0.000123734811551882
+PASS  brands month 2023-03 comerciais_leves view=with_aurora every brand row units/share/dense_rank == SQL (21 rows) api='ok'                     sql='ok'
+PASS  brands month 2023-03 comerciais_leves view=with_aurora rows sorted by units desc api=True                     sql=True
+PASS  brands month 2023-03 comerciais_leves view=with_aurora othersUnits = sum(cut brands) api=0                        sql=0
+PASS  brands month 2023-03 comerciais_leves view=with_aurora sum(rows.units)+othersUnits == totalUnits api=40409                    sql=40409
+PASS  brands month 2023-03 comerciais_leves view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2021-04-01'             sql='2021-04-01'
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora totalUnits               api=790445                   sql=790445
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora residual is last row     api=True                     sql=True
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora residual rank null       api=None                     sql=None
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora residual label           api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora residual units           api=38                       sql=38
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora residual share           api=4.807418605975115e-05    sql=4.807418605975115e-05
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora rows sorted by units desc api=True                     sql=True
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora othersUnits = sum(cut brands) api=9                        sql=9
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora no cut brand outsells a shown one api=True                     sql=True
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora sum(rows.units)+othersUnits == totalUnits api=790445                   sql=790445
+PASS  brands 24m->2023-03 comerciais_leves view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+
+## Brands 2023-03 total view=real (limit=25, period=24m)
+PASS  brands 2023-03 total real http                                                 api=200                      sql=200
+PASS  brands month 2023-03 total view=real totalUnits                                api=186583                   sql=186583
+PASS  brands month 2023-03 total view=real non-residual rows = min(limit, brands)    api=25                       sql=25
+PASS  brands month 2023-03 total view=real residual row present iff residual>0       api=1                        sql=1
+PASS  brands month 2023-03 total view=real residual is last row                      api=True                     sql=True
+PASS  brands month 2023-03 total view=real residual rank null                        api=None                     sql=None
+PASS  brands month 2023-03 total view=real residual label                            api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2023-03 total view=real residual units                            api=992                      sql=992
+PASS  brands month 2023-03 total view=real residual share                            api=0.005316668721158948     sql=0.005316668721158948
+PASS  brands month 2023-03 total view=real every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands month 2023-03 total view=real rows sorted by units desc                 api=True                     sql=True
+PASS  brands month 2023-03 total view=real othersUnits = sum(cut brands)             api=132                      sql=132
+PASS  brands month 2023-03 total view=real no cut brand outsells a shown one         api=True                     sql=True
+PASS  brands month 2023-03 total view=real sum(rows.units)+othersUnits == totalUnits api=186583                   sql=186583
+PASS  brands month 2023-03 total view=real sum(rows.share)+others/total == 1         api=1.0                      sql=1.0
+PASS  brands month 2023-03 total view=real no Aurora row in view real                api=False                    sql=False
+PASS  brands period from                                                             api='2021-04-01'             sql='2021-04-01'
+PASS  brands 24m->2023-03 total view=real totalUnits                                 api=3868202                  sql=3868202
+PASS  brands 24m->2023-03 total view=real non-residual rows = min(limit, brands)     api=25                       sql=25
+PASS  brands 24m->2023-03 total view=real residual row present iff residual>0        api=1                        sql=1
+PASS  brands 24m->2023-03 total view=real residual is last row                       api=True                     sql=True
+PASS  brands 24m->2023-03 total view=real residual rank null                         api=None                     sql=None
+PASS  brands 24m->2023-03 total view=real residual label                             api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2023-03 total view=real residual units                             api=14205                    sql=14205
+PASS  brands 24m->2023-03 total view=real residual share                             api=0.0036722487605352562    sql=0.0036722487605352562
+PASS  brands 24m->2023-03 total view=real every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2023-03 total view=real rows sorted by units desc                  api=True                     sql=True
+PASS  brands 24m->2023-03 total view=real othersUnits = sum(cut brands)              api=1925                     sql=1925
+PASS  brands 24m->2023-03 total view=real no cut brand outsells a shown one          api=True                     sql=True
+PASS  brands 24m->2023-03 total view=real sum(rows.units)+othersUnits == totalUnits  api=3868202                  sql=3868202
+PASS  brands 24m->2023-03 total view=real sum(rows.share)+others/total == 1          api=1.0                      sql=1.0
+PASS  brands 24m->2023-03 total view=real no Aurora row in view real                 api=False                    sql=False
+
+## Brands 2023-03 total view=with_aurora (limit=25, period=24m)
+PASS  brands 2023-03 total with_aurora http                                          api=200                      sql=200
+PASS  brands month 2023-03 total view=with_aurora totalUnits                         api=192236                   sql=192236
+PASS  brands month 2023-03 total view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands month 2023-03 total view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2023-03 total view=with_aurora residual is last row               api=True                     sql=True
+PASS  brands month 2023-03 total view=with_aurora residual rank null                 api=None                     sql=None
+PASS  brands month 2023-03 total view=with_aurora residual label                     api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2023-03 total view=with_aurora residual units                     api=992                      sql=992
+PASS  brands month 2023-03 total view=with_aurora residual share                     api=0.0051603237687009714    sql=0.0051603237687009714
+PASS  brands month 2023-03 total view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands month 2023-03 total view=with_aurora rows sorted by units desc          api=True                     sql=True
+PASS  brands month 2023-03 total view=with_aurora othersUnits = sum(cut brands)      api=276                      sql=276
+PASS  brands month 2023-03 total view=with_aurora no cut brand outsells a shown one  api=True                     sql=True
+PASS  brands month 2023-03 total view=with_aurora sum(rows.units)+othersUnits == totalUnits api=192236                   sql=192236
+PASS  brands month 2023-03 total view=with_aurora sum(rows.share)+others/total == 1  api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2021-04-01'             sql='2021-04-01'
+PASS  brands 24m->2023-03 total view=with_aurora totalUnits                          api=3964214                  sql=3964214
+PASS  brands 24m->2023-03 total view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2023-03 total view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2023-03 total view=with_aurora residual is last row                api=True                     sql=True
+PASS  brands 24m->2023-03 total view=with_aurora residual rank null                  api=None                     sql=None
+PASS  brands 24m->2023-03 total view=with_aurora residual label                      api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2023-03 total view=with_aurora residual units                      api=14205                    sql=14205
+PASS  brands 24m->2023-03 total view=with_aurora residual share                      api=0.003583308065608971     sql=0.003583308065608971
+PASS  brands 24m->2023-03 total view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2023-03 total view=with_aurora rows sorted by units desc           api=True                     sql=True
+PASS  brands 24m->2023-03 total view=with_aurora othersUnits = sum(cut brands)       api=3969                     sql=3969
+PASS  brands 24m->2023-03 total view=with_aurora no cut brand outsells a shown one   api=True                     sql=True
+PASS  brands 24m->2023-03 total view=with_aurora sum(rows.units)+othersUnits == totalUnits api=3964214                  sql=3964214
+PASS  brands 24m->2023-03 total view=with_aurora sum(rows.share)+others/total == 1   api=0.9999999999999999       sql=1.0
+
+## Brands 2007-06 automoveis view=real (limit=25, period=24m)
+PASS  brands 2007-06 automoveis real http                                            api=200                      sql=200
+PASS  brands month 2007-06 automoveis view=real totalUnits                           api=169429                   sql=169429
+PASS  brands month 2007-06 automoveis view=real non-residual rows = min(limit, brands) api=20                       sql=20
+PASS  brands month 2007-06 automoveis view=real residual row present iff residual>0  api=1                        sql=1
+PASS  brands month 2007-06 automoveis view=real residual is last row                 api=True                     sql=True
+PASS  brands month 2007-06 automoveis view=real residual rank null                   api=None                     sql=None
+PASS  brands month 2007-06 automoveis view=real residual label                       api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2007-06 automoveis view=real residual units                       api=225                      sql=225
+PASS  brands month 2007-06 automoveis view=real residual share                       api=0.0013279898954724398    sql=0.0013279898954724398
+PASS  brands month 2007-06 automoveis view=real every brand row units/share/dense_rank == SQL (20 rows) api='ok'                     sql='ok'
+PASS  brands month 2007-06 automoveis view=real rows sorted by units desc            api=True                     sql=True
+PASS  brands month 2007-06 automoveis view=real othersUnits = sum(cut brands)        api=0                        sql=0
+PASS  brands month 2007-06 automoveis view=real sum(rows.units)+othersUnits == totalUnits api=169429                   sql=169429
+PASS  brands month 2007-06 automoveis view=real sum(rows.share)+others/total == 1    api=1.0                      sql=1.0
+PASS  brands month 2007-06 automoveis view=real no Aurora row in view real           api=False                    sql=False
+PASS  brands period from                                                             api='2005-07-01'             sql='2005-07-01'
+PASS  brands 24m->2007-06 automoveis view=real totalUnits                            api=3323314                  sql=3323314
+PASS  brands 24m->2007-06 automoveis view=real non-residual rows = min(limit, brands) api=23                       sql=23
+PASS  brands 24m->2007-06 automoveis view=real residual row present iff residual>0   api=1                        sql=1
+PASS  brands 24m->2007-06 automoveis view=real residual is last row                  api=True                     sql=True
+PASS  brands 24m->2007-06 automoveis view=real residual rank null                    api=None                     sql=None
+PASS  brands 24m->2007-06 automoveis view=real residual label                        api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2007-06 automoveis view=real residual units                        api=4349                     sql=4349
+PASS  brands 24m->2007-06 automoveis view=real residual share                        api=0.0013086334905458828    sql=0.0013086334905458828
+PASS  brands 24m->2007-06 automoveis view=real every brand row units/share/dense_rank == SQL (23 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2007-06 automoveis view=real rows sorted by units desc             api=True                     sql=True
+PASS  brands 24m->2007-06 automoveis view=real othersUnits = sum(cut brands)         api=0                        sql=0
+PASS  brands 24m->2007-06 automoveis view=real sum(rows.units)+othersUnits == totalUnits api=3323314                  sql=3323314
+PASS  brands 24m->2007-06 automoveis view=real sum(rows.share)+others/total == 1     api=1.0                      sql=1.0
+PASS  brands 24m->2007-06 automoveis view=real no Aurora row in view real            api=False                    sql=False
+
+## Brands 2007-06 automoveis view=with_aurora (limit=25, period=24m)
+PASS  brands 2007-06 automoveis with_aurora http                                     api=200                      sql=200
+PASS  brands month 2007-06 automoveis view=with_aurora totalUnits                    api=169429                   sql=169429
+PASS  brands month 2007-06 automoveis view=with_aurora non-residual rows = min(limit, brands) api=20                       sql=20
+PASS  brands month 2007-06 automoveis view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2007-06 automoveis view=with_aurora residual is last row          api=True                     sql=True
+PASS  brands month 2007-06 automoveis view=with_aurora residual rank null            api=None                     sql=None
+PASS  brands month 2007-06 automoveis view=with_aurora residual label                api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2007-06 automoveis view=with_aurora residual units                api=225                      sql=225
+PASS  brands month 2007-06 automoveis view=with_aurora residual share                api=0.0013279898954724398    sql=0.0013279898954724398
+PASS  brands month 2007-06 automoveis view=with_aurora every brand row units/share/dense_rank == SQL (20 rows) api='ok'                     sql='ok'
+PASS  brands month 2007-06 automoveis view=with_aurora rows sorted by units desc     api=True                     sql=True
+PASS  brands month 2007-06 automoveis view=with_aurora othersUnits = sum(cut brands) api=0                        sql=0
+PASS  brands month 2007-06 automoveis view=with_aurora sum(rows.units)+othersUnits == totalUnits api=169429                   sql=169429
+PASS  brands month 2007-06 automoveis view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2005-07-01'             sql='2005-07-01'
+PASS  brands 24m->2007-06 automoveis view=with_aurora totalUnits                     api=3323314                  sql=3323314
+PASS  brands 24m->2007-06 automoveis view=with_aurora non-residual rows = min(limit, brands) api=23                       sql=23
+PASS  brands 24m->2007-06 automoveis view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2007-06 automoveis view=with_aurora residual is last row           api=True                     sql=True
+PASS  brands 24m->2007-06 automoveis view=with_aurora residual rank null             api=None                     sql=None
+PASS  brands 24m->2007-06 automoveis view=with_aurora residual label                 api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2007-06 automoveis view=with_aurora residual units                 api=4349                     sql=4349
+PASS  brands 24m->2007-06 automoveis view=with_aurora residual share                 api=0.0013086334905458828    sql=0.0013086334905458828
+PASS  brands 24m->2007-06 automoveis view=with_aurora every brand row units/share/dense_rank == SQL (23 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2007-06 automoveis view=with_aurora rows sorted by units desc      api=True                     sql=True
+PASS  brands 24m->2007-06 automoveis view=with_aurora othersUnits = sum(cut brands)  api=0                        sql=0
+PASS  brands 24m->2007-06 automoveis view=with_aurora sum(rows.units)+othersUnits == totalUnits api=3323314                  sql=3323314
+PASS  brands 24m->2007-06 automoveis view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+
+## Brands 2007-06 comerciais_leves view=real (limit=25, period=24m)
+PASS  brands 2007-06 comerciais_leves real http                                      api=200                      sql=200
+PASS  brands month 2007-06 comerciais_leves view=real totalUnits                     api=19348                    sql=19348
+PASS  brands month 2007-06 comerciais_leves view=real non-residual rows = min(limit, brands) api=14                       sql=14
+PASS  brands month 2007-06 comerciais_leves view=real residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2007-06 comerciais_leves view=real residual is last row           api=True                     sql=True
+PASS  brands month 2007-06 comerciais_leves view=real residual rank null             api=None                     sql=None
+PASS  brands month 2007-06 comerciais_leves view=real residual label                 api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2007-06 comerciais_leves view=real residual units                 api=67                       sql=67
+PASS  brands month 2007-06 comerciais_leves view=real residual share                 api=0.0034628902212114946    sql=0.0034628902212114946
+PASS  brands month 2007-06 comerciais_leves view=real every brand row units/share/dense_rank == SQL (14 rows) api='ok'                     sql='ok'
+PASS  brands month 2007-06 comerciais_leves view=real rows sorted by units desc      api=True                     sql=True
+PASS  brands month 2007-06 comerciais_leves view=real othersUnits = sum(cut brands)  api=0                        sql=0
+PASS  brands month 2007-06 comerciais_leves view=real sum(rows.units)+othersUnits == totalUnits api=19348                    sql=19348
+PASS  brands month 2007-06 comerciais_leves view=real sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands month 2007-06 comerciais_leves view=real no Aurora row in view real     api=False                    sql=False
+PASS  brands period from                                                             api='2005-07-01'             sql='2005-07-01'
+PASS  brands 24m->2007-06 comerciais_leves view=real totalUnits                      api=404779                   sql=404779
+PASS  brands 24m->2007-06 comerciais_leves view=real non-residual rows = min(limit, brands) api=15                       sql=15
+PASS  brands 24m->2007-06 comerciais_leves view=real residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2007-06 comerciais_leves view=real residual is last row            api=True                     sql=True
+PASS  brands 24m->2007-06 comerciais_leves view=real residual rank null              api=None                     sql=None
+PASS  brands 24m->2007-06 comerciais_leves view=real residual label                  api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2007-06 comerciais_leves view=real residual units                  api=1031                     sql=1031
+PASS  brands 24m->2007-06 comerciais_leves view=real residual share                  api=0.002547068894384343     sql=0.002547068894384343
+PASS  brands 24m->2007-06 comerciais_leves view=real every brand row units/share/dense_rank == SQL (15 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2007-06 comerciais_leves view=real rows sorted by units desc       api=True                     sql=True
+PASS  brands 24m->2007-06 comerciais_leves view=real othersUnits = sum(cut brands)   api=0                        sql=0
+PASS  brands 24m->2007-06 comerciais_leves view=real sum(rows.units)+othersUnits == totalUnits api=404779                   sql=404779
+PASS  brands 24m->2007-06 comerciais_leves view=real sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands 24m->2007-06 comerciais_leves view=real no Aurora row in view real      api=False                    sql=False
+
+## Brands 2007-06 comerciais_leves view=with_aurora (limit=25, period=24m)
+PASS  brands 2007-06 comerciais_leves with_aurora http                               api=200                      sql=200
+PASS  brands month 2007-06 comerciais_leves view=with_aurora totalUnits              api=19348                    sql=19348
+PASS  brands month 2007-06 comerciais_leves view=with_aurora non-residual rows = min(limit, brands) api=14                       sql=14
+PASS  brands month 2007-06 comerciais_leves view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2007-06 comerciais_leves view=with_aurora residual is last row    api=True                     sql=True
+PASS  brands month 2007-06 comerciais_leves view=with_aurora residual rank null      api=None                     sql=None
+PASS  brands month 2007-06 comerciais_leves view=with_aurora residual label          api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2007-06 comerciais_leves view=with_aurora residual units          api=67                       sql=67
+PASS  brands month 2007-06 comerciais_leves view=with_aurora residual share          api=0.0034628902212114946    sql=0.0034628902212114946
+PASS  brands month 2007-06 comerciais_leves view=with_aurora every brand row units/share/dense_rank == SQL (14 rows) api='ok'                     sql='ok'
+PASS  brands month 2007-06 comerciais_leves view=with_aurora rows sorted by units desc api=True                     sql=True
+PASS  brands month 2007-06 comerciais_leves view=with_aurora othersUnits = sum(cut brands) api=0                        sql=0
+PASS  brands month 2007-06 comerciais_leves view=with_aurora sum(rows.units)+othersUnits == totalUnits api=19348                    sql=19348
+PASS  brands month 2007-06 comerciais_leves view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2005-07-01'             sql='2005-07-01'
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora totalUnits               api=404779                   sql=404779
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora non-residual rows = min(limit, brands) api=15                       sql=15
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora residual is last row     api=True                     sql=True
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora residual rank null       api=None                     sql=None
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora residual label           api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora residual units           api=1031                     sql=1031
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora residual share           api=0.002547068894384343     sql=0.002547068894384343
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora every brand row units/share/dense_rank == SQL (15 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora rows sorted by units desc api=True                     sql=True
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora othersUnits = sum(cut brands) api=0                        sql=0
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora sum(rows.units)+othersUnits == totalUnits api=404779                   sql=404779
+PASS  brands 24m->2007-06 comerciais_leves view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+
+## Brands 2007-06 total view=real (limit=25, period=24m)
+PASS  brands 2007-06 total real http                                                 api=200                      sql=200
+PASS  brands month 2007-06 total view=real totalUnits                                api=188777                   sql=188777
+PASS  brands month 2007-06 total view=real non-residual rows = min(limit, brands)    api=22                       sql=22
+PASS  brands month 2007-06 total view=real residual row present iff residual>0       api=1                        sql=1
+PASS  brands month 2007-06 total view=real residual is last row                      api=True                     sql=True
+PASS  brands month 2007-06 total view=real residual rank null                        api=None                     sql=None
+PASS  brands month 2007-06 total view=real residual label                            api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2007-06 total view=real residual units                            api=292                      sql=292
+PASS  brands month 2007-06 total view=real residual share                            api=0.0015467986036434523    sql=0.0015467986036434523
+PASS  brands month 2007-06 total view=real every brand row units/share/dense_rank == SQL (22 rows) api='ok'                     sql='ok'
+PASS  brands month 2007-06 total view=real rows sorted by units desc                 api=True                     sql=True
+PASS  brands month 2007-06 total view=real othersUnits = sum(cut brands)             api=0                        sql=0
+PASS  brands month 2007-06 total view=real sum(rows.units)+othersUnits == totalUnits api=188777                   sql=188777
+PASS  brands month 2007-06 total view=real sum(rows.share)+others/total == 1         api=1.0                      sql=1.0
+PASS  brands month 2007-06 total view=real no Aurora row in view real                api=False                    sql=False
+PASS  brands period from                                                             api='2005-07-01'             sql='2005-07-01'
+PASS  brands 24m->2007-06 total view=real totalUnits                                 api=3728093                  sql=3728093
+PASS  brands 24m->2007-06 total view=real non-residual rows = min(limit, brands)     api=25                       sql=25
+PASS  brands 24m->2007-06 total view=real residual row present iff residual>0        api=1                        sql=1
+PASS  brands 24m->2007-06 total view=real residual is last row                       api=True                     sql=True
+PASS  brands 24m->2007-06 total view=real residual rank null                         api=None                     sql=None
+PASS  brands 24m->2007-06 total view=real residual label                             api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2007-06 total view=real residual units                             api=5380                     sql=5380
+PASS  brands 24m->2007-06 total view=real residual share                             api=0.0014430970472034898    sql=0.0014430970472034898
+PASS  brands 24m->2007-06 total view=real every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2007-06 total view=real rows sorted by units desc                  api=True                     sql=True
+PASS  brands 24m->2007-06 total view=real othersUnits = sum(cut brands)              api=0                        sql=0
+PASS  brands 24m->2007-06 total view=real sum(rows.units)+othersUnits == totalUnits  api=3728093                  sql=3728093
+PASS  brands 24m->2007-06 total view=real sum(rows.share)+others/total == 1          api=1.0                      sql=1.0
+PASS  brands 24m->2007-06 total view=real no Aurora row in view real                 api=False                    sql=False
+
+## Brands 2007-06 total view=with_aurora (limit=25, period=24m)
+PASS  brands 2007-06 total with_aurora http                                          api=200                      sql=200
+PASS  brands month 2007-06 total view=with_aurora totalUnits                         api=188777                   sql=188777
+PASS  brands month 2007-06 total view=with_aurora non-residual rows = min(limit, brands) api=22                       sql=22
+PASS  brands month 2007-06 total view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2007-06 total view=with_aurora residual is last row               api=True                     sql=True
+PASS  brands month 2007-06 total view=with_aurora residual rank null                 api=None                     sql=None
+PASS  brands month 2007-06 total view=with_aurora residual label                     api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2007-06 total view=with_aurora residual units                     api=292                      sql=292
+PASS  brands month 2007-06 total view=with_aurora residual share                     api=0.0015467986036434523    sql=0.0015467986036434523
+PASS  brands month 2007-06 total view=with_aurora every brand row units/share/dense_rank == SQL (22 rows) api='ok'                     sql='ok'
+PASS  brands month 2007-06 total view=with_aurora rows sorted by units desc          api=True                     sql=True
+PASS  brands month 2007-06 total view=with_aurora othersUnits = sum(cut brands)      api=0                        sql=0
+PASS  brands month 2007-06 total view=with_aurora sum(rows.units)+othersUnits == totalUnits api=188777                   sql=188777
+PASS  brands month 2007-06 total view=with_aurora sum(rows.share)+others/total == 1  api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2005-07-01'             sql='2005-07-01'
+PASS  brands 24m->2007-06 total view=with_aurora totalUnits                          api=3728093                  sql=3728093
+PASS  brands 24m->2007-06 total view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2007-06 total view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2007-06 total view=with_aurora residual is last row                api=True                     sql=True
+PASS  brands 24m->2007-06 total view=with_aurora residual rank null                  api=None                     sql=None
+PASS  brands 24m->2007-06 total view=with_aurora residual label                      api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2007-06 total view=with_aurora residual units                      api=5380                     sql=5380
+PASS  brands 24m->2007-06 total view=with_aurora residual share                      api=0.0014430970472034898    sql=0.0014430970472034898
+PASS  brands 24m->2007-06 total view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2007-06 total view=with_aurora rows sorted by units desc           api=True                     sql=True
+PASS  brands 24m->2007-06 total view=with_aurora othersUnits = sum(cut brands)       api=0                        sql=0
+PASS  brands 24m->2007-06 total view=with_aurora sum(rows.units)+othersUnits == totalUnits api=3728093                  sql=3728093
+PASS  brands 24m->2007-06 total view=with_aurora sum(rows.share)+others/total == 1   api=1.0                      sql=1.0
+
+## Brands 2004-01 automoveis view=real (limit=25, period=24m)
+PASS  brands 2004-01 automoveis real http                                            api=200                      sql=200
+PASS  brands month 2004-01 automoveis view=real totalUnits                           api=87489                    sql=87489
+PASS  brands month 2004-01 automoveis view=real non-residual rows = min(limit, brands) api=0                        sql=0
+PASS  brands month 2004-01 automoveis view=real residual row present iff residual>0  api=1                        sql=1
+PASS  brands month 2004-01 automoveis view=real residual is last row                 api=True                     sql=True
+PASS  brands month 2004-01 automoveis view=real residual rank null                   api=None                     sql=None
+PASS  brands month 2004-01 automoveis view=real residual label                       api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2004-01 automoveis view=real residual units                       api=87489                    sql=87489
+PASS  brands month 2004-01 automoveis view=real residual share                       api=1                        sql=1.0
+PASS  brands month 2004-01 automoveis view=real every brand row units/share/dense_rank == SQL (0 rows) api='ok'                     sql='ok'
+PASS  brands month 2004-01 automoveis view=real rows sorted by units desc            api=True                     sql=True
+PASS  brands month 2004-01 automoveis view=real othersUnits = sum(cut brands)        api=0                        sql=0
+PASS  brands month 2004-01 automoveis view=real sum(rows.units)+othersUnits == totalUnits api=87489                    sql=87489
+PASS  brands month 2004-01 automoveis view=real sum(rows.share)+others/total == 1    api=1.0                      sql=1.0
+PASS  brands month 2004-01 automoveis view=real no Aurora row in view real           api=False                    sql=False
+PASS  brands period from                                                             api='2003-01-01'             sql='2003-01-01'
+PASS  brands 24m->2004-01 automoveis view=real totalUnits                            api=1301882                  sql=1301882
+PASS  brands 24m->2004-01 automoveis view=real non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2004-01 automoveis view=real residual row present iff residual>0   api=1                        sql=1
+PASS  brands 24m->2004-01 automoveis view=real residual is last row                  api=True                     sql=True
+PASS  brands 24m->2004-01 automoveis view=real residual rank null                    api=None                     sql=None
+PASS  brands 24m->2004-01 automoveis view=real residual label                        api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2004-01 automoveis view=real residual units                        api=88863                    sql=88863
+PASS  brands 24m->2004-01 automoveis view=real residual share                        api=0.06825733822266535      sql=0.06825733822266535
+PASS  brands 24m->2004-01 automoveis view=real every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2004-01 automoveis view=real rows sorted by units desc             api=True                     sql=True
+PASS  brands 24m->2004-01 automoveis view=real othersUnits = sum(cut brands)         api=0                        sql=0
+PASS  brands 24m->2004-01 automoveis view=real sum(rows.units)+othersUnits == totalUnits api=1301882                  sql=1301882
+PASS  brands 24m->2004-01 automoveis view=real sum(rows.share)+others/total == 1     api=1.0                      sql=1.0
+PASS  brands 24m->2004-01 automoveis view=real no Aurora row in view real            api=False                    sql=False
+
+## Brands 2004-01 automoveis view=with_aurora (limit=25, period=24m)
+PASS  brands 2004-01 automoveis with_aurora http                                     api=200                      sql=200
+PASS  brands month 2004-01 automoveis view=with_aurora totalUnits                    api=87489                    sql=87489
+PASS  brands month 2004-01 automoveis view=with_aurora non-residual rows = min(limit, brands) api=0                        sql=0
+PASS  brands month 2004-01 automoveis view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2004-01 automoveis view=with_aurora residual is last row          api=True                     sql=True
+PASS  brands month 2004-01 automoveis view=with_aurora residual rank null            api=None                     sql=None
+PASS  brands month 2004-01 automoveis view=with_aurora residual label                api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2004-01 automoveis view=with_aurora residual units                api=87489                    sql=87489
+PASS  brands month 2004-01 automoveis view=with_aurora residual share                api=1                        sql=1.0
+PASS  brands month 2004-01 automoveis view=with_aurora every brand row units/share/dense_rank == SQL (0 rows) api='ok'                     sql='ok'
+PASS  brands month 2004-01 automoveis view=with_aurora rows sorted by units desc     api=True                     sql=True
+PASS  brands month 2004-01 automoveis view=with_aurora othersUnits = sum(cut brands) api=0                        sql=0
+PASS  brands month 2004-01 automoveis view=with_aurora sum(rows.units)+othersUnits == totalUnits api=87489                    sql=87489
+PASS  brands month 2004-01 automoveis view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2003-01-01'             sql='2003-01-01'
+PASS  brands 24m->2004-01 automoveis view=with_aurora totalUnits                     api=1301882                  sql=1301882
+PASS  brands 24m->2004-01 automoveis view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2004-01 automoveis view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2004-01 automoveis view=with_aurora residual is last row           api=True                     sql=True
+PASS  brands 24m->2004-01 automoveis view=with_aurora residual rank null             api=None                     sql=None
+PASS  brands 24m->2004-01 automoveis view=with_aurora residual label                 api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2004-01 automoveis view=with_aurora residual units                 api=88863                    sql=88863
+PASS  brands 24m->2004-01 automoveis view=with_aurora residual share                 api=0.06825733822266535      sql=0.06825733822266535
+PASS  brands 24m->2004-01 automoveis view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2004-01 automoveis view=with_aurora rows sorted by units desc      api=True                     sql=True
+PASS  brands 24m->2004-01 automoveis view=with_aurora othersUnits = sum(cut brands)  api=0                        sql=0
+PASS  brands 24m->2004-01 automoveis view=with_aurora sum(rows.units)+othersUnits == totalUnits api=1301882                  sql=1301882
+PASS  brands 24m->2004-01 automoveis view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+
+## Brands 2004-01 comerciais_leves view=real (limit=25, period=24m)
+PASS  brands 2004-01 comerciais_leves real http                                      api=200                      sql=200
+PASS  brands month 2004-01 comerciais_leves view=real totalUnits                     api=13620                    sql=13620
+PASS  brands month 2004-01 comerciais_leves view=real non-residual rows = min(limit, brands) api=0                        sql=0
+PASS  brands month 2004-01 comerciais_leves view=real residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2004-01 comerciais_leves view=real residual is last row           api=True                     sql=True
+PASS  brands month 2004-01 comerciais_leves view=real residual rank null             api=None                     sql=None
+PASS  brands month 2004-01 comerciais_leves view=real residual label                 api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2004-01 comerciais_leves view=real residual units                 api=13620                    sql=13620
+PASS  brands month 2004-01 comerciais_leves view=real residual share                 api=1                        sql=1.0
+PASS  brands month 2004-01 comerciais_leves view=real every brand row units/share/dense_rank == SQL (0 rows) api='ok'                     sql='ok'
+PASS  brands month 2004-01 comerciais_leves view=real rows sorted by units desc      api=True                     sql=True
+PASS  brands month 2004-01 comerciais_leves view=real othersUnits = sum(cut brands)  api=0                        sql=0
+PASS  brands month 2004-01 comerciais_leves view=real sum(rows.units)+othersUnits == totalUnits api=13620                    sql=13620
+PASS  brands month 2004-01 comerciais_leves view=real sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands month 2004-01 comerciais_leves view=real no Aurora row in view real     api=False                    sql=False
+PASS  brands period from                                                             api='2003-01-01'             sql='2003-01-01'
+PASS  brands 24m->2004-01 comerciais_leves view=real totalUnits                      api=143949                   sql=143949
+PASS  brands 24m->2004-01 comerciais_leves view=real non-residual rows = min(limit, brands) api=14                       sql=14
+PASS  brands 24m->2004-01 comerciais_leves view=real residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2004-01 comerciais_leves view=real residual is last row            api=True                     sql=True
+PASS  brands 24m->2004-01 comerciais_leves view=real residual rank null              api=None                     sql=None
+PASS  brands 24m->2004-01 comerciais_leves view=real residual label                  api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2004-01 comerciais_leves view=real residual units                  api=13643                    sql=13643
+PASS  brands 24m->2004-01 comerciais_leves view=real residual share                  api=0.09477662227594495      sql=0.09477662227594495
+PASS  brands 24m->2004-01 comerciais_leves view=real every brand row units/share/dense_rank == SQL (14 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2004-01 comerciais_leves view=real rows sorted by units desc       api=True                     sql=True
+PASS  brands 24m->2004-01 comerciais_leves view=real othersUnits = sum(cut brands)   api=0                        sql=0
+PASS  brands 24m->2004-01 comerciais_leves view=real sum(rows.units)+othersUnits == totalUnits api=143949                   sql=143949
+PASS  brands 24m->2004-01 comerciais_leves view=real sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands 24m->2004-01 comerciais_leves view=real no Aurora row in view real      api=False                    sql=False
+
+## Brands 2004-01 comerciais_leves view=with_aurora (limit=25, period=24m)
+PASS  brands 2004-01 comerciais_leves with_aurora http                               api=200                      sql=200
+PASS  brands month 2004-01 comerciais_leves view=with_aurora totalUnits              api=13620                    sql=13620
+PASS  brands month 2004-01 comerciais_leves view=with_aurora non-residual rows = min(limit, brands) api=0                        sql=0
+PASS  brands month 2004-01 comerciais_leves view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2004-01 comerciais_leves view=with_aurora residual is last row    api=True                     sql=True
+PASS  brands month 2004-01 comerciais_leves view=with_aurora residual rank null      api=None                     sql=None
+PASS  brands month 2004-01 comerciais_leves view=with_aurora residual label          api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2004-01 comerciais_leves view=with_aurora residual units          api=13620                    sql=13620
+PASS  brands month 2004-01 comerciais_leves view=with_aurora residual share          api=1                        sql=1.0
+PASS  brands month 2004-01 comerciais_leves view=with_aurora every brand row units/share/dense_rank == SQL (0 rows) api='ok'                     sql='ok'
+PASS  brands month 2004-01 comerciais_leves view=with_aurora rows sorted by units desc api=True                     sql=True
+PASS  brands month 2004-01 comerciais_leves view=with_aurora othersUnits = sum(cut brands) api=0                        sql=0
+PASS  brands month 2004-01 comerciais_leves view=with_aurora sum(rows.units)+othersUnits == totalUnits api=13620                    sql=13620
+PASS  brands month 2004-01 comerciais_leves view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2003-01-01'             sql='2003-01-01'
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora totalUnits               api=143949                   sql=143949
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora non-residual rows = min(limit, brands) api=14                       sql=14
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora residual is last row     api=True                     sql=True
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora residual rank null       api=None                     sql=None
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora residual label           api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora residual units           api=13643                    sql=13643
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora residual share           api=0.09477662227594495      sql=0.09477662227594495
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora every brand row units/share/dense_rank == SQL (14 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora rows sorted by units desc api=True                     sql=True
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora othersUnits = sum(cut brands) api=0                        sql=0
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora sum(rows.units)+othersUnits == totalUnits api=143949                   sql=143949
+PASS  brands 24m->2004-01 comerciais_leves view=with_aurora sum(rows.share)+others/total == 1 api=1.0                      sql=1.0
+
+## Brands 2004-01 total view=real (limit=25, period=24m)
+PASS  brands 2004-01 total real http                                                 api=200                      sql=200
+PASS  brands month 2004-01 total view=real totalUnits                                api=101109                   sql=101109
+PASS  brands month 2004-01 total view=real non-residual rows = min(limit, brands)    api=0                        sql=0
+PASS  brands month 2004-01 total view=real residual row present iff residual>0       api=1                        sql=1
+PASS  brands month 2004-01 total view=real residual is last row                      api=True                     sql=True
+PASS  brands month 2004-01 total view=real residual rank null                        api=None                     sql=None
+PASS  brands month 2004-01 total view=real residual label                            api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2004-01 total view=real residual units                            api=101109                   sql=101109
+PASS  brands month 2004-01 total view=real residual share                            api=1                        sql=1.0
+PASS  brands month 2004-01 total view=real every brand row units/share/dense_rank == SQL (0 rows) api='ok'                     sql='ok'
+PASS  brands month 2004-01 total view=real rows sorted by units desc                 api=True                     sql=True
+PASS  brands month 2004-01 total view=real othersUnits = sum(cut brands)             api=0                        sql=0
+PASS  brands month 2004-01 total view=real sum(rows.units)+othersUnits == totalUnits api=101109                   sql=101109
+PASS  brands month 2004-01 total view=real sum(rows.share)+others/total == 1         api=1.0                      sql=1.0
+PASS  brands month 2004-01 total view=real no Aurora row in view real                api=False                    sql=False
+PASS  brands period from                                                             api='2003-01-01'             sql='2003-01-01'
+PASS  brands 24m->2004-01 total view=real totalUnits                                 api=1445831                  sql=1445831
+PASS  brands 24m->2004-01 total view=real non-residual rows = min(limit, brands)     api=25                       sql=25
+PASS  brands 24m->2004-01 total view=real residual row present iff residual>0        api=1                        sql=1
+PASS  brands 24m->2004-01 total view=real residual is last row                       api=True                     sql=True
+PASS  brands 24m->2004-01 total view=real residual rank null                         api=None                     sql=None
+PASS  brands 24m->2004-01 total view=real residual label                             api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2004-01 total view=real residual units                             api=102506                   sql=102506
+PASS  brands 24m->2004-01 total view=real residual share                             api=0.07089763603076708      sql=0.07089763603076708
+PASS  brands 24m->2004-01 total view=real every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2004-01 total view=real rows sorted by units desc                  api=True                     sql=True
+PASS  brands 24m->2004-01 total view=real othersUnits = sum(cut brands)              api=17                       sql=17
+PASS  brands 24m->2004-01 total view=real no cut brand outsells a shown one          api=True                     sql=True
+PASS  brands 24m->2004-01 total view=real sum(rows.units)+othersUnits == totalUnits  api=1445831                  sql=1445831
+PASS  brands 24m->2004-01 total view=real sum(rows.share)+others/total == 1          api=1.0                      sql=1.0
+PASS  brands 24m->2004-01 total view=real no Aurora row in view real                 api=False                    sql=False
+
+## Brands 2004-01 total view=with_aurora (limit=25, period=24m)
+PASS  brands 2004-01 total with_aurora http                                          api=200                      sql=200
+PASS  brands month 2004-01 total view=with_aurora totalUnits                         api=101109                   sql=101109
+PASS  brands month 2004-01 total view=with_aurora non-residual rows = min(limit, brands) api=0                        sql=0
+PASS  brands month 2004-01 total view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands month 2004-01 total view=with_aurora residual is last row               api=True                     sql=True
+PASS  brands month 2004-01 total view=with_aurora residual rank null                 api=None                     sql=None
+PASS  brands month 2004-01 total view=with_aurora residual label                     api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands month 2004-01 total view=with_aurora residual units                     api=101109                   sql=101109
+PASS  brands month 2004-01 total view=with_aurora residual share                     api=1                        sql=1.0
+PASS  brands month 2004-01 total view=with_aurora every brand row units/share/dense_rank == SQL (0 rows) api='ok'                     sql='ok'
+PASS  brands month 2004-01 total view=with_aurora rows sorted by units desc          api=True                     sql=True
+PASS  brands month 2004-01 total view=with_aurora othersUnits = sum(cut brands)      api=0                        sql=0
+PASS  brands month 2004-01 total view=with_aurora sum(rows.units)+othersUnits == totalUnits api=101109                   sql=101109
+PASS  brands month 2004-01 total view=with_aurora sum(rows.share)+others/total == 1  api=1.0                      sql=1.0
+PASS  brands period from                                                             api='2003-01-01'             sql='2003-01-01'
+PASS  brands 24m->2004-01 total view=with_aurora totalUnits                          api=1445831                  sql=1445831
+PASS  brands 24m->2004-01 total view=with_aurora non-residual rows = min(limit, brands) api=25                       sql=25
+PASS  brands 24m->2004-01 total view=with_aurora residual row present iff residual>0 api=1                        sql=1
+PASS  brands 24m->2004-01 total view=with_aurora residual is last row                api=True                     sql=True
+PASS  brands 24m->2004-01 total view=with_aurora residual rank null                  api=None                     sql=None
+PASS  brands 24m->2004-01 total view=with_aurora residual label                      api='Outras (não publicadas)' sql='Outras (não publicadas)'
+PASS  brands 24m->2004-01 total view=with_aurora residual units                      api=102506                   sql=102506
+PASS  brands 24m->2004-01 total view=with_aurora residual share                      api=0.07089763603076708      sql=0.07089763603076708
+PASS  brands 24m->2004-01 total view=with_aurora every brand row units/share/dense_rank == SQL (25 rows) api='ok'                     sql='ok'
+PASS  brands 24m->2004-01 total view=with_aurora rows sorted by units desc           api=True                     sql=True
+PASS  brands 24m->2004-01 total view=with_aurora othersUnits = sum(cut brands)       api=17                       sql=17
+PASS  brands 24m->2004-01 total view=with_aurora no cut brand outsells a shown one   api=True                     sql=True
+PASS  brands 24m->2004-01 total view=with_aurora sum(rows.units)+othersUnits == totalUnits api=1445831                  sql=1445831
+PASS  brands 24m->2004-01 total view=with_aurora sum(rows.share)+others/total == 1   api=1.0                      sql=1.0
+
+## Models 2026-09 automoveis real (limit=50; SQL shown month 2026-09)
+PASS  models 2026-09 automoveis real http                                            api=200                      sql=200
+PASS  models 2026-09 automoveis real month (shown)                                   api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 automoveis real latestMonth (requested)                         api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 automoveis real available                                       api=True                     sql=True
+PASS  models 2026-09 automoveis real coveredUnits                                    api=194260                   sql=194260
+PASS  models 2026-09 automoveis real totalUnits                                      api=216366                   sql=216366
+PASS  models 2026-09 automoveis real coveredUnits < totalUnits (no model residual)   api=True                     sql=True
+PASS  models 2026-09 automoveis real row count                                       api=50                       sql=50
+PASS  models 2026-09 automoveis real rows == SQL row_number order (50 rows)          api='ok'                     sql='ok'
+PASS  models 2026-09 automoveis real no Aurora model in view real                    api=False                    sql=False
+
+## Models 2026-09 automoveis with_aurora (limit=50; SQL shown month 2026-09)
+PASS  models 2026-09 automoveis with_aurora http                                     api=200                      sql=200
+PASS  models 2026-09 automoveis with_aurora month (shown)                            api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 automoveis with_aurora latestMonth (requested)                  api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 automoveis with_aurora available                                api=True                     sql=True
+PASS  models 2026-09 automoveis with_aurora coveredUnits                             api=200952                   sql=200952
+PASS  models 2026-09 automoveis with_aurora totalUnits                               api=223058                   sql=223058
+PASS  models 2026-09 automoveis with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2026-09 automoveis with_aurora row count                                api=50                       sql=50
+PASS  models 2026-09 automoveis with_aurora rows == SQL row_number order (50 rows)   api='ok'                     sql='ok'
+
+## Models 2026-09 comerciais_leves real (limit=50; SQL shown month 2026-09)
+PASS  models 2026-09 comerciais_leves real http                                      api=200                      sql=200
+PASS  models 2026-09 comerciais_leves real month (shown)                             api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 comerciais_leves real latestMonth (requested)                   api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 comerciais_leves real available                                 api=True                     sql=True
+PASS  models 2026-09 comerciais_leves real coveredUnits                              api=52290                    sql=52290
+PASS  models 2026-09 comerciais_leves real totalUnits                                api=52355                    sql=52355
+PASS  models 2026-09 comerciais_leves real coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2026-09 comerciais_leves real row count                                 api=50                       sql=50
+PASS  models 2026-09 comerciais_leves real rows == SQL row_number order (50 rows)    api='ok'                     sql='ok'
+PASS  models 2026-09 comerciais_leves real no Aurora model in view real              api=False                    sql=False
+
+## Models 2026-09 comerciais_leves with_aurora (limit=50; SQL shown month 2026-09)
+PASS  models 2026-09 comerciais_leves with_aurora http                               api=200                      sql=200
+PASS  models 2026-09 comerciais_leves with_aurora month (shown)                      api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 comerciais_leves with_aurora latestMonth (requested)            api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 comerciais_leves with_aurora available                          api=True                     sql=True
+PASS  models 2026-09 comerciais_leves with_aurora coveredUnits                       api=52290                    sql=52290
+PASS  models 2026-09 comerciais_leves with_aurora totalUnits                         api=52355                    sql=52355
+PASS  models 2026-09 comerciais_leves with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2026-09 comerciais_leves with_aurora row count                          api=50                       sql=50
+PASS  models 2026-09 comerciais_leves with_aurora rows == SQL row_number order (50 rows) api='ok'                     sql='ok'
+
+## Models 2026-09 total real (limit=50; SQL shown month 2026-09)
+PASS  models 2026-09 total real http                                                 api=200                      sql=200
+PASS  models 2026-09 total real month (shown)                                        api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 total real latestMonth (requested)                              api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 total real available                                            api=True                     sql=True
+PASS  models 2026-09 total real coveredUnits                                         api=246550                   sql=246550
+PASS  models 2026-09 total real totalUnits                                           api=268721                   sql=268721
+PASS  models 2026-09 total real coveredUnits < totalUnits (no model residual)        api=True                     sql=True
+PASS  models 2026-09 total real row count                                            api=50                       sql=50
+PASS  models 2026-09 total real rows == SQL row_number order (50 rows)               api='ok'                     sql='ok'
+PASS  models 2026-09 total real no Aurora model in view real                         api=False                    sql=False
+
+## Models 2026-09 total with_aurora (limit=50; SQL shown month 2026-09)
+PASS  models 2026-09 total with_aurora http                                          api=200                      sql=200
+PASS  models 2026-09 total with_aurora month (shown)                                 api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 total with_aurora latestMonth (requested)                       api='2026-09-01'             sql='2026-09-01'
+PASS  models 2026-09 total with_aurora available                                     api=True                     sql=True
+PASS  models 2026-09 total with_aurora coveredUnits                                  api=253242                   sql=253242
+PASS  models 2026-09 total with_aurora totalUnits                                    api=275413                   sql=275413
+PASS  models 2026-09 total with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2026-09 total with_aurora row count                                     api=50                       sql=50
+PASS  models 2026-09 total with_aurora rows == SQL row_number order (50 rows)        api='ok'                     sql='ok'
+
+## Models 2023-03 automoveis real (limit=50; SQL shown month 2023-03)
+PASS  models 2023-03 automoveis real http                                            api=200                      sql=200
+PASS  models 2023-03 automoveis real month (shown)                                   api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 automoveis real latestMonth (requested)                         api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 automoveis real available                                       api=True                     sql=True
+PASS  models 2023-03 automoveis real coveredUnits                                    api=140794                   sql=140794
+PASS  models 2023-03 automoveis real totalUnits                                      api=146174                   sql=146174
+PASS  models 2023-03 automoveis real coveredUnits < totalUnits (no model residual)   api=True                     sql=True
+PASS  models 2023-03 automoveis real row count                                       api=50                       sql=50
+PASS  models 2023-03 automoveis real rows == SQL row_number order (50 rows)          api='ok'                     sql='ok'
+PASS  models 2023-03 automoveis real no Aurora model in view real                    api=False                    sql=False
+
+## Models 2023-03 automoveis with_aurora (limit=50; SQL shown month 2023-03)
+PASS  models 2023-03 automoveis with_aurora http                                     api=200                      sql=200
+PASS  models 2023-03 automoveis with_aurora month (shown)                            api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 automoveis with_aurora latestMonth (requested)                  api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 automoveis with_aurora available                                api=True                     sql=True
+PASS  models 2023-03 automoveis with_aurora coveredUnits                             api=146447                   sql=146447
+PASS  models 2023-03 automoveis with_aurora totalUnits                               api=151827                   sql=151827
+PASS  models 2023-03 automoveis with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2023-03 automoveis with_aurora row count                                api=50                       sql=50
+PASS  models 2023-03 automoveis with_aurora rows == SQL row_number order (50 rows)   api='ok'                     sql='ok'
+
+## Models 2023-03 comerciais_leves real (limit=50; SQL shown month 2023-03)
+PASS  models 2023-03 comerciais_leves real http                                      api=200                      sql=200
+PASS  models 2023-03 comerciais_leves real month (shown)                             api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 comerciais_leves real latestMonth (requested)                   api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 comerciais_leves real available                                 api=True                     sql=True
+PASS  models 2023-03 comerciais_leves real coveredUnits                              api=40398                    sql=40398
+PASS  models 2023-03 comerciais_leves real totalUnits                                api=40409                    sql=40409
+PASS  models 2023-03 comerciais_leves real coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2023-03 comerciais_leves real row count                                 api=50                       sql=50
+PASS  models 2023-03 comerciais_leves real rows == SQL row_number order (50 rows)    api='ok'                     sql='ok'
+PASS  models 2023-03 comerciais_leves real no Aurora model in view real              api=False                    sql=False
+
+## Models 2023-03 comerciais_leves with_aurora (limit=50; SQL shown month 2023-03)
+PASS  models 2023-03 comerciais_leves with_aurora http                               api=200                      sql=200
+PASS  models 2023-03 comerciais_leves with_aurora month (shown)                      api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 comerciais_leves with_aurora latestMonth (requested)            api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 comerciais_leves with_aurora available                          api=True                     sql=True
+PASS  models 2023-03 comerciais_leves with_aurora coveredUnits                       api=40398                    sql=40398
+PASS  models 2023-03 comerciais_leves with_aurora totalUnits                         api=40409                    sql=40409
+PASS  models 2023-03 comerciais_leves with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2023-03 comerciais_leves with_aurora row count                          api=50                       sql=50
+PASS  models 2023-03 comerciais_leves with_aurora rows == SQL row_number order (50 rows) api='ok'                     sql='ok'
+
+## Models 2023-03 total real (limit=50; SQL shown month 2023-03)
+PASS  models 2023-03 total real http                                                 api=200                      sql=200
+PASS  models 2023-03 total real month (shown)                                        api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 total real latestMonth (requested)                              api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 total real available                                            api=True                     sql=True
+PASS  models 2023-03 total real coveredUnits                                         api=181192                   sql=181192
+PASS  models 2023-03 total real totalUnits                                           api=186583                   sql=186583
+PASS  models 2023-03 total real coveredUnits < totalUnits (no model residual)        api=True                     sql=True
+PASS  models 2023-03 total real row count                                            api=50                       sql=50
+PASS  models 2023-03 total real rows == SQL row_number order (50 rows)               api='ok'                     sql='ok'
+PASS  models 2023-03 total real no Aurora model in view real                         api=False                    sql=False
+
+## Models 2023-03 total with_aurora (limit=50; SQL shown month 2023-03)
+PASS  models 2023-03 total with_aurora http                                          api=200                      sql=200
+PASS  models 2023-03 total with_aurora month (shown)                                 api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 total with_aurora latestMonth (requested)                       api='2023-03-01'             sql='2023-03-01'
+PASS  models 2023-03 total with_aurora available                                     api=True                     sql=True
+PASS  models 2023-03 total with_aurora coveredUnits                                  api=186845                   sql=186845
+PASS  models 2023-03 total with_aurora totalUnits                                    api=192236                   sql=192236
+PASS  models 2023-03 total with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2023-03 total with_aurora row count                                     api=50                       sql=50
+PASS  models 2023-03 total with_aurora rows == SQL row_number order (50 rows)        api='ok'                     sql='ok'
+
+## Models 2007-06 automoveis real (limit=50; SQL shown month 2007-06)
+PASS  models 2007-06 automoveis real http                                            api=200                      sql=200
+PASS  models 2007-06 automoveis real month (shown)                                   api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 automoveis real latestMonth (requested)                         api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 automoveis real available                                       api=True                     sql=True
+PASS  models 2007-06 automoveis real coveredUnits                                    api=164478                   sql=164478
+PASS  models 2007-06 automoveis real totalUnits                                      api=169429                   sql=169429
+PASS  models 2007-06 automoveis real coveredUnits < totalUnits (no model residual)   api=True                     sql=True
+PASS  models 2007-06 automoveis real row count                                       api=50                       sql=50
+PASS  models 2007-06 automoveis real rows == SQL row_number order (50 rows)          api='ok'                     sql='ok'
+PASS  models 2007-06 automoveis real no Aurora model in view real                    api=False                    sql=False
+
+## Models 2007-06 automoveis with_aurora (limit=50; SQL shown month 2007-06)
+PASS  models 2007-06 automoveis with_aurora http                                     api=200                      sql=200
+PASS  models 2007-06 automoveis with_aurora month (shown)                            api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 automoveis with_aurora latestMonth (requested)                  api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 automoveis with_aurora available                                api=True                     sql=True
+PASS  models 2007-06 automoveis with_aurora coveredUnits                             api=164478                   sql=164478
+PASS  models 2007-06 automoveis with_aurora totalUnits                               api=169429                   sql=169429
+PASS  models 2007-06 automoveis with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2007-06 automoveis with_aurora row count                                api=50                       sql=50
+PASS  models 2007-06 automoveis with_aurora rows == SQL row_number order (50 rows)   api='ok'                     sql='ok'
+
+## Models 2007-06 comerciais_leves real (limit=50; SQL shown month 2007-06)
+PASS  models 2007-06 comerciais_leves real http                                      api=200                      sql=200
+PASS  models 2007-06 comerciais_leves real month (shown)                             api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 comerciais_leves real latestMonth (requested)                   api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 comerciais_leves real available                                 api=True                     sql=True
+PASS  models 2007-06 comerciais_leves real coveredUnits                              api=19346                    sql=19346
+PASS  models 2007-06 comerciais_leves real totalUnits                                api=19348                    sql=19348
+PASS  models 2007-06 comerciais_leves real coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2007-06 comerciais_leves real row count                                 api=31                       sql=31
+PASS  models 2007-06 comerciais_leves real rows == SQL row_number order (31 rows)    api='ok'                     sql='ok'
+PASS  models 2007-06 comerciais_leves real no Aurora model in view real              api=False                    sql=False
+
+## Models 2007-06 comerciais_leves with_aurora (limit=50; SQL shown month 2007-06)
+PASS  models 2007-06 comerciais_leves with_aurora http                               api=200                      sql=200
+PASS  models 2007-06 comerciais_leves with_aurora month (shown)                      api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 comerciais_leves with_aurora latestMonth (requested)            api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 comerciais_leves with_aurora available                          api=True                     sql=True
+PASS  models 2007-06 comerciais_leves with_aurora coveredUnits                       api=19346                    sql=19346
+PASS  models 2007-06 comerciais_leves with_aurora totalUnits                         api=19348                    sql=19348
+PASS  models 2007-06 comerciais_leves with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2007-06 comerciais_leves with_aurora row count                          api=31                       sql=31
+PASS  models 2007-06 comerciais_leves with_aurora rows == SQL row_number order (31 rows) api='ok'                     sql='ok'
+
+## Models 2007-06 total real (limit=50; SQL shown month 2007-06)
+PASS  models 2007-06 total real http                                                 api=200                      sql=200
+PASS  models 2007-06 total real month (shown)                                        api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 total real latestMonth (requested)                              api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 total real available                                            api=True                     sql=True
+PASS  models 2007-06 total real coveredUnits                                         api=183824                   sql=183824
+PASS  models 2007-06 total real totalUnits                                           api=188777                   sql=188777
+PASS  models 2007-06 total real coveredUnits < totalUnits (no model residual)        api=True                     sql=True
+PASS  models 2007-06 total real row count                                            api=50                       sql=50
+PASS  models 2007-06 total real rows == SQL row_number order (50 rows)               api='ok'                     sql='ok'
+PASS  models 2007-06 total real no Aurora model in view real                         api=False                    sql=False
+
+## Models 2007-06 total with_aurora (limit=50; SQL shown month 2007-06)
+PASS  models 2007-06 total with_aurora http                                          api=200                      sql=200
+PASS  models 2007-06 total with_aurora month (shown)                                 api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 total with_aurora latestMonth (requested)                       api='2007-06-01'             sql='2007-06-01'
+PASS  models 2007-06 total with_aurora available                                     api=True                     sql=True
+PASS  models 2007-06 total with_aurora coveredUnits                                  api=183824                   sql=183824
+PASS  models 2007-06 total with_aurora totalUnits                                    api=188777                   sql=188777
+PASS  models 2007-06 total with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2007-06 total with_aurora row count                                     api=50                       sql=50
+PASS  models 2007-06 total with_aurora rows == SQL row_number order (50 rows)        api='ok'                     sql='ok'
+
+## Models 2004-01 automoveis real (limit=50; SQL shown month 2003-12)
+PASS  models 2004-01 automoveis real http                                            api=200                      sql=200
+PASS  models 2004-01 automoveis real month (shown)                                   api='2003-12-01'             sql='2003-12-01'
+PASS  models 2004-01 automoveis real latestMonth (requested)                         api='2004-01-01'             sql='2004-01-01'
+PASS  models 2004-01 automoveis real available                                       api=True                     sql=True
+PASS  models 2004-01 automoveis real coveredUnits                                    api=144001                   sql=144001
+PASS  models 2004-01 automoveis real totalUnits                                      api=145248                   sql=145248
+PASS  models 2004-01 automoveis real coveredUnits < totalUnits (no model residual)   api=True                     sql=True
+PASS  models 2004-01 automoveis real row count                                       api=50                       sql=50
+PASS  models 2004-01 automoveis real rows == SQL row_number order (50 rows)          api='ok'                     sql='ok'
+PASS  models 2004-01 automoveis real no Aurora model in view real                    api=False                    sql=False
+
+## Models 2004-01 automoveis with_aurora (limit=50; SQL shown month 2003-12)
+PASS  models 2004-01 automoveis with_aurora http                                     api=200                      sql=200
+PASS  models 2004-01 automoveis with_aurora month (shown)                            api='2003-12-01'             sql='2003-12-01'
+PASS  models 2004-01 automoveis with_aurora latestMonth (requested)                  api='2004-01-01'             sql='2004-01-01'
+PASS  models 2004-01 automoveis with_aurora available                                api=True                     sql=True
+PASS  models 2004-01 automoveis with_aurora coveredUnits                             api=144001                   sql=144001
+PASS  models 2004-01 automoveis with_aurora totalUnits                               api=145248                   sql=145248
+PASS  models 2004-01 automoveis with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2004-01 automoveis with_aurora row count                                api=50                       sql=50
+PASS  models 2004-01 automoveis with_aurora rows == SQL row_number order (50 rows)   api='ok'                     sql='ok'
+
+## Models 2004-01 comerciais_leves real (limit=50; SQL shown month 2003-12)
+PASS  models 2004-01 comerciais_leves real http                                      api=200                      sql=200
+PASS  models 2004-01 comerciais_leves real month (shown)                             api='2003-12-01'             sql='2003-12-01'
+PASS  models 2004-01 comerciais_leves real latestMonth (requested)                   api='2004-01-01'             sql='2004-01-01'
+PASS  models 2004-01 comerciais_leves real available                                 api=True                     sql=True
+PASS  models 2004-01 comerciais_leves real coveredUnits                              api=16156                    sql=16156
+PASS  models 2004-01 comerciais_leves real totalUnits                                api=16157                    sql=16157
+PASS  models 2004-01 comerciais_leves real coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2004-01 comerciais_leves real row count                                 api=33                       sql=33
+PASS  models 2004-01 comerciais_leves real rows == SQL row_number order (33 rows)    api='ok'                     sql='ok'
+PASS  models 2004-01 comerciais_leves real no Aurora model in view real              api=False                    sql=False
+
+## Models 2004-01 comerciais_leves with_aurora (limit=50; SQL shown month 2003-12)
+PASS  models 2004-01 comerciais_leves with_aurora http                               api=200                      sql=200
+PASS  models 2004-01 comerciais_leves with_aurora month (shown)                      api='2003-12-01'             sql='2003-12-01'
+PASS  models 2004-01 comerciais_leves with_aurora latestMonth (requested)            api='2004-01-01'             sql='2004-01-01'
+PASS  models 2004-01 comerciais_leves with_aurora available                          api=True                     sql=True
+PASS  models 2004-01 comerciais_leves with_aurora coveredUnits                       api=16156                    sql=16156
+PASS  models 2004-01 comerciais_leves with_aurora totalUnits                         api=16157                    sql=16157
+PASS  models 2004-01 comerciais_leves with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2004-01 comerciais_leves with_aurora row count                          api=33                       sql=33
+PASS  models 2004-01 comerciais_leves with_aurora rows == SQL row_number order (33 rows) api='ok'                     sql='ok'
+
+## Models 2004-01 total real (limit=50; SQL shown month 2003-12)
+PASS  models 2004-01 total real http                                                 api=200                      sql=200
+PASS  models 2004-01 total real month (shown)                                        api='2003-12-01'             sql='2003-12-01'
+PASS  models 2004-01 total real latestMonth (requested)                              api='2004-01-01'             sql='2004-01-01'
+PASS  models 2004-01 total real available                                            api=True                     sql=True
+PASS  models 2004-01 total real coveredUnits                                         api=160157                   sql=160157
+PASS  models 2004-01 total real totalUnits                                           api=161405                   sql=161405
+PASS  models 2004-01 total real coveredUnits < totalUnits (no model residual)        api=True                     sql=True
+PASS  models 2004-01 total real row count                                            api=50                       sql=50
+PASS  models 2004-01 total real rows == SQL row_number order (50 rows)               api='ok'                     sql='ok'
+PASS  models 2004-01 total real no Aurora model in view real                         api=False                    sql=False
+
+## Models 2004-01 total with_aurora (limit=50; SQL shown month 2003-12)
+PASS  models 2004-01 total with_aurora http                                          api=200                      sql=200
+PASS  models 2004-01 total with_aurora month (shown)                                 api='2003-12-01'             sql='2003-12-01'
+PASS  models 2004-01 total with_aurora latestMonth (requested)                       api='2004-01-01'             sql='2004-01-01'
+PASS  models 2004-01 total with_aurora available                                     api=True                     sql=True
+PASS  models 2004-01 total with_aurora coveredUnits                                  api=160157                   sql=160157
+PASS  models 2004-01 total with_aurora totalUnits                                    api=161405                   sql=161405
+PASS  models 2004-01 total with_aurora coveredUnits < totalUnits (no model residual) api=True                     sql=True
+PASS  models 2004-01 total with_aurora row count                                     api=50                       sql=50
+PASS  models 2004-01 total with_aurora rows == SQL row_number order (50 rows)        api='ok'                     sql='ok'
+
+## Timeseries automoveis real
+PASS  timeseries automoveis real 12m http                                            api=200                      sql=200
+PASS  timeseries automoveis real 12m from                                            api='2025-10-01'             sql='2025-10-01'
+PASS  timeseries automoveis real 12m to                                              api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries automoveis real 12m point count                                     api=12                       sql=12
+PASS  timeseries automoveis real 12m every point == SQL                              api='ok'                     sql='ok'
+PASS  timeseries automoveis real 24m http                                            api=200                      sql=200
+PASS  timeseries automoveis real 24m from                                            api='2024-10-01'             sql='2024-10-01'
+PASS  timeseries automoveis real 24m to                                              api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries automoveis real 24m point count                                     api=24                       sql=24
+PASS  timeseries automoveis real 24m every point == SQL                              api='ok'                     sql='ok'
+PASS  timeseries automoveis real 60m http                                            api=200                      sql=200
+PASS  timeseries automoveis real 60m from                                            api='2021-10-01'             sql='2021-10-01'
+PASS  timeseries automoveis real 60m to                                              api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries automoveis real 60m point count                                     api=60                       sql=60
+PASS  timeseries automoveis real 60m every point == SQL                              api='ok'                     sql='ok'
+PASS  timeseries automoveis real all http                                            api=200                      sql=200
+PASS  timeseries automoveis real all from                                            api='2003-01-01'             sql='2003-01-01'
+PASS  timeseries automoveis real all to                                              api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries automoveis real all point count                                     api=285                      sql=285
+PASS  timeseries automoveis real all every point == SQL                              api='ok'                     sql='ok'
+
+## Timeseries automoveis with_aurora
+PASS  timeseries automoveis with_aurora 12m http                                     api=200                      sql=200
+PASS  timeseries automoveis with_aurora 12m from                                     api='2025-10-01'             sql='2025-10-01'
+PASS  timeseries automoveis with_aurora 12m to                                       api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries automoveis with_aurora 12m point count                              api=12                       sql=12
+PASS  timeseries automoveis with_aurora 12m every point == SQL                       api='ok'                     sql='ok'
+PASS  timeseries automoveis with_aurora 24m http                                     api=200                      sql=200
+PASS  timeseries automoveis with_aurora 24m from                                     api='2024-10-01'             sql='2024-10-01'
+PASS  timeseries automoveis with_aurora 24m to                                       api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries automoveis with_aurora 24m point count                              api=24                       sql=24
+PASS  timeseries automoveis with_aurora 24m every point == SQL                       api='ok'                     sql='ok'
+PASS  timeseries automoveis with_aurora 60m http                                     api=200                      sql=200
+PASS  timeseries automoveis with_aurora 60m from                                     api='2021-10-01'             sql='2021-10-01'
+PASS  timeseries automoveis with_aurora 60m to                                       api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries automoveis with_aurora 60m point count                              api=60                       sql=60
+PASS  timeseries automoveis with_aurora 60m every point == SQL                       api='ok'                     sql='ok'
+PASS  timeseries automoveis with_aurora all http                                     api=200                      sql=200
+PASS  timeseries automoveis with_aurora all from                                     api='2003-01-01'             sql='2003-01-01'
+PASS  timeseries automoveis with_aurora all to                                       api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries automoveis with_aurora all point count                              api=285                      sql=285
+PASS  timeseries automoveis with_aurora all every point == SQL                       api='ok'                     sql='ok'
+
+## Timeseries comerciais_leves real
+PASS  timeseries comerciais_leves real 12m http                                      api=200                      sql=200
+PASS  timeseries comerciais_leves real 12m from                                      api='2025-10-01'             sql='2025-10-01'
+PASS  timeseries comerciais_leves real 12m to                                        api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries comerciais_leves real 12m point count                               api=12                       sql=12
+PASS  timeseries comerciais_leves real 12m every point == SQL                        api='ok'                     sql='ok'
+PASS  timeseries comerciais_leves real 24m http                                      api=200                      sql=200
+PASS  timeseries comerciais_leves real 24m from                                      api='2024-10-01'             sql='2024-10-01'
+PASS  timeseries comerciais_leves real 24m to                                        api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries comerciais_leves real 24m point count                               api=24                       sql=24
+PASS  timeseries comerciais_leves real 24m every point == SQL                        api='ok'                     sql='ok'
+PASS  timeseries comerciais_leves real 60m http                                      api=200                      sql=200
+PASS  timeseries comerciais_leves real 60m from                                      api='2021-10-01'             sql='2021-10-01'
+PASS  timeseries comerciais_leves real 60m to                                        api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries comerciais_leves real 60m point count                               api=60                       sql=60
+PASS  timeseries comerciais_leves real 60m every point == SQL                        api='ok'                     sql='ok'
+PASS  timeseries comerciais_leves real all http                                      api=200                      sql=200
+PASS  timeseries comerciais_leves real all from                                      api='2003-01-01'             sql='2003-01-01'
+PASS  timeseries comerciais_leves real all to                                        api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries comerciais_leves real all point count                               api=285                      sql=285
+PASS  timeseries comerciais_leves real all every point == SQL                        api='ok'                     sql='ok'
+
+## Timeseries comerciais_leves with_aurora
+PASS  timeseries comerciais_leves with_aurora 12m http                               api=200                      sql=200
+PASS  timeseries comerciais_leves with_aurora 12m from                               api='2025-10-01'             sql='2025-10-01'
+PASS  timeseries comerciais_leves with_aurora 12m to                                 api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries comerciais_leves with_aurora 12m point count                        api=12                       sql=12
+PASS  timeseries comerciais_leves with_aurora 12m every point == SQL                 api='ok'                     sql='ok'
+PASS  timeseries comerciais_leves with_aurora 24m http                               api=200                      sql=200
+PASS  timeseries comerciais_leves with_aurora 24m from                               api='2024-10-01'             sql='2024-10-01'
+PASS  timeseries comerciais_leves with_aurora 24m to                                 api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries comerciais_leves with_aurora 24m point count                        api=24                       sql=24
+PASS  timeseries comerciais_leves with_aurora 24m every point == SQL                 api='ok'                     sql='ok'
+PASS  timeseries comerciais_leves with_aurora 60m http                               api=200                      sql=200
+PASS  timeseries comerciais_leves with_aurora 60m from                               api='2021-10-01'             sql='2021-10-01'
+PASS  timeseries comerciais_leves with_aurora 60m to                                 api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries comerciais_leves with_aurora 60m point count                        api=60                       sql=60
+PASS  timeseries comerciais_leves with_aurora 60m every point == SQL                 api='ok'                     sql='ok'
+PASS  timeseries comerciais_leves with_aurora all http                               api=200                      sql=200
+PASS  timeseries comerciais_leves with_aurora all from                               api='2003-01-01'             sql='2003-01-01'
+PASS  timeseries comerciais_leves with_aurora all to                                 api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries comerciais_leves with_aurora all point count                        api=285                      sql=285
+PASS  timeseries comerciais_leves with_aurora all every point == SQL                 api='ok'                     sql='ok'
+
+## Timeseries total real
+PASS  timeseries total real 12m http                                                 api=200                      sql=200
+PASS  timeseries total real 12m from                                                 api='2025-10-01'             sql='2025-10-01'
+PASS  timeseries total real 12m to                                                   api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries total real 12m point count                                          api=12                       sql=12
+PASS  timeseries total real 12m every point == SQL                                   api='ok'                     sql='ok'
+PASS  timeseries total real 24m http                                                 api=200                      sql=200
+PASS  timeseries total real 24m from                                                 api='2024-10-01'             sql='2024-10-01'
+PASS  timeseries total real 24m to                                                   api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries total real 24m point count                                          api=24                       sql=24
+PASS  timeseries total real 24m every point == SQL                                   api='ok'                     sql='ok'
+PASS  timeseries total real 60m http                                                 api=200                      sql=200
+PASS  timeseries total real 60m from                                                 api='2021-10-01'             sql='2021-10-01'
+PASS  timeseries total real 60m to                                                   api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries total real 60m point count                                          api=60                       sql=60
+PASS  timeseries total real 60m every point == SQL                                   api='ok'                     sql='ok'
+PASS  timeseries total real all http                                                 api=200                      sql=200
+PASS  timeseries total real all from                                                 api='2003-01-01'             sql='2003-01-01'
+PASS  timeseries total real all to                                                   api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries total real all point count                                          api=285                      sql=285
+PASS  timeseries total real all every point == SQL                                   api='ok'                     sql='ok'
+
+## Timeseries total with_aurora
+PASS  timeseries total with_aurora 12m http                                          api=200                      sql=200
+PASS  timeseries total with_aurora 12m from                                          api='2025-10-01'             sql='2025-10-01'
+PASS  timeseries total with_aurora 12m to                                            api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries total with_aurora 12m point count                                   api=12                       sql=12
+PASS  timeseries total with_aurora 12m every point == SQL                            api='ok'                     sql='ok'
+PASS  timeseries total with_aurora 24m http                                          api=200                      sql=200
+PASS  timeseries total with_aurora 24m from                                          api='2024-10-01'             sql='2024-10-01'
+PASS  timeseries total with_aurora 24m to                                            api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries total with_aurora 24m point count                                   api=24                       sql=24
+PASS  timeseries total with_aurora 24m every point == SQL                            api='ok'                     sql='ok'
+PASS  timeseries total with_aurora 60m http                                          api=200                      sql=200
+PASS  timeseries total with_aurora 60m from                                          api='2021-10-01'             sql='2021-10-01'
+PASS  timeseries total with_aurora 60m to                                            api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries total with_aurora 60m point count                                   api=60                       sql=60
+PASS  timeseries total with_aurora 60m every point == SQL                            api='ok'                     sql='ok'
+PASS  timeseries total with_aurora all http                                          api=200                      sql=200
+PASS  timeseries total with_aurora all from                                          api='2003-01-01'             sql='2003-01-01'
+PASS  timeseries total with_aurora all to                                            api='2026-09-01'             sql='2026-09-01'
+PASS  timeseries total with_aurora all point count                                   api=285                      sql=285
+PASS  timeseries total with_aurora all every point == SQL                            api='ok'                     sql='ok'
+
+## Aurora toggle never changes the real market total
+PASS  summary 2026-09 automoveis realUnits real==with_aurora                         api=216366                   sql=216366
+PASS  summary 2026-09 automoveis view real: totalUnits==realUnits                    api=216366                   sql=216366
+PASS  summary 2026-09 comerciais_leves realUnits real==with_aurora                   api=52355                    sql=52355
+PASS  summary 2026-09 comerciais_leves view real: totalUnits==realUnits              api=52355                    sql=52355
+PASS  summary 2026-09 total realUnits real==with_aurora                              api=268721                   sql=268721
+PASS  summary 2026-09 total view real: totalUnits==realUnits                         api=268721                   sql=268721
+PASS  summary 2023-03 automoveis realUnits real==with_aurora                         api=146174                   sql=146174
+PASS  summary 2023-03 automoveis view real: totalUnits==realUnits                    api=146174                   sql=146174
+PASS  summary 2023-03 comerciais_leves realUnits real==with_aurora                   api=40409                    sql=40409
+PASS  summary 2023-03 comerciais_leves view real: totalUnits==realUnits              api=40409                    sql=40409
+PASS  summary 2023-03 total realUnits real==with_aurora                              api=186583                   sql=186583
+PASS  summary 2023-03 total view real: totalUnits==realUnits                         api=186583                   sql=186583
+PASS  summary 2007-06 automoveis realUnits real==with_aurora                         api=169429                   sql=169429
+PASS  summary 2007-06 automoveis view real: totalUnits==realUnits                    api=169429                   sql=169429
+PASS  summary 2007-06 comerciais_leves realUnits real==with_aurora                   api=19348                    sql=19348
+PASS  summary 2007-06 comerciais_leves view real: totalUnits==realUnits              api=19348                    sql=19348
+PASS  summary 2007-06 total realUnits real==with_aurora                              api=188777                   sql=188777
+PASS  summary 2007-06 total view real: totalUnits==realUnits                         api=188777                   sql=188777
+PASS  summary 2004-01 automoveis realUnits real==with_aurora                         api=87489                    sql=87489
+PASS  summary 2004-01 automoveis view real: totalUnits==realUnits                    api=87489                    sql=87489
+PASS  summary 2004-01 comerciais_leves realUnits real==with_aurora                   api=13620                    sql=13620
+PASS  summary 2004-01 comerciais_leves view real: totalUnits==realUnits              api=13620                    sql=13620
+PASS  summary 2004-01 total realUnits real==with_aurora                              api=101109                   sql=101109
+PASS  summary 2004-01 total view real: totalUnits==realUnits                         api=101109                   sql=101109
+PASS  timeseries automoveis all: realUnits identical across views                    api='none'                   sql='none'
+PASS  timeseries automoveis with_aurora: auroraUnits null before 2019-01             api='none'                   sql='none'
+PASS  timeseries comerciais_leves all: realUnits identical across views              api='none'                   sql='none'
+PASS  timeseries comerciais_leves with_aurora: auroraUnits null before 2019-01       api='none'                   sql='none'
+PASS  timeseries comerciais_leves with_aurora: auroraUnits always null               api='none'                   sql='none'
+PASS  timeseries total all: realUnits identical across views                         api='none'                   sql='none'
+PASS  timeseries total with_aurora: auroraUnits null before 2019-01                  api='none'                   sql='none'
+PASS  summary 2026-09 total realUnits == timeseries point                            api=268721                   sql=268721
+PASS  summary 2023-03 total realUnits == timeseries point                            api=186583                   sql=186583
+PASS  summary 2007-06 total realUnits == timeseries point                            api=188777                   sql=188777
+PASS  summary 2004-01 total realUnits == timeseries point                            api=101109                   sql=101109
+
+## Input validation (expect 400 + error.code=invalid_parameter + error.param)
+PASS  GET /api/market/summary?segment=AUTOMOVEIS                                     api='400 invalid_parameter segment' sql='400 invalid_parameter segment'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?segment=                                               api='400 invalid_parameter segment' sql='400 invalid_parameter segment'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?segment=automoveis&segment=total                       api='400 invalid_parameter segment' sql='400 invalid_parameter segment'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?view=aurora                                            api='400 invalid_parameter view' sql='400 invalid_parameter view'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?period=36m                                             api='400 invalid_parameter period' sql='400 invalid_parameter period'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/timeseries?period=                                             api='400 invalid_parameter period' sql='400 invalid_parameter period'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?month=2002-12                                          api='400 invalid_parameter month' sql='400 invalid_parameter month'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?month=2026-10                                          api='400 invalid_parameter month' sql='400 invalid_parameter month'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?month=2026-13                                          api='400 invalid_parameter month' sql='400 invalid_parameter month'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?month=2023-03-15                                       api='400 invalid_parameter month' sql='400 invalid_parameter month'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?month=2023-3                                           api='400 invalid_parameter month' sql='400 invalid_parameter month'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?month=abc                                              api='400 invalid_parameter month' sql='400 invalid_parameter month'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/brands?limit=0                                                 api='400 invalid_parameter limit' sql='400 invalid_parameter limit'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/brands?limit=26                                                api='400 invalid_parameter limit' sql='400 invalid_parameter limit'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/brands?limit=1.5                                               api='400 invalid_parameter limit' sql='400 invalid_parameter limit'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/brands?limit=abc                                               api='400 invalid_parameter limit' sql='400 invalid_parameter limit'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/brands?limit=-1                                                api='400 invalid_parameter limit' sql='400 invalid_parameter limit'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/models?limit=51                                                api='400 invalid_parameter limit' sql='400 invalid_parameter limit'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/models?limit=                                                  api='400 invalid_parameter limit' sql='400 invalid_parameter limit'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/brands?segment=total%27%20OR%201%3D1--                         api='400 invalid_parameter segment' sql='400 invalid_parameter segment'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/models?month=2023-03%27--                                      api='400 invalid_parameter month' sql='400 invalid_parameter month'
+PASS    no stack/secret in body                                                      api=False                    sql=False
+PASS  GET /api/market/summary?foo=bar accepted                                       api=200                      sql=200
+PASS  GET /api/market/brands?limit=25 accepted                                       api=200                      sql=200
+PASS  GET /api/market/brands?limit=1 accepted                                        api=200                      sql=200
+PASS  GET /api/market/models?limit=50 accepted                                       api=200                      sql=200
+PASS  GET /api/market/summary?month=2023-03-01 accepted                              api=200                      sql=200
+PASS  GET /api/market/summary?month=2003-01 accepted                                 api=200                      sql=200
+PASS  GET /api/market/timeseries?month=2023-03 accepted                              api=200                      sql=200

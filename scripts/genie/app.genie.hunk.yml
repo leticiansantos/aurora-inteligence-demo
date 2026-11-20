@@ -1,0 +1,11 @@
+# Follow-up for the app deploy (together with scripts/lakebase/app.lakebase.hunk.yml, ADR aftersales §7 F1):
+# add to resources/app.yml so the deployed app can call the market Genie Agent on behalf of the user.
+#   resources:
+#     - name: genie-market
+#       genie_space:
+#         space_id: 01f1e51fb8bb1e7d93d9f4b25aab7517   # printed by scripts/genie/deploy_space.sh
+#         permission: CAN_RUN
+#   config.env:
+#     - name: DATABRICKS_GENIE_SPACE_ID
+#       value_from: genie-market
+# The Genie plugin is OBO: enable user authorization (scope dashboards.genie) on the app.

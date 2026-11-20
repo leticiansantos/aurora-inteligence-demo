@@ -1,0 +1,40 @@
+# claim:    no secrets in any commit on any ref; no real-brand names, images or overlay files in committed content after the accepted baseline
+# command:  tests/smoke/static_checks.sh --ref-assets <old-demo>/assets --known-secrets <file outside repo with the old demo's leaked PAT>
+# git_sha:  77d8d09 (script version; scanned tree = main 63097e9) (refs scanned: main + all team/fnd0-* branches; frontend tip c130b3a)
+# date:     2026-11-20 12:18 UTC
+# result:   PASS
+
+
+== context
+repo:    ~/workspace/auto-intelligence-demo/.team/worktrees/fnd0-qa
+head:    63097e9 (team/fnd0-qa)
+refs:    main team/fnd0-backend team/fnd0-frontend team/fnd0-platform team/fnd0-qa 
+commits: 22 reachable from all refs
+
+== 1. secrets in full history (all commits, all refs)
+PASS: no secret pattern in 22 commits
+PASS: 1 known leaked literal(s) absent from history
+PASS: no token pattern in commit messages
+
+== 2. brand names in tracked files (tip of every local branch)
+INFO: [team/fnd0-backend] tasks/lessons.md inherited unchanged from be51c88 (rebase onto main to drop)
+INFO: [team/fnd0-backend] tasks/todo.md inherited unchanged from be51c88 (rebase onto main to drop)
+INFO: [team/fnd0-frontend] tasks/lessons.md inherited unchanged from be51c88 (rebase onto main to drop)
+INFO: [team/fnd0-frontend] tasks/todo.md inherited unchanged from be51c88 (rebase onto main to drop)
+INFO: [team/fnd0-platform] tasks/lessons.md inherited unchanged from be51c88 (rebase onto main to drop)
+INFO: [team/fnd0-platform] tasks/todo.md inherited unchanged from be51c88 (rebase onto main to drop)
+PASS: no brand names at any branch tip outside allowlist (^(tests/smoke/static_checks\.sh|evidence/.*)$)
+history after baseline be51c88: 21 commits
+PASS: no new brand content in any commit after baseline (inherited unchanged baseline files excluded)
+
+== 3. brand image assets in history
+PASS: reference asset #1 (blob 7b42ae21d849) not in history
+PASS: reference asset #2 (blob d4018831834d) not in history
+PASS: reference asset #3 (blob 095c436bcef6) not in history
+PASS: no brand-named image path in history
+
+== 4. no brand overlay files tracked (any commit)
+PASS: no brand.local.* / brand-overlay/ path in history
+
+== result
+ALL STATIC CHECKS PASSED

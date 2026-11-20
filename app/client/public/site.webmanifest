@@ -1,0 +1,15 @@
+{
+  "name": "Aurora Motors · Auto Intelligence",
+  "short_name": "Aurora",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#3b2a8c",
+  "background_color": "#f7f7fb",
+  "display": "standalone"
+}

@@ -1,0 +1,49 @@
+# claim:    a second job run downloads nothing and adds no rows (snapshots identical apart from the title line)
+# command:  diff evidence/market/snapshots/baseline.txt evidence/market/snapshots/after-run2.txt
+# target:   demo (classic_stable.auto_intelligence)
+# git_sha:  37fb5d6
+# date:     2026-11-20 14:44 UTC
+# result:   PASS
+
+## before: # snapshot baseline · classic_stable.auto_intelligence · 2026-11-20 14:37 UTC · git d3febe7
+## after:  # snapshot after-run2 · classic_stable.auto_intelligence · 2026-11-20 14:43 UTC · git 37fb5d6
+## table_rows (before → after)
+market_download_manifest: 307 → 307
+market_raw_documents: 285 → 285
+market_documents: 285 → 285
+market_segment_totals: 570 → 570
+market_registrations_brand: 11137 → 11137
+market_registrations_model: 26958 → 26958
+market_synthetic_registrations: 279 → 279
+market_brand_monthly: 11800 → 11800
+market_model_monthly: 27237 → 27237
+market_share_real: 11707 → 11707
+market_share_with_aurora: 11800 → 11800
+
+## diff (empty = identical)
+
+
+echo
+
+echo "## note: the snapshots exclude attempted_at on purpose. Job run 2 re-probed the 3-month window (D1), so only"
+
+echo "## not_found rows got a new attempted_at; downloaded rows keep their original timestamps (query below, $(date -u '+%Y-%m-%d %H:%M UTC'))"
+
+databricks experimental aitools tools query --profile classic-stable-new --output csv "SELECT status, count(*) AS n, count_if(attempted_at > TIMESTAMP'2026-11-20 14:00:00') AS reprobed_in_run2, min(attempted_at) AS min_attempted_at, max(attempted_at) AS max_attempted_at FROM classic_stable.auto_intelligence.market_download_manifest GROUP BY 1 ORDER BY 1"
+
+## note: the snapshots exclude attempted_at on purpose. Job run 2 re-probed the 3-month window (D1), so only
+## not_found rows got a new attempted_at; downloaded rows keep their original timestamps (query below, 2026-11-20 14:45 UTC)
+status,n,reprobed_in_run2,min_attempted_at,max_attempted_at
+downloaded,285,0,2026-11-20T13:46:19.855Z,2026-11-20T13:46:19.855Z
+not_found,22,8,2026-11-20T13:46:19.855Z,2026-11-20T14:42:58.388Z
+
+## ordering note (timeline in UTC)
+## 14:42:20Z job run 2 starts · 14:42:58Z last manifest write by run 2 (attempted_at above) · 14:43:22Z job run 2 ends
+## 14:43:xxZ after-run2 snapshot starts (header) · 14:43:56Z pipeline update 5 (May model-table fix, 6c4146f3) starts
+## 14:44:54Z after-run2 snapshot file written (local mtime) · 14:46:17Z update 5 completes
+## Update 5 overlapped the end of the snapshot, but the snapshot still shows the pre-update-5 state.
+## Materialized views only change when an update commits, and the snapshot recorded
+## market_registrations_model = 26,958 and market_model_monthly = 27,237. Update 5 added exactly 193 model rows
+## (50 + 50 + 50 + 43 for 2016-05, 2017-05, 2018-05, 2020-05): 27,151 = 26,958 + 193 and 27,430 = 27,237 + 193.
+## Update 5 does not write the manifest, the Volume or bronze (no new files), the other sections of the snapshot.
+## The pipeline idempotency proof is separate (idempotency-pipeline-update6.txt), taken on the post-update-5 baseline.

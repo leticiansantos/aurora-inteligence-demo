@@ -1,0 +1,930 @@
+# snapshot s7-after-update7 · classic_stable.auto_intelligence · 2026-11-20 14:59 UTC · git ebddd10
+## table_rows
+market_download_manifest	307
+market_raw_documents	285
+market_documents	285
+market_segment_totals	570
+market_registrations_brand	11137
+market_registrations_model	27151
+market_synthetic_registrations	279
+market_brand_monthly	11800
+market_model_monthly	27430
+market_share_real	11707
+market_share_with_aurora	11800
+## content fingerprints (count, sum of xxhash64 over all columns; bronze excludes the VARIANT payload)
+market_documents	285 16544189869105576874
+market_segment_totals	570 -111552562397054569389
+market_registrations_brand	11137 -127317925659706232889
+market_registrations_model	27151 484973649937211705611
+market_synthetic_registrations	279 -115011292680116653687
+market_brand_monthly	11800 -579685695603635828172
+market_model_monthly	27430 -59153299055136917337
+market_share_real	11707 245093020849256917774
+market_share_with_aurora	11800 -119805355622224437836
+market_raw_documents	285 -33151992780321763352
+## manifest (ref_month, status, sha256, downloaded_at)
+source_url,url_month,status,sha256,downloaded_at
+https://www.fenabrave.org.br/portal/files/2003_12_2.pdf,2003-12-01,downloaded,5d41ed449572c30d1c69c2316418edd08d2fefa8a46f22560df65ac4ba9de1e6,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2004_01_2.pdf,2004-01-01,downloaded,7d07cb68151cf30d9324862666541611dc63ca8bfef3938a5340c40a152330d9,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2008_03_2.pdf,2008-03-01,downloaded,77f4256e8b7b7c8349b349d006164181e813f4288c2765b7fc5189283a2aa0d8,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2012_09_2.pdf,2012-09-01,downloaded,dcd981cfd93c8b3ebbc4a3743c84ffcc81f23b417ba3b646e8f56e04571b925e,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2015_02_2.pdf,2015-02-01,downloaded,900ca2036d1326a096c9bdde51e667f1462059f4c0476ecc1a35e99e2a999170,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2015_05_2.pdf,2015-05-01,downloaded,70ecf1981232532838103d5c042dceb1039c8a88f1e88c61b97ebf06321982c3,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2015_07_2.pdf,2015-07-01,downloaded,0a8ceeca94ffe986cb94ab0e949b1518eecd8c6e37767cfcedb9506a74bdc47b,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2015_08_2.pdf,2015-08-01,downloaded,3014ef499077eba7043df160269b56d92f7eb12bc4c948543150fa70befaf119,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2015_09_2.pdf,2015-09-01,downloaded,44f2cbbd0ee6d385b4cf380c4578dcbdd509868d5e7d181741be04ba2f0fa2f0,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2015_10_2.pdf,2015-10-01,downloaded,cf40a6747b8bfe3b503429400930a8a12a6203f15d399397d97d4b2282ec5cda,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2015_11_2.pdf,2015-11-01,downloaded,46047583393fd1a4d8adda51cb56e789c62ef7f51c56c69eb57e2770081a0852,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2015_12_2.pdf,2015-12-01,downloaded,e01ba1cee2ac835f050ffe9841f8993b208bb41b5b9ab2516cf5691ba087fbd9,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2016_01_2.pdf,2016-01-01,downloaded,3fcc8ab8669cb5874626e870953081ffc7257dd1c686cee0b019b85309fb90f3,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2016_02_2.pdf,2016-02-01,downloaded,f1d4cdd04065bb65bfb49f5460cb82f788eed2474326a99ca50c95c9e00c6236,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2016_03_2.pdf,2016-03-01,downloaded,713804d04163b48c19c6da2cb494ef2e39460f22f2aaad46465ab9d3a4eedc0b,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2016_04_2.pdf,2016-04-01,downloaded,c14c9022e8678bb54430d9cfeb806ec0e0f5555c367a28c275ffc0cdbc0f7ed3,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2016_05_2.pdf,2016-05-01,downloaded,3ed19ca14aa0e9dcdf7c8cb1db96ae25f06e2e4d635a0d4f76e0bf29f4bbb9a4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2016_06_2.pdf,2016-06-01,downloaded,8c51405068aee903c88b3833d02b71e77e7e83c557dacfe7f55f82e19a356415,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2016_07_2.pdf,2016-07-01,downloaded,3b4817db4b1283b3377162dcc2c8232195e5558b543fb7009fc4eb27e1713b2c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2016_08_2.pdf,2016-08-01,downloaded,37b3d9d811932725e3567e3b65275b3ab23dc9d14d05a3234aca2d942880ea75,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2016_10_2.pdf,2016-10-01,downloaded,55f9dc499e77868157d2045c69795ac289632b12a18b3fdc7c0afd74f4e8eb64,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_01_2.pdf,2017-01-01,downloaded,d7289deb4d4c59e9b9fe1dde51817d82e596a6fda1a3ceb8a2b74b239fc3f0a7,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_02_2.pdf,2017-02-01,downloaded,56a03510e4bc39b719f9528b45e33d0189ad6ebe20b58081e57f404960636bd6,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_03_2.pdf,2017-03-01,downloaded,e1a65ddd582d942a3264850476b29b778afcd1a5f2437947868c7ff93218b090,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_04_2.pdf,2017-04-01,downloaded,26cf6014227f7629f4d237f45056cbffb793bf78ce7510a244d93c0b23d1c5c0,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_05_2.pdf,2017-05-01,downloaded,b0a8a36c4ce8d411c115b01b62bc9db16f14a1cb3bcc38b328c0d45c1f16ad6a,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_06_2.pdf,2017-06-01,downloaded,836daf8384136651df00a5ad5359da1c5144a1600db7a2337a8c3b81100e6cff,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_07_2.pdf,2017-07-01,downloaded,e84abebf1e00230ae76b0128766dc8bb31b2f9dccf3188dc65ef8f4a86edd3b3,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_08_2.pdf,2017-08-01,downloaded,ffda1a32fb88fe2507a89c924870e56c70a15f2c99f2ecbe5ed90d40d5936d8b,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_09_2.pdf,2017-09-01,downloaded,880c50daf1a317bd5e90ef98572ee979626e1ca8b530d5e4d44bb3fdcb4b32a1,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_10_2.pdf,2017-10-01,downloaded,e232f1f973db98aeb51d10e864fcc6ada7addb6884057cd52fcd52eefb269131,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_11_2.pdf,2017-11-01,downloaded,bf62e3efd8cf05c7856092cb79533e3d80e8ac3a4bd2b70edb40460aa02dd98d,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2017_12_2.pdf,2017-12-01,downloaded,fd2b1a23fffe3e58e24c49ca870be4801eba3bc34cbd417a6db480a591957248,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_01_2.pdf,2018-01-01,downloaded,0e4d56b8445cbf6a54e710bedffc9a4db242c228f57bce16ea70f045522162a2,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_02_2.pdf,2018-02-01,downloaded,b2f72b632f19c1dd681fb1316fb16c9075a03c90cc413f4f97733f2e314dc910,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_03_2.pdf,2018-03-01,downloaded,db48bcae6d1890ddcac049a9abd2e91f65a67e293611a0eb3ccf9312e5951e9d,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_04_2.pdf,2018-04-01,downloaded,71746ba115d53860ef8225a3bb588da32e7b55b5667ce0b27b36142412f2ca1e,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_05_2.pdf,2018-05-01,downloaded,2b60de0926aa8f5c9fd4adc92c1f26c68a125a5bc7464453e410ff6804275096,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_07_2.pdf,2018-07-01,downloaded,a9241e6ec5c3b2c5a76919d2242daf68a325da73c156fa090036b58df7b8a9f2,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_08_2.pdf,2018-08-01,downloaded,b3a411ee1f1f624c88e04b009a28fb28ac95d061880ef41c686ec3f998cd5bbc,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_09_2.pdf,2018-09-01,downloaded,fb9295545e9ff76f9fa312ccdea7a817e1a9da58587db00164f90d4217ae2232,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_10_2.pdf,2018-10-01,downloaded,1c8f6355edc80b72051c2ca7e2cb3be90d393838a368dbee1fde883f2af0113c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_11_2.pdf,2018-11-01,downloaded,5fa6a65112187d539f08847c55d7577b18fcfe328fe9212b2618cde2ac83d2ab,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2018_12_2.pdf,2018-12-01,downloaded,9457d34894980f2bd6617e40715d3eea74eed0e1b6307c58df525ab0d278d5b1,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_01_2.pdf,2019-01-01,downloaded,6d2e2fdfb3ca4ec0b753759b9dd833fe222bdd86ef57f5879ea1bbebb59c3d52,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_02_2.pdf,2019-02-01,downloaded,f46918a54b31edc4e13b010a8501aeca3d8790bf78be1641bfdd0eda31ad65d3,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_03_2.pdf,2019-03-01,downloaded,443e85106d40a26f1f51cb572c43c563d5f8364f7d4625e1ebcdd32ad85e8308,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_04_2.pdf,2019-04-01,downloaded,ed22f4e719b38919965af8c26f4c8493f2ba17192c825fd790d426e4282d188f,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_05_2.pdf,2019-05-01,downloaded,86f924457b0aad0d05c030774e3925ce45978f6edc97f2c80ee58a2a0423b9db,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_06_2.pdf,2019-06-01,downloaded,d60147ae317d191cb6f87ed239a75f1df8512e3f1ef14a17dfd899c0a438ec73,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_07_2.pdf,2019-07-01,downloaded,6205c3e30c3ec8cf24b599d67072ca44469de084ed0fa76ebe4457f52a8fee28,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_08_2.pdf,2019-08-01,downloaded,7431e9556d96a472b4e4a1e1a54f2ff4065ea18914f085509e06236f60f219f3,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_09_2.pdf,2019-09-01,downloaded,de0af68dd659b39b4d5a39f8213823e745d7e25ffe8355657f65f8ee43ab0406,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_10_2.pdf,2019-10-01,downloaded,f05dedeeeba84bb0f563040c82ecf7549bbbb784740082b66e3852ab28b76991,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_11_2.pdf,2019-11-01,downloaded,7f2d30e5c387a7d30711f87fe7e4bf2e9f2116467953b7aef1a027b5affdd825,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2019_12_2.pdf,2019-12-01,downloaded,6876607a4ce3c130d48a23908057663b59f366100eae431827117996892d697d,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_01_2.pdf,2020-01-01,downloaded,2eaa8491d7f9191a30f2014c9dafa97825f53df7f427fbd362de63406f2dd1cf,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_02_2.pdf,2020-02-01,downloaded,942ae129a7bc2f66a8944f2bf8ceebe91396048cc4eca590adb0d2ea835f0f0a,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_03_2.pdf,2020-03-01,downloaded,6f30924e996da4eb688e6fcd5c917b1c730aa5bfc8e924aa98e92b5198e6a1bd,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_04_2.pdf,2020-04-01,downloaded,79a2ce9d1c198816bed0be63c0f330b3337ec5677d085115675273b018fbacba,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_05_2.pdf,2020-05-01,downloaded,d0ee07b80f32eda9f49978c7e34bee062120f788ee483ae4ba1209f5971d03a5,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_06_2.pdf,2020-06-01,downloaded,d5f7df81ad93d7d661f0eea875e692078b69a4d0c33cc04d881c9e1bf948b38e,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_07_2.pdf,2020-07-01,downloaded,72c97c4e5f7614de62e5bc54743012094aa29ef2168043d5748eafcb0498017c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_08_2.pdf,2020-08-01,downloaded,4f58397217070f9cbefff08cba0a80d73dd9a96a75d3f4e144f6394eee494b28,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_09_2.pdf,2020-09-01,downloaded,1afcb8f4954fe16525a8e6e4f722c73bee74c3d2d5059b49f0acfb45fd7c35ea,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_10_2.pdf,2020-10-01,downloaded,7c883ce5b62bc7fd215a6f9be80ac62449fa2f021b287d633e09c2d7e379d219,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_11_2.pdf,2020-11-01,downloaded,29ea6a6cfdc37d3f2b934b3db8172a32f9f527d3cd13dead64bbbed17a781e4c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2020_12_2.pdf,2020-12-01,downloaded,eab37f9f93481dcbcab10c6f67420a5bc220145cf627e5e6e9beaa2e76a09a6e,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_01_2.pdf,2021-01-01,downloaded,d1ab2864517a2fa98d8124ca5baf4c0ddc4e9f62a168f0be00e0af2087336095,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_02_2.pdf,2021-02-01,downloaded,732095f9bf8d3139e030a834887d286ed6a3dd8d3ea2dda79f29a67637d7f16c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_03_2.pdf,2021-03-01,downloaded,15fd22f671f1d806e823adc567c0f4ef67e87bf33a456e46b2225237019ef873,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_04_2.pdf,2021-04-01,downloaded,ac731504cc56a9e9dc6836bc92a36ef16c4f52f13ecff5206d83ba923d08cee0,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_05_2.pdf,2021-05-01,downloaded,60e8c92053aef9f1e44a357d3ebe41aae26264b341340a7d8f63b3e9f2dac61c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_06_2.pdf,2021-06-01,downloaded,59c53685aa054982209c0c1ef2a819064a827737cf17aabb75d033d489632b53,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_07_2.pdf,2021-07-01,downloaded,47fbf19a14560b66329d508887dc85bb3ee8c8bfb5b45b0416dc9b792d96ae11,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_08_2.pdf,2021-08-01,downloaded,5b2442475136a0882a2fba7366cec02410024ce7ec9ff8efb331089c55b2a96b,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_09_2.pdf,2021-09-01,downloaded,16c67256ee341309ef09acbfacca67c0caa1da4ff3753fd094092b2d9d63f036,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_10_2.pdf,2021-10-01,downloaded,e58ede3704bb23a0a32ff965fecf2d846a260dd100b628af53617d6d0339d8b0,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_11_2.pdf,2021-11-01,downloaded,c76921e8b59a8d0638c66c9a7756c097bb22c6c79d4cad725e538f5222b36b69,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2021_12_2.pdf,2021-12-01,downloaded,4e4efd3050cc61ab092e2a13d6ec4ac46ef7589a44e75d0603b40e3465334451,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_01_2.pdf,2022-01-01,downloaded,b7234b6fd433e4033649376888c161bf2ef535982e1c483c39efc214db22a081,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_02_2.pdf,2022-02-01,downloaded,a3f3d98ce107ebde1b2ffd6a535fdf4cc19c8b5b04a98bd9157bcba3be368eab,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_03_2.pdf,2022-03-01,downloaded,14e08f9212574fc1156b34dfe186d988304ea705a0ca12a4340b3aaf5ddacf93,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_04_2.pdf,2022-04-01,downloaded,1c231a9ffc0feffd8c84c8c2f907dfe06bda4ca1112aff34a5041b63ed8d5a03,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_05_2.pdf,2022-05-01,downloaded,b2aafc2c884b55589a2e108e2ae4d3deb3e9e0ea6c2bfb182bd78faa7f30edd2,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_06_2.pdf,2022-06-01,downloaded,913c8e3b4c8116b8373110d3409c5718f21baa17b54d5850dfdeeb69f0f0c445,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_07_2.pdf,2022-07-01,downloaded,58f62c55e5bb45216da79e437e92d88f9846da904740e5136d77569ded1ff128,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_08_2.pdf,2022-08-01,downloaded,a2420891faf46651cf813e4e8c165281deceb37bfda95a56b1ba4ebf4e250bdc,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_09_2.pdf,2022-09-01,downloaded,5625926a3b35562866acb19985a6ae304b513dcf74175ba5af46c487b44c4099,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_10_2.pdf,2022-10-01,downloaded,db5aa2546e26ced669ae8f11fc55574a0d66de7a192b1037adc431828722c7eb,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_11_2.pdf,2022-11-01,downloaded,ad889f4e710b55bf9449dce2630f8147eebd96532c2273b7fd31517775d8614a,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2022_12_2.pdf,2022-12-01,downloaded,45e84563339ca62e1c9b9106542f0f5e7e1a445b931d34effffb1006306946d0,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_01_2.pdf,2023-01-01,downloaded,9344dd3c07f70b833f1b608201eba615f02fa2552a23592e49c60b27898216f4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_02_2.pdf,2023-02-01,downloaded,374f98f5a40a3e878ec3a8dd32f74e4ba45fbe0664ebc8e86f1645a6f10d2aba,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_02_3.pdf,2023-02-01,downloaded,151d80435ddd64c9d0fdeff37a6a7b36e0334374e5acf977ad82683011bc81c1,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_04_2.pdf,2023-04-01,downloaded,ac2a244689a52b1b283fa7e38f019e118d9b9836ff74eec277d2dae9ab33e020,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_05_2.pdf,2023-05-01,downloaded,3153b8453bed13d125ac6532fd5528d50ac471af6ee8b7f6e41f08045fa92d44,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_06_2.pdf,2023-06-01,downloaded,ce0a721209400bbc841487cf0a79399b693ab0873ff772d7a797754b7eb23d8e,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_07_2.pdf,2023-07-01,downloaded,fba7d45b72f6f9155a492885403739e84a1cb6a108e9bf5e1507ddd7612210c8,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_08_2.pdf,2023-08-01,downloaded,6c9460d314f6c04e0b391e8e1a2799d84687b4c09b3391303fb9c0d485acdaf9,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_09_2.pdf,2023-09-01,downloaded,b4db3914b3705ee0d95dd3664c92eed2c187600527f6a252a7627559b073ea92,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_10_2.pdf,2023-10-01,downloaded,15776fd7e13f8dd3b0d010805efc3ddb6106ad2ee01ad2e11b456645350cbfdc,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_11_2.pdf,2023-11-01,downloaded,5d8a33baf63bbfc133b8d39699e678427e320c65ec013ba8a06494ce0a8512b4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2023_12_2.pdf,2023-12-01,downloaded,88fb03206a78bb13ccc903442273e4aa9b7464e527cd3f86645c5d7d703df0b2,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_01_02.pdf,2024-01-01,downloaded,126d321bdc4a38bf30586a9ab70db396b844bc7244b7d05e5ca69e4eb5742fec,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_02_02.pdf,2024-02-01,downloaded,36fd3d02e3d521c39661b5377c806124a7877802bb3a96d905898f384b525901,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_03_02.pdf,2024-03-01,downloaded,934fa9f7f35fca32a0923636565700b3894c78bf77d3db062a0e0629e497e050,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_04_02.pdf,2024-04-01,downloaded,1b563db066d63e06214fb610c851d0013b84ac73eb2675af7589a28882bab3d8,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_05_02.pdf,2024-05-01,downloaded,d9aa48863d84ec2c23cc9a1efd24115693cc4c78202a262b5cba49a25ff138fa,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_06_02.pdf,2024-06-01,downloaded,183fb18398f3bb0d88adcab334d095d1e64886a16ff19129021a331ba146fed2,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_07_02.pdf,2024-07-01,downloaded,516b5cbba14ef287d24eab3ad943666890da4c9acded91119c6ce36b7183efef,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_08_02.pdf,2024-08-01,downloaded,fe1ff84bd2ab8ba875f7727f7fb564942fbe0d6a4080a3b76ea8bd5855f418fd,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_09_02.pdf,2024-09-01,downloaded,47c9c0caf829d5d73d126716bc9377c616aa51d4fdc30fe185a00009aeee056f,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_10_02.pdf,2024-10-01,downloaded,6c51d968719ce80a459e0f4c6e2c58d6db646c0964b8a617310d2784d6932182,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_11_02.pdf,2024-11-01,downloaded,d9b8004d2380c5cff97898315461375cf16d5ef5eb57853a8bf46dc21c542683,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2024_12_02.pdf,2024-12-01,downloaded,3598be43151157b002d7b74dc3f7d2d8e6c243ba06261f869236bb43ac20d8e0,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_01_02.pdf,2025-01-01,downloaded,2da3555ec039c1d2968271f9e191404fd3381c5552b16d759391b8041aefe4ae,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_02_02.pdf,2025-02-01,downloaded,d62259f6cf1c8d648b3191e212ff9cc841e71f5311ab10fc1a781821eb408d96,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_03_02.pdf,2025-03-01,downloaded,96e72418cef0319b96aa160346201596c1e4c92d0c0623385fa397d6558e6899,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_04_02.pdf,2025-04-01,downloaded,44c72d0f4ce5bd5f6a5130368739beb35de7581bc9a9853d8eacbc02b9392724,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_05_02.pdf,2025-05-01,downloaded,5fb298f09ae90fa18a83472e720a48cdf9571beeed471403100e510da7e0fbf5,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_06_02.pdf,2025-06-01,downloaded,808e7709ae09ec9bae4450a5990123f440aa1acca54136e920af4597fbae8ce1,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_07_02.pdf,2025-07-01,downloaded,cd938bbba2cc7adf703c2571d1fbc6c9179e5ae437c8709721a480d606bd88a9,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_08_02.pdf,2025-08-01,downloaded,548a50828dc0db8061461f0522ac609028610f64ec21c8f9f5cbde38f4397d30,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_09_02.pdf,2025-09-01,downloaded,f11030baad417c40708a65e50848385791d1e3791dd0b1d83402f5b258b4e9d5,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_10_02.pdf,2025-10-01,downloaded,1b598a9410be4e7131663a6e9ea2bef62a3f330b7e1868f108f2cf7f8190cdcc,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_11_02.pdf,2025-11-01,downloaded,48324055aa809d52ca44eb9435207712e6e72aeb40f9d82f3d1113aee925992f,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2025_12_02.pdf,2025-12-01,downloaded,a0be3dcbd504f3774d3facba7882eeccac82b683aeedd5ee1531cb1a05d43eab,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2026_01_02.pdf,2026-01-01,downloaded,0300494d57f731299645439742fda9484d5cc35637ec7902ae5cb59ce696dbe4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2026_02_02.pdf,2026-02-01,downloaded,e7d962b956607b7f0005ad0edda8faad5dc2e397381f003bb3b0e257f01808cd,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2026_02_2.pdf,2026-02-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_02_3.pdf,2026-02-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_03_02.pdf,2026-03-01,downloaded,2127128785ae5266c384b83e0627299d2e37176f01c3d12fe366f40e708a4515,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2026_03_2.pdf,2026-03-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_03_3.pdf,2026-03-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_04_02.pdf,2026-04-01,downloaded,c0645d4fe2ee5254881a8ba029ef954d345531814278d7a6875f012f89229184,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2026_04_2.pdf,2026-04-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_04_3.pdf,2026-04-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_05_02.pdf,2026-05-01,downloaded,09bb4774998a7cec362b38d54689c3a9a0e97543d9e396fd832ad5529d485d0c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2026_05_2.pdf,2026-05-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_05_3.pdf,2026-05-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_06_02.pdf,2026-06-01,downloaded,8c9f0e6ce9b0ebd43a201f13eb827de8fcd73543d8adffee671e058aa187ffb7,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2026_06_2.pdf,2026-06-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_06_3.pdf,2026-06-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_07_02.pdf,2026-07-01,downloaded,996d04f814bd176381a50bbc373c5c55a83e56d491eec05ff369e4df297b5a53,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2026_07_2.pdf,2026-07-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_07_3.pdf,2026-07-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_08_02.pdf,2026-08-01,downloaded,299260bb4bdcf7754fe1d58bd41916368c19e749445d42c3b70e48ac2f1ee630,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2026_08_2.pdf,2026-08-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_08_3.pdf,2026-08-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_09_02.pdf,2026-09-01,downloaded,5b2e267ea04bd82393b96c7ffb8b61d4abc95373d0c422a7f7e664ab5d6b00af,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2026_09_2.pdf,2026-09-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_09_3.pdf,2026-09-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_10_02.pdf,2026-10-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_10_2.pdf,2026-10-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_10_3.pdf,2026-10-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_11_02.pdf,2026-11-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_11_2.pdf,2026-11-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2026_11_3.pdf,2026-11-01,not_found,,
+https://www.fenabrave.org.br/portal/files/2_2003_01_2.pdf,2003-01-01,downloaded,aca31350da89776e1357578fd6928cb37532ca1d91e4b63cfa13a2075479a1a4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2003_02_2.pdf,2003-02-01,downloaded,b90be75221ee26a780a86ac58ba8058aa97219e54f5e05715a4aa1c31b009373,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2003_03_2.pdf,2003-03-01,downloaded,2096d99a66bf7c634bbd688287eab73149088fdacd8279735b1e49d58da0ccb6,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2003_04_2.pdf,2003-04-01,downloaded,2681d716a4ad83eefa180397ac4e8cc153a0f15df32d7d635da982e932e48c94,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2003_05_2.pdf,2003-05-01,downloaded,d3d844fe7bd86f8cbcb64ee0f0ecc8e0a6e11cfa58f6d6a60db93c916674d1be,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2003_06_2.pdf,2003-06-01,downloaded,0fd61b16979e57182265c1cb7f8b2d290a0c2ffcdc8c6d75a572642165b62f54,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2003_07_2.pdf,2003-07-01,downloaded,e568ccdf7f819f8974238e23964272883526e52ca017bdca99e0ea5a1d88f87c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2003_08_2.pdf,2003-08-01,downloaded,03bafe408ff2c5ef73e182f582be43fa1452457278bd127d946521bf713469c9,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2003_09_2.pdf,2003-09-01,downloaded,931baa906e3f8eeb5ba00e0ab1e2e1f1180ba9d4a63e3cb642a6e9f4118df07d,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2003_10_2.pdf,2003-10-01,downloaded,f9630408e95bda21f313e9ea27234e7769e8cb9c66996410f86e450abbaac3d2,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2003_11_2.pdf,2003-11-01,downloaded,f96ae5b0d0845ce750f2e35a0c221921dfa89e92cdbb87e456ea5dd487abc475,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2004_02_2.pdf,2004-02-01,downloaded,da9d68dc50b7fd31ed69554197539dc32dd7108fd903c0c2d821b20fce0881c0,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2004_03_2.pdf,2004-03-01,downloaded,1018e3e53781b327767550e0cbdf16e7cb6a8cf16009b18543024ad55bd2cdbe,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2004_04_2.pdf,2004-04-01,downloaded,d99200feea15ffcda6e7543f2f9e7a2ba452d2ec6e9eb799ba332010c3e62737,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2004_05_2.pdf,2004-05-01,downloaded,83a11c968604189f462268f4205ab1dcc53d9be26f3104e48b1e0381c8b00038,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2004_06_2.pdf,2004-06-01,downloaded,c9158ff611d8092291478f3dcbb0cc1f22024375d5b2c8d48850297a5a696208,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2004_07_2.pdf,2004-07-01,downloaded,b5431a93d637495dfe2c53103528ddcc8618a2a0b6c61a46131ef57b9f8dac1f,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2013_11_2.pdf,2013-11-01,downloaded,0d4413a4c9f6a91238e25aceeb0308dd79a0fe2bb7c649b792d0dfd2c5896f54,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2015_01_2.pdf,2015-01-01,downloaded,577c8623d96e4adf0da13122d62a1edbb8de678caf4359ccd0405920dca37e52,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2015_03_2.pdf,2015-03-01,downloaded,773e481f9dbb5b5b0f987f1e634a516dd10d7f4e2394a530ac58fec1681105b4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2015_04_2.pdf,2015-04-01,downloaded,0bbe4d3feab5e69866ca7dd8b104c0215ac679ece703ebd9ca56fe5f90bd11f5,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2015_06_2.pdf,2015-06-01,downloaded,4866f98ca4715aae3bff3a18920d8be3293f1b9e8e7adbb10a8bd1aacdfd01ae,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2016_09_2.pdf,2016-09-01,downloaded,d8e5aa0780a40b12db90e5081484d44eb1ba79ecb7642ca6baeea7baca7ca8b7,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2016_11_2.pdf,2016-11-01,downloaded,f140de13a9c82c392c0e5c6e397c93c74ea955ef533e75ba36a9c18bfbf258ce,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2016_12_2.pdf,2016-12-01,downloaded,f400dde8c1c073404e33700f1607bb364c1b65003b701ab6b50ae31f75e73147,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/2_2018_06_2.pdf,2018-06-01,downloaded,7d313c7f984c28bb47ef79b326ed6e8db862b7775efc60f40e110512833a2f21,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2004_08_2.pdf,2004-08-01,downloaded,d86238bacd66ed43940ce502e18d7ec3a840052dccedc3dfd4a3b86edd52d7aa,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2004_09_2.pdf,2004-09-01,downloaded,db48f898c892e88533ae7aab49fec3b78bdb61c6744e04029fc43d5f897b02d7,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2004_10_2.pdf,2004-10-01,downloaded,22a331be7ca29b7555f8580ee0e4145a2c9d2bd1cfbd2110fc6556092ad226a6,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2004_11_2.pdf,2004-11-01,downloaded,0a45acce1aaee3b5a2ae1d0c72841f9e0311e6927602863859b0b11079eceaad,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2004_12_2.pdf,2004-12-01,downloaded,0ae85fb5de67dde8e97ff8144a61c991eff293550f8e455c88aff99e347edc9d,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_01_2.pdf,2005-01-01,downloaded,7d12a9b60c1d052acc3eda6d94668bd4d868c8fac3a88c99e0bc508c00601212,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_02_2.pdf,2005-02-01,downloaded,1eccba84fe1f69f11764787dab32e990bacf0535ccf427c32c1a046557295740,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_03_2.pdf,2005-03-01,downloaded,e150cc8cc59936789a0a99129649d627bba311f9317d0970daccf9bc09ddf827,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_04_2.pdf,2005-04-01,downloaded,87b5fd3ec94b7b04b5d43e5ad46b192b334e456573f94aa977cf90f19e9d8280,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_05_2.pdf,2005-05-01,downloaded,f68260fc2becf64b2b8dc3d3b4db426fa1c4fd62e34f79b61f6bba4e42d3b422,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_06_2.pdf,2005-06-01,downloaded,85383ce3987d4b4f010b878a0e91fea04807d2501ae9606496ba31e8d50ee25b,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_07_2.pdf,2005-07-01,downloaded,a0b3d1df051c8e599487a21c67f6c2c3004cbe585cf9bfbea81ac6b610696c06,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_08_2.pdf,2005-08-01,downloaded,369381c01a6f37f4456fd5dd05973c94421439cc146586653490dd8c69958bbd,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_09_2.pdf,2005-09-01,downloaded,8aa37a1ce492a823dbbcc322ca3b54426a17e5d1ccdce7da774b7b08fa6c242f,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_10_2.pdf,2005-10-01,downloaded,c3dce5d220bb20ab48395777816d43a19536f8fe6a9d4c6d851b63cbfc355711,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_11_2.pdf,2005-11-01,downloaded,ef49a528692201220c9b3241be6387691f21dc980b40de0ab4dd5a8b3ce545c6,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2005_12_2.pdf,2005-12-01,downloaded,8d509583f0a4d0409a6bc2742b815fb3a9b8c3ce1801a8f6cd6d252fb9f28fd7,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2006_01_2.pdf,2006-01-01,downloaded,df331d97619649ccb81f6ba608e0462d2e36c971195b74fd397ddf1e426641a5,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2007_04_2.pdf,2007-04-01,downloaded,b2e6dcdb522af9be6e735615c25a46aa44cdbb5a4fc48720ba641e95b6c99024,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2007_09_2.pdf,2007-09-01,downloaded,dbfa8902fdca8a56bc50b8163f1de47e0dd67b99ef43c240308a1e49d9fa99b0,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2009_04_2.pdf,2009-04-01,downloaded,b35f7c0ec8dde5112a8f56098dfafb2086fc9284bc9b178cc54ff052225e8ee8,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2009_06_2.pdf,2009-06-01,downloaded,3eff7485564df5ebc5b4617e2b465d685ba1b3d883f9ff551e849859ccae640c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2013_01_2.pdf,2013-01-01,downloaded,72a405e8fea30fcac28e36117b209f4ea91bd10ab665c92c338b8a6199afdc32,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2013_05_2.pdf,2013-05-01,downloaded,29360528a67728a484ac328f5f4524e44b9ab87c85cbcb5ab9b3b1de2186709c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2013_06_2.pdf,2013-06-01,downloaded,c0976662d33e0181bd09f7bb4ab2bd8066519c8ca23bb652be9981fe92b189ee,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2013_09_2.pdf,2013-09-01,downloaded,4bbf887821ef03ca6c9eddfe3ece1dd1adb3d137126977fe6c97334add4318de,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2013_10_2.pdf,2013-10-01,downloaded,56f0ed1c5ab4c6f845cbb818291113aa8c950a3ace1d33f1becdd72e89b6fea4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2014_01_2.pdf,2014-01-01,downloaded,ada9838660cd950229054f725b247d1ad65cbcc03fc6f396f4070a78bf770a39,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2014_04_2.pdf,2014-04-01,downloaded,b5b381737c96bba2a122b44d01c9d9a4e53a58719ff9ff15515b2619995cbe07,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2014_05_2.pdf,2014-05-01,downloaded,2dadc3493e90514bff50f8d616f3c722765c0a1c9d4aae1720eef77b6cc4e20d,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2014_08_2.pdf,2014-08-01,downloaded,6d7a0cf6207050aadd773ba09e46c8ae856b09faa0e199c32d602a7c3fc8e947,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2014_09_2.pdf,2014-09-01,downloaded,67ba0b2db75be4aac2ab36b89455f530dd817a5ee5b6deb93ddc920d7949c3eb,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2014_10_2.pdf,2014-10-01,downloaded,ea07082d907027771cb1e4fbf0fe07f11079365fa953b5342e7eae0f82e00161,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/3_2014_11_2.pdf,2014-11-01,downloaded,347a06fc8f1eb47da34ef1e14ae16a4f7bf3068ccc7c4f9f6334cc1e575e07ff,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_02_2.pdf,2006-02-01,downloaded,04fa7eae77d8b02d7afb1ce4e66510693c0dd1ea32c9a0756da43c857d31e5bb,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_03_2.pdf,2006-03-01,downloaded,d60cca2643fdf081a1eeea5b305fbd5d5fa7463738fa8d3511395a9a4d335fcd,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_04_2.pdf,2006-04-01,downloaded,473ef655cae09dcfb85374c2601f5b3eabbafc095ec6151bd85b8700278e2ba6,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_05_2.pdf,2006-05-01,downloaded,1f9afbcc662d3cf90632006fec6b3a7867467fa68a0bffaeb7d3acde81a05d11,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_06_2.pdf,2006-06-01,downloaded,760001ab5548a4406e8259ab2ff5e4e9e9a688b9d25a010a891d315454d33959,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_07_2.pdf,2006-07-01,downloaded,356fb48729dcb4dc8cebb905827e96237e274c1dcb672daa3155a4cb6b806366,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_08_2.pdf,2006-08-01,downloaded,5435f91608a409d2e26f8e5534c138ec4666e1034216383c5ccf1026799ec5b6,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_09_2.pdf,2006-09-01,downloaded,fe5b9c7b3ecc62b9033ed81a4d7c57dfe2bed16b30ed60704630c6b265025036,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_10_2.pdf,2006-10-01,downloaded,275415757384e32be96bfbab49f7e7f519f4d8129e03ae0f54edad90dcee42c5,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_11_2.pdf,2006-11-01,downloaded,93256b778eb6b303beedfd9ac032ec45ffd98f8e29a5109dcdccb939bf55022a,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2006_12_2.pdf,2006-12-01,downloaded,98d2d3f66b8156b0e3f895a0e3858ab478db77a0eef23fbb4f477b320c86b5cf,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2007_01_2.pdf,2007-01-01,downloaded,b7472cbfd89a620e5f5819d1673cbdd123f924aef2fb1fc789c6e3fca4c25a4d,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2007_02_2.pdf,2007-02-01,downloaded,8e8f03fb768df5845f2e517002d2c37ff56109b49f06740cfdf1ef46065e9aad,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2007_05_2.pdf,2007-05-01,downloaded,1a372698603ca68863a3ce536eb692ce35f11712ee6619a1a7a648245a9cf1bc,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2007_06_2.pdf,2007-06-01,downloaded,0245cfd7105662c91a38333a19af91bbf530db92ee3807d6442676b94bafcb66,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2007_08_2.pdf,2007-08-01,downloaded,ad214c7513f5e84f2edffe906e65106c87f6f6098a874e566626fbfc1982dec2,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2007_10_2.pdf,2007-10-01,downloaded,29057add18141c7f533ad5cb28ec612d9b05968643de21474b14f5e410e81736,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2007_11_2.pdf,2007-11-01,downloaded,d35c8d9a0690687be5a1f8277bd4864862547b1ef0d273bdc62a0c4602cc9940,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2008_01_2.pdf,2008-01-01,downloaded,7d561c9e81ce10584bcae95007c845391c8ab05daa1ed63b0852f48f48b1533d,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2008_02_2.pdf,2008-02-01,downloaded,26b2a462c4b788e2fcef6d1b33a0d62b4be245c28f779b2c5e6742a288192752,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2008_04_2.pdf,2008-04-01,downloaded,a71bda358ecc6e24ecfd558a883d3fe30fe12ca9907ca54a89e8121ee5ebd642,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2008_05_2.pdf,2008-05-01,downloaded,5182aca2fa718eb64f0d1a3dfce84327dea4a8dca2194be53c67e01920951d5c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2008_06_2.pdf,2008-06-01,downloaded,4381ecb448341c6fd9deb08b18128ca76963db392449d352be86c806e2efd97b,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2008_07_2.pdf,2008-07-01,downloaded,e9b2877272211401a8ea3fb1e0ee76c9dc2e4435fd59bd56d93bcf22658a94be,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2008_08_2.pdf,2008-08-01,downloaded,fe4cd8c359ee690e460e9bbe9a747d776255fe5ce7c187271edf3044459e6075,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2008_09_2.pdf,2008-09-01,downloaded,d6704e7fdd61ba74e49a8cd23cf82a4a8fafa3aba1d18e655ecbf190a1526053,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2008_11_2.pdf,2008-11-01,downloaded,700f5c454ff980c4e421d7b98dced15d049a5f6e738bf3a2d232fcfdbd6942b4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2009_01_2.pdf,2009-01-01,downloaded,66e4abeff97704e915c4f720e651973c4a25d71b2da57116cb3cdade4c845032,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2009_02_2.pdf,2009-02-01,downloaded,ba61e420813572788b34fda964f4a7d0c01e04f9f6262ab11165af5f8ce30c55,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2009_03_2.pdf,2009-03-01,downloaded,94f80dcabba17e60fac8590951593276e383c74cf88e73cb1a2abff57261fe7b,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2009_05_2.pdf,2009-05-01,downloaded,3602cf7714e5c6d79c1324246ee297ba0155e6a3e474184d38601b06c94ebb58,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2009_07_2.pdf,2009-07-01,downloaded,abb4037f8b000a18b2a4f4dd0669410387e48d902cd345caf2f8cb9ae4d42b8c,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2009_08_2.pdf,2009-08-01,downloaded,f871dfe35c03449f0d5b4ae7425375a44ab3b01e9ebf3c04be3834ee6af088b5,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2009_09_2.pdf,2009-09-01,downloaded,df9a3b0f1b864ba59428a6489b2e0cf9e7037fd58e4bd68fafe4057e43fb091e,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2009_11_2.pdf,2009-11-01,downloaded,cbf39b01266880037a3dc234a0f9aeab186578a2ca56afb95d1b6948175612aa,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_01_2.pdf,2010-01-01,downloaded,c088792ea1a7b260f75693874ed53191fbf139393b0452c13a602002435cb5f9,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_02_2.pdf,2010-02-01,downloaded,0a5c20f8183d54141b187243e661f928f21e318f7425fbd1e9db84a66b2a845e,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_03_2.pdf,2010-03-01,downloaded,0c9b8f2b1e8db27f291c05dfbfeb45dc90cd570c77e46551a37f82560efb0e91,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_04_2.pdf,2010-04-01,downloaded,57c8d5c1601c9adbcb5773ec5a6bb9bdecfdf78231da6acecf56bfaa919a0f06,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_05_2.pdf,2010-05-01,downloaded,e78b4a2d7992f37760a1855163b8a78b2309a29c3bcc04558fe2380a28db769b,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_06_2.pdf,2010-06-01,downloaded,a68dfdebe8a76ec0e9e902c433cac7c8253274b40b02d64b503aedbb35e2eea4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_07_2.pdf,2010-07-01,downloaded,8794b8743e650162e0cc579ed135a00026218cf8c8cbe8fa7c2d842101435188,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_08_2.pdf,2010-08-01,downloaded,8e1e81e2fc0b999863ad89be395614bd151723dfcabe87a811ecc85859369964,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_09_2.pdf,2010-09-01,downloaded,737adb9af78644f7a69254621df0932cd0b0744fe0c7e716b5a2b3ccd95a2db0,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_10_2.pdf,2010-10-01,downloaded,3ecf41f33ecd48201e14af0a50b73cc49e439b6641d6aee55fb559111cf7e5c7,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2010_11_2.pdf,2010-11-01,downloaded,0703d072e52e4bff141628be9419f990357940b41d9afca10efd805034d187d7,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2011_01_2.pdf,2011-01-01,downloaded,7fc255a36625b416941e7faedc007e4ca3b48a7a2680b71e51898fd269f271b3,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2011_03_2.pdf,2011-03-01,downloaded,eb7b41a0fb732a92951eee83f769679691ef97bb7f60c4a630925f53ff015360,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2011_04_2.pdf,2011-04-01,downloaded,e011bd1c4194c5ff744b086ee61a3293a04e1001767e38578795aa6062c7a7ef,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2011_05_2.pdf,2011-05-01,downloaded,8e528e04e6b69ef7805f0d60da84d6bf203f4d655e46e299850b076bbae74238,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2011_07_2.pdf,2011-07-01,downloaded,93d56598a4e593fb9c5b6cec27b482946edaf19dfeaea28c696590d2a63cb50f,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2011_08_2.pdf,2011-08-01,downloaded,d1be9a7d280c8f8d035a91b60939dd511219d8e0329e4bd107d5c3b5504d2636,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2011_09_2.pdf,2011-09-01,downloaded,8d2ab2cf1cc24dd2ad96745a382f3d0460521ef40d8a99d00452cbe50e42d0bd,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2011_12_2.pdf,2011-12-01,downloaded,30da14ed0f64f7381796cc637f9bcd53130aeada33dde06cc069ab352e355297,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2012_07_2.pdf,2012-07-01,downloaded,8c57a0c9164972daed2c05967d0c06efd1eb6dc493f98576e828c332084d5a35,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2013_03_2.pdf,2013-03-01,downloaded,be25919e01dbe962196f35688bb0f97435d8df00f8be26f74f7eed7f3ceb7992,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2013_07_2.pdf,2013-07-01,downloaded,e2f5f67b1fec5af9390cf8787366733c0961039423a476aad806d671f8ac67bb,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2014_02_2.pdf,2014-02-01,downloaded,4abe668308bc47216dc69426d3f8d4bb8ef0d1d9e68fa1a871287c385c3de495,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2014_03_2.pdf,2014-03-01,downloaded,5f0b57a2d37da7e3800aa36edd846c7923db5580416410b8163ffdbaadc22862,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2014_06_2.pdf,2014-06-01,downloaded,da90226b17f8347a0c81cc64fdef17fb2b849c852b2acd6dd970475f96c80e27,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2014_07_2.pdf,2014-07-01,downloaded,a7e733f45d9477cdc55f033bdba9b149172ccf6cbea277c5348fee8abdaea08a,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/4_2014_12_2.pdf,2014-12-01,downloaded,f30d8ecc98a83d20fb1c7e92f8566450e14cf3551b0b8de7ce6b4fd011d93d4a,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2007_03_2.pdf,2007-03-01,downloaded,bec85b9a930163c0589569e6170ba18b90e7b915632986e8eda4ccd94fea864f,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2007_07_2.pdf,2007-07-01,downloaded,96755578800c3ed58858facb48707e61010e2a8ba4da91c440485e8e096961bf,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2007_12_2.pdf,2007-12-01,downloaded,6a9a8611070030bbc035d39240dd27eb04ac80e3c064da9b4893f6270c7af24b,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2008_10_2.pdf,2008-10-01,downloaded,b81d8255f75389fe5f9f54f87b6a51c2877ceedc33764364b14cf6bb6a6e5a1d,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2008_12_2.pdf,2008-12-01,downloaded,0e41579f14bb83b932f564e89178ff93583279a218bb6be95ce711e624a291a1,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2009_10_2.pdf,2009-10-01,downloaded,cfd6d513d791a824b46990e22acdc074ff50ebae8d2da4ec8951ae220a63e911,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2009_12_2.pdf,2009-12-01,downloaded,68e47d5ab0d59e9bacfd85dce06b9b0d21f8f289a94646525143bfffae38dfae,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2010_12_2.pdf,2010-12-01,downloaded,a125a77ef881e0237e9ba812925dba6d424df8012359dcc5f882c2a567aae69e,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2011_02_2.pdf,2011-02-01,downloaded,0adb366a6cffab82c31a48550d13d501691f210dece0b5f927c769d2918ca2f8,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2011_06_2.pdf,2011-06-01,downloaded,b95f2379b2329e276e66967ad5d7aded0c450e6734c72badcc14126d2244f296,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2011_10_2.pdf,2011-10-01,downloaded,894d40125a71a5e0283d8a439afd44b1870af9535f214665a505be0fadfb2ba0,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2011_11_2.pdf,2011-11-01,downloaded,303c628a422f33377c9edffb4ee0a658529dd2fb8994e5097c9e66c1b018fa7e,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2012_01_2.pdf,2012-01-01,downloaded,d61eb13e17ae8d3bba390b616d55b82c5420a687c8fb8b82bfd73493518f3f69,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2012_02_2.pdf,2012-02-01,downloaded,05b63bfa4b2e84b5a4f8f631270673b24f3c85e12636ef08be8bccbadca37569,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2012_03_2.pdf,2012-03-01,downloaded,8ad58af4a75bb4e2a6b17a4129eb8007dcbe8bb46c4e1c376c5ab8778a402370,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2012_04_2.pdf,2012-04-01,downloaded,6c3e34b186c7c05051b7a873080cd1b6b714454df48ad71936f88e4c9a866216,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2012_05_2.pdf,2012-05-01,downloaded,28dc1d184309363e7f8e426d365a1e3ee56ffc2aef1bfe25c2552285b825fc78,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2012_10_2.pdf,2012-10-01,downloaded,a23a7f64f7cefbbb78670f592b10c33f7d08d3c991ddee7bde92237922c46a94,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2012_11_2.pdf,2012-11-01,downloaded,10b8d15fe9d89656ec3a1ea2da7384c9e53519d63b4abc6fe0d9f7f132bfafc4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2013_02_2.pdf,2013-02-01,downloaded,4691d87544176e878059e3f64c57513dea686bf19d7774fc52bbf4844fa05f6e,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2013_04_2.pdf,2013-04-01,downloaded,11c19527dace24e91899be3568d8a58e89c495c3ac66798ef7c35526496f701f,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/5_2013_08_2.pdf,2013-08-01,downloaded,d120f540df03e808932c7f30c2b7f7e6c3d8ee9c9772983e23be18d3e98ca26f,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/6_2012_06_2.pdf,2012-06-01,downloaded,23e400737c28807dc592243e722746db47031110f9655ae7048df2c7bc61e2bb,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/6_2012_08_2.pdf,2012-08-01,downloaded,9b78b8c08ba0bf9e7303e40203876b43eff6d0df5e966072ed524c2deb6d2440,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/6_2012_12_2.pdf,2012-12-01,downloaded,3d6a058baa7f1140add203140e1f90d2b1109dfea50a7df2590f5cded1fa86a4,2026-11-20T13:46:19.855Z
+https://www.fenabrave.org.br/portal/files/6_2013_12_2.pdf,2013-12-01,downloaded,791687d4c327bf27507d135e22f4f14b2507026f25b7de6aae4683e988f7a840,2026-11-20T13:46:19.855Z
+## bronze (source_path, file_modification_time, _ingested_at)
+source_path,file_modification_time,_ingested_at
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2003_12_2.pdf,2026-11-20T13:37:00.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_01_2.pdf,2026-11-20T13:36:54.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_02_2.pdf,2026-11-20T13:36:54.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_03_2.pdf,2026-11-20T13:36:54.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_04_2.pdf,2026-11-20T13:36:54.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_05_2.pdf,2026-11-20T13:36:56.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_06_2.pdf,2026-11-20T13:36:56.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_07_2.pdf,2026-11-20T13:36:56.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_08_2.pdf,2026-11-20T13:37:05.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_09_2.pdf,2026-11-20T13:36:58.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_10_2.pdf,2026-11-20T13:36:58.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_11_2.pdf,2026-11-20T13:37:04.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2004_01_2.pdf,2026-11-20T13:37:00.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_02_2.pdf,2026-11-20T13:37:02.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_03_2.pdf,2026-11-20T13:37:02.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_04_2.pdf,2026-11-20T13:37:04.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_05_2.pdf,2026-11-20T13:37:04.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_06_2.pdf,2026-11-20T13:37:14.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_07_2.pdf,2026-11-20T13:37:07.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/3_2004_08_2.pdf,2026-11-20T13:37:21.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/3_2004_09_2.pdf,2026-11-20T13:37:13.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/3_2004_10_2.pdf,2026-11-20T13:37:16.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/3_2004_11_2.pdf,2026-11-20T13:37:25.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/3_2004_12_2.pdf,2026-11-20T13:37:26.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_01_2.pdf,2026-11-20T13:37:26.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_02_2.pdf,2026-11-20T13:37:27.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_03_2.pdf,2026-11-20T13:37:30.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_04_2.pdf,2026-11-20T13:37:38.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_05_2.pdf,2026-11-20T13:37:52.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_06_2.pdf,2026-11-20T13:37:36.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_07_2.pdf,2026-11-20T13:37:38.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_08_2.pdf,2026-11-20T13:37:45.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_09_2.pdf,2026-11-20T13:37:49.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_10_2.pdf,2026-11-20T13:37:47.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_11_2.pdf,2026-11-20T13:37:54.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_12_2.pdf,2026-11-20T13:37:50.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/3_2006_01_2.pdf,2026-11-20T13:38:02.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_02_2.pdf,2026-11-20T13:38:01.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_03_2.pdf,2026-11-20T13:38:01.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_04_2.pdf,2026-11-20T13:38:01.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_05_2.pdf,2026-11-20T13:38:11.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_06_2.pdf,2026-11-20T13:38:10.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_07_2.pdf,2026-11-20T13:38:10.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_08_2.pdf,2026-11-20T13:38:22.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_09_2.pdf,2026-11-20T13:38:17.000Z,2026-11-20T13:48:20.396Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_10_2.pdf,2026-11-20T13:38:19.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_11_2.pdf,2026-11-20T13:38:17.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_12_2.pdf,2026-11-20T13:38:32.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/3_2007_04_2.pdf,2026-11-20T13:38:38.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/3_2007_09_2.pdf,2026-11-20T13:38:52.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_01_2.pdf,2026-11-20T13:38:33.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_02_2.pdf,2026-11-20T13:38:28.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_05_2.pdf,2026-11-20T13:38:37.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_06_2.pdf,2026-11-20T13:38:41.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_08_2.pdf,2026-11-20T13:38:44.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_10_2.pdf,2026-11-20T13:38:51.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_11_2.pdf,2026-11-20T13:38:52.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/5_2007_03_2.pdf,2026-11-20T13:38:28.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/5_2007_07_2.pdf,2026-11-20T13:38:43.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/5_2007_12_2.pdf,2026-11-20T13:38:50.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/2008_03_2.pdf,2026-11-20T13:39:08.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_01_2.pdf,2026-11-20T13:39:06.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_02_2.pdf,2026-11-20T13:39:00.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_04_2.pdf,2026-11-20T13:39:01.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_05_2.pdf,2026-11-20T13:39:08.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_06_2.pdf,2026-11-20T13:39:10.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_07_2.pdf,2026-11-20T13:39:15.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_08_2.pdf,2026-11-20T13:39:20.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_09_2.pdf,2026-11-20T13:39:16.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_11_2.pdf,2026-11-20T13:39:23.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/5_2008_10_2.pdf,2026-11-20T13:39:17.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/5_2008_12_2.pdf,2026-11-20T13:39:34.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/3_2009_04_2.pdf,2026-11-20T13:39:33.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/3_2009_06_2.pdf,2026-11-20T13:39:40.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_01_2.pdf,2026-11-20T13:39:26.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_02_2.pdf,2026-11-20T13:39:29.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_03_2.pdf,2026-11-20T13:39:31.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_05_2.pdf,2026-11-20T13:39:37.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_07_2.pdf,2026-11-20T13:39:39.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_08_2.pdf,2026-11-20T13:39:40.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_09_2.pdf,2026-11-20T13:39:49.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_11_2.pdf,2026-11-20T13:39:47.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/5_2009_10_2.pdf,2026-11-20T13:39:58.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/5_2009_12_2.pdf,2026-11-20T13:39:48.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_01_2.pdf,2026-11-20T13:39:55.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_02_2.pdf,2026-11-20T13:39:56.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_03_2.pdf,2026-11-20T13:39:57.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_04_2.pdf,2026-11-20T13:40:04.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_05_2.pdf,2026-11-20T13:40:10.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_06_2.pdf,2026-11-20T13:40:06.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_07_2.pdf,2026-11-20T13:40:05.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_08_2.pdf,2026-11-20T13:40:20.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_09_2.pdf,2026-11-20T13:40:13.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_10_2.pdf,2026-11-20T13:40:15.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_11_2.pdf,2026-11-20T13:40:19.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/5_2010_12_2.pdf,2026-11-20T13:40:26.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_01_2.pdf,2026-11-20T13:40:23.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_03_2.pdf,2026-11-20T13:40:27.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_04_2.pdf,2026-11-20T13:40:32.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_05_2.pdf,2026-11-20T13:40:36.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_07_2.pdf,2026-11-20T13:40:36.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_08_2.pdf,2026-11-20T13:40:40.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_09_2.pdf,2026-11-20T13:40:44.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_12_2.pdf,2026-11-20T13:40:47.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/5_2011_02_2.pdf,2026-11-20T13:40:27.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/5_2011_06_2.pdf,2026-11-20T13:40:36.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/5_2011_10_2.pdf,2026-11-20T13:40:44.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/5_2011_11_2.pdf,2026-11-20T13:40:43.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/2012_09_2.pdf,2026-11-20T13:41:08.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/4_2012_07_2.pdf,2026-11-20T13:41:05.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_01_2.pdf,2026-11-20T13:40:59.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_02_2.pdf,2026-11-20T13:40:53.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_03_2.pdf,2026-11-20T13:40:53.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_04_2.pdf,2026-11-20T13:40:56.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_05_2.pdf,2026-11-20T13:41:03.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_10_2.pdf,2026-11-20T13:41:12.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_11_2.pdf,2026-11-20T13:41:13.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/6_2012_06_2.pdf,2026-11-20T13:41:01.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/6_2012_08_2.pdf,2026-11-20T13:41:09.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/6_2012_12_2.pdf,2026-11-20T13:41:16.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/2_2013_11_2.pdf,2026-11-20T13:41:40.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/3_2013_01_2.pdf,2026-11-20T13:41:18.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/3_2013_05_2.pdf,2026-11-20T13:41:32.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/3_2013_06_2.pdf,2026-11-20T13:41:28.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/3_2013_09_2.pdf,2026-11-20T13:41:36.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/3_2013_10_2.pdf,2026-11-20T13:41:40.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/4_2013_03_2.pdf,2026-11-20T13:41:26.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/4_2013_07_2.pdf,2026-11-20T13:41:37.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/5_2013_02_2.pdf,2026-11-20T13:41:18.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/5_2013_04_2.pdf,2026-11-20T13:41:26.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/5_2013_08_2.pdf,2026-11-20T13:41:39.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/6_2013_12_2.pdf,2026-11-20T13:41:45.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_01_2.pdf,2026-11-20T13:41:47.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_04_2.pdf,2026-11-20T13:41:51.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_05_2.pdf,2026-11-20T13:41:53.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_08_2.pdf,2026-11-20T13:42:02.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_09_2.pdf,2026-11-20T13:42:02.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_10_2.pdf,2026-11-20T13:42:03.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_11_2.pdf,2026-11-20T13:42:11.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/4_2014_02_2.pdf,2026-11-20T13:41:43.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/4_2014_03_2.pdf,2026-11-20T13:42:01.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/4_2014_06_2.pdf,2026-11-20T13:41:56.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/4_2014_07_2.pdf,2026-11-20T13:42:00.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/4_2014_12_2.pdf,2026-11-20T13:42:11.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_02_2.pdf,2026-11-20T13:42:09.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_05_2.pdf,2026-11-20T13:42:14.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_07_2.pdf,2026-11-20T13:42:16.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_08_2.pdf,2026-11-20T13:42:27.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_09_2.pdf,2026-11-20T13:42:20.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_10_2.pdf,2026-11-20T13:42:19.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_11_2.pdf,2026-11-20T13:42:22.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_12_2.pdf,2026-11-20T13:42:24.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2_2015_01_2.pdf,2026-11-20T13:42:10.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2_2015_03_2.pdf,2026-11-20T13:42:12.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2_2015_04_2.pdf,2026-11-20T13:42:14.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2_2015_06_2.pdf,2026-11-20T13:42:19.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_01_2.pdf,2026-11-20T13:42:25.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_02_2.pdf,2026-11-20T13:42:25.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_03_2.pdf,2026-11-20T13:42:27.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_04_2.pdf,2026-11-20T13:42:28.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_05_2.pdf,2026-11-20T13:42:28.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_06_2.pdf,2026-11-20T13:42:30.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_07_2.pdf,2026-11-20T13:42:31.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_08_2.pdf,2026-11-20T13:42:31.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_10_2.pdf,2026-11-20T13:42:33.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2_2016_09_2.pdf,2026-11-20T13:42:31.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2_2016_11_2.pdf,2026-11-20T13:42:35.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2_2016_12_2.pdf,2026-11-20T13:42:34.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_01_2.pdf,2026-11-20T13:42:35.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_02_2.pdf,2026-11-20T13:42:37.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_03_2.pdf,2026-11-20T13:42:37.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_04_2.pdf,2026-11-20T13:42:37.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_05_2.pdf,2026-11-20T13:42:39.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_06_2.pdf,2026-11-20T13:42:39.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_07_2.pdf,2026-11-20T13:42:42.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_08_2.pdf,2026-11-20T13:42:40.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_09_2.pdf,2026-11-20T13:42:42.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_10_2.pdf,2026-11-20T13:42:42.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_11_2.pdf,2026-11-20T13:42:43.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_12_2.pdf,2026-11-20T13:42:44.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_01_2.pdf,2026-11-20T13:42:45.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_02_2.pdf,2026-11-20T13:42:45.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_03_2.pdf,2026-11-20T13:42:45.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_04_2.pdf,2026-11-20T13:42:47.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_05_2.pdf,2026-11-20T13:43:01.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_07_2.pdf,2026-11-20T13:42:57.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_08_2.pdf,2026-11-20T13:42:58.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_09_2.pdf,2026-11-20T13:43:00.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_10_2.pdf,2026-11-20T13:43:16.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_11_2.pdf,2026-11-20T13:43:11.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_12_2.pdf,2026-11-20T13:43:24.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2_2018_06_2.pdf,2026-11-20T13:43:00.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_01_2.pdf,2026-11-20T13:43:10.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_02_2.pdf,2026-11-20T13:43:30.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_03_2.pdf,2026-11-20T13:43:25.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_04_2.pdf,2026-11-20T13:43:32.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_05_2.pdf,2026-11-20T13:43:42.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_06_2.pdf,2026-11-20T13:43:33.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_07_2.pdf,2026-11-20T13:43:46.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_08_2.pdf,2026-11-20T13:43:44.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_09_2.pdf,2026-11-20T13:43:47.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_10_2.pdf,2026-11-20T13:44:02.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_11_2.pdf,2026-11-20T13:44:02.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_12_2.pdf,2026-11-20T13:43:48.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_01_2.pdf,2026-11-20T13:43:49.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_02_2.pdf,2026-11-20T13:43:50.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_03_2.pdf,2026-11-20T13:44:05.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_04_2.pdf,2026-11-20T13:43:54.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_05_2.pdf,2026-11-20T13:43:56.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_06_2.pdf,2026-11-20T13:43:59.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_07_2.pdf,2026-11-20T13:44:01.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_08_2.pdf,2026-11-20T13:44:03.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_09_2.pdf,2026-11-20T13:44:05.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_10_2.pdf,2026-11-20T13:44:05.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_11_2.pdf,2026-11-20T13:44:06.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_12_2.pdf,2026-11-20T13:44:08.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_01_2.pdf,2026-11-20T13:44:07.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_02_2.pdf,2026-11-20T13:44:08.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_03_2.pdf,2026-11-20T13:44:13.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_04_2.pdf,2026-11-20T13:44:10.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_05_2.pdf,2026-11-20T13:44:10.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_06_2.pdf,2026-11-20T13:44:47.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_07_2.pdf,2026-11-20T13:44:12.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_08_2.pdf,2026-11-20T13:44:12.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_09_2.pdf,2026-11-20T13:44:15.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_10_2.pdf,2026-11-20T13:44:15.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_11_2.pdf,2026-11-20T13:44:17.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_12_2.pdf,2026-11-20T13:44:22.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_01_2.pdf,2026-11-20T13:44:24.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_02_2.pdf,2026-11-20T13:44:24.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_03_2.pdf,2026-11-20T13:44:28.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_04_2.pdf,2026-11-20T13:44:29.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_05_2.pdf,2026-11-20T13:44:31.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_06_2.pdf,2026-11-20T13:44:37.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_07_2.pdf,2026-11-20T13:44:35.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_08_2.pdf,2026-11-20T13:44:36.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_09_2.pdf,2026-11-20T13:44:45.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_10_2.pdf,2026-11-20T13:44:42.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_11_2.pdf,2026-11-20T13:44:42.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_12_2.pdf,2026-11-20T13:44:47.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_01_2.pdf,2026-11-20T13:44:48.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_02_2.pdf,2026-11-20T13:44:50.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_02_3.pdf,2026-11-20T13:44:52.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_04_2.pdf,2026-11-20T13:44:52.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_05_2.pdf,2026-11-20T13:44:55.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_06_2.pdf,2026-11-20T13:44:55.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_07_2.pdf,2026-11-20T13:44:56.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_08_2.pdf,2026-11-20T13:44:58.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_09_2.pdf,2026-11-20T13:45:15.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_10_2.pdf,2026-11-20T13:45:09.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_11_2.pdf,2026-11-20T13:45:02.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_12_2.pdf,2026-11-20T13:45:04.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_01_02.pdf,2026-11-20T13:45:09.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_02_02.pdf,2026-11-20T13:45:44.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_03_02.pdf,2026-11-20T13:45:25.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_04_02.pdf,2026-11-20T13:45:14.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_05_02.pdf,2026-11-20T13:45:20.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_06_02.pdf,2026-11-20T13:45:21.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_07_02.pdf,2026-11-20T13:45:26.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_08_02.pdf,2026-11-20T13:45:27.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_09_02.pdf,2026-11-20T13:45:32.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_10_02.pdf,2026-11-20T13:45:34.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_11_02.pdf,2026-11-20T13:45:32.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_12_02.pdf,2026-11-20T13:45:37.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_01_02.pdf,2026-11-20T13:45:40.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_02_02.pdf,2026-11-20T13:45:42.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_03_02.pdf,2026-11-20T13:45:49.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_04_02.pdf,2026-11-20T13:45:46.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_05_02.pdf,2026-11-20T13:45:54.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_06_02.pdf,2026-11-20T13:45:51.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_07_02.pdf,2026-11-20T13:45:52.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_08_02.pdf,2026-11-20T13:45:55.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_09_02.pdf,2026-11-20T13:45:57.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_10_02.pdf,2026-11-20T13:46:01.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_11_02.pdf,2026-11-20T13:46:01.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_12_02.pdf,2026-11-20T13:46:03.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_01_02.pdf,2026-11-20T13:46:08.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_02_02.pdf,2026-11-20T13:46:07.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_03_02.pdf,2026-11-20T13:46:10.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_04_02.pdf,2026-11-20T13:46:10.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_05_02.pdf,2026-11-20T13:46:12.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_06_02.pdf,2026-11-20T13:46:15.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_07_02.pdf,2026-11-20T13:46:17.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_08_02.pdf,2026-11-20T13:46:17.000Z,2026-11-20T13:48:21.457Z
+dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_09_02.pdf,2026-11-20T13:46:19.000Z,2026-11-20T13:48:21.457Z
+## volume files (path, size, modification_time)
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025
+DIRECTORY 0 1969-12-31T21:00:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026
+FILE      299259 2026-11-20T10:36:58Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_10_2.pdf
+FILE      4568275 2026-11-20T10:37:05Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_08_2.pdf
+FILE      4587833 2026-11-20T10:37:04Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_11_2.pdf
+FILE      666045 2026-11-20T10:36:54Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_01_2.pdf
+FILE      670903 2026-11-20T10:36:54Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_02_2.pdf
+FILE      674200 2026-11-20T10:36:54Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_04_2.pdf
+FILE      674660 2026-11-20T10:36:54Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_03_2.pdf
+FILE      677051 2026-11-20T10:36:56Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_05_2.pdf
+FILE      678080 2026-11-20T10:36:56Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_06_2.pdf
+FILE      679997 2026-11-20T10:36:56Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_07_2.pdf
+FILE      684336 2026-11-20T10:36:58Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2_2003_09_2.pdf
+FILE      688167 2026-11-20T10:37:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2003/2003_12_2.pdf
+FILE      4550292 2026-11-20T10:37:26Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/3_2004_12_2.pdf
+FILE      4567989 2026-11-20T10:37:25Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/3_2004_11_2.pdf
+FILE      4572493 2026-11-20T10:37:16Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/3_2004_10_2.pdf
+FILE      4572902 2026-11-20T10:37:14Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_06_2.pdf
+FILE      4584935 2026-11-20T10:37:13Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/3_2004_09_2.pdf
+FILE      4587226 2026-11-20T10:37:21Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/3_2004_08_2.pdf
+FILE      524653 2026-11-20T10:37:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2004_01_2.pdf
+FILE      672732 2026-11-20T10:37:02Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_02_2.pdf
+FILE      673971 2026-11-20T10:37:02Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_03_2.pdf
+FILE      675648 2026-11-20T10:37:04Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_04_2.pdf
+FILE      677946 2026-11-20T10:37:04Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_05_2.pdf
+FILE      683450 2026-11-20T10:37:07Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2004/2_2004_07_2.pdf
+FILE      1272432 2026-11-20T10:37:50Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_12_2.pdf
+FILE      3293001 2026-11-20T10:37:30Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_03_2.pdf
+FILE      4536818 2026-11-20T10:37:26Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_01_2.pdf
+FILE      4552004 2026-11-20T10:37:27Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_02_2.pdf
+FILE      4569463 2026-11-20T10:37:36Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_06_2.pdf
+FILE      4570777 2026-11-20T10:37:45Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_08_2.pdf
+FILE      4575192 2026-11-20T10:37:38Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_04_2.pdf
+FILE      4576326 2026-11-20T10:37:49Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_09_2.pdf
+FILE      4583044 2026-11-20T10:37:54Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_11_2.pdf
+FILE      4583421 2026-11-20T10:37:52Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_05_2.pdf
+FILE      4584641 2026-11-20T10:37:47Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_10_2.pdf
+FILE      4596607 2026-11-20T10:37:38Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2005/3_2005_07_2.pdf
+FILE      4550300 2026-11-20T10:38:02Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/3_2006_01_2.pdf
+FILE      4559617 2026-11-20T10:38:01Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_03_2.pdf
+FILE      4573005 2026-11-20T10:38:01Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_02_2.pdf
+FILE      4574701 2026-11-20T10:38:10Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_06_2.pdf
+FILE      4580823 2026-11-20T10:38:32Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_12_2.pdf
+FILE      4582192 2026-11-20T10:38:19Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_10_2.pdf
+FILE      4586459 2026-11-20T10:38:10Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_07_2.pdf
+FILE      4586622 2026-11-20T10:38:01Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_04_2.pdf
+FILE      4593544 2026-11-20T10:38:22Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_08_2.pdf
+FILE      4596337 2026-11-20T10:38:17Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_11_2.pdf
+FILE      4601695 2026-11-20T10:38:11Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_05_2.pdf
+FILE      4607078 2026-11-20T10:38:17Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2006/4_2006_09_2.pdf
+FILE      4570538 2026-11-20T10:38:28Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/5_2007_03_2.pdf
+FILE      4572534 2026-11-20T10:38:43Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/5_2007_07_2.pdf
+FILE      4573964 2026-11-20T10:38:37Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_05_2.pdf
+FILE      4574123 2026-11-20T10:38:28Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_02_2.pdf
+FILE      4575583 2026-11-20T10:38:41Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_06_2.pdf
+FILE      4585442 2026-11-20T10:38:38Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/3_2007_04_2.pdf
+FILE      4593251 2026-11-20T10:38:33Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_01_2.pdf
+FILE      4599171 2026-11-20T10:38:52Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/3_2007_09_2.pdf
+FILE      4602643 2026-11-20T10:38:50Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/5_2007_12_2.pdf
+FILE      4609933 2026-11-20T10:38:52Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_11_2.pdf
+FILE      4613886 2026-11-20T10:38:44Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_08_2.pdf
+FILE      4620415 2026-11-20T10:38:51Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2007/4_2007_10_2.pdf
+FILE      4581373 2026-11-20T10:39:20Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_08_2.pdf
+FILE      4582427 2026-11-20T10:39:15Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_07_2.pdf
+FILE      4584111 2026-11-20T10:39:16Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_09_2.pdf
+FILE      4590613 2026-11-20T10:39:06Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_01_2.pdf
+FILE      4593346 2026-11-20T10:39:10Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_06_2.pdf
+FILE      4603960 2026-11-20T10:39:34Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/5_2008_12_2.pdf
+FILE      4610901 2026-11-20T10:39:01Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_04_2.pdf
+FILE      4611355 2026-11-20T10:39:08Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_05_2.pdf
+FILE      4618335 2026-11-20T10:39:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_02_2.pdf
+FILE      4621519 2026-11-20T10:39:23Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/4_2008_11_2.pdf
+FILE      4632758 2026-11-20T10:39:17Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/5_2008_10_2.pdf
+FILE      7122678 2026-11-20T10:39:08Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2008/2008_03_2.pdf
+FILE      4591153 2026-11-20T10:39:26Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_01_2.pdf
+FILE      4596022 2026-11-20T10:39:31Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_03_2.pdf
+FILE      4596200 2026-11-20T10:39:37Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_05_2.pdf
+FILE      4597815 2026-11-20T10:39:33Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/3_2009_04_2.pdf
+FILE      4598374 2026-11-20T10:39:48Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/5_2009_12_2.pdf
+FILE      4600929 2026-11-20T10:39:29Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_02_2.pdf
+FILE      4607010 2026-11-20T10:39:40Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/3_2009_06_2.pdf
+FILE      4613369 2026-11-20T10:39:40Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_08_2.pdf
+FILE      4617044 2026-11-20T10:39:39Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_07_2.pdf
+FILE      4622934 2026-11-20T10:39:49Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_09_2.pdf
+FILE      4628191 2026-11-20T10:39:58Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/5_2009_10_2.pdf
+FILE      4637701 2026-11-20T10:39:47Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2009/4_2009_11_2.pdf
+FILE      4629796 2026-11-20T10:40:05Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_07_2.pdf
+FILE      4632286 2026-11-20T10:40:19Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_11_2.pdf
+FILE      4639437 2026-11-20T10:40:26Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/5_2010_12_2.pdf
+FILE      4643572 2026-11-20T10:39:56Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_02_2.pdf
+FILE      4643941 2026-11-20T10:40:06Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_06_2.pdf
+FILE      4658899 2026-11-20T10:39:55Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_01_2.pdf
+FILE      4663701 2026-11-20T10:39:57Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_03_2.pdf
+FILE      4668889 2026-11-20T10:40:13Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_09_2.pdf
+FILE      4669203 2026-11-20T10:40:15Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_10_2.pdf
+FILE      4669215 2026-11-20T10:40:20Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_08_2.pdf
+FILE      4673847 2026-11-20T10:40:04Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_04_2.pdf
+FILE      4679347 2026-11-20T10:40:10Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2010/4_2010_05_2.pdf
+FILE      4630621 2026-11-20T10:40:27Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/5_2011_02_2.pdf
+FILE      4639057 2026-11-20T10:40:47Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_12_2.pdf
+FILE      4641060 2026-11-20T10:40:40Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_08_2.pdf
+FILE      4646160 2026-11-20T10:40:44Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_09_2.pdf
+FILE      4646763 2026-11-20T10:40:36Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_07_2.pdf
+FILE      4649195 2026-11-20T10:40:32Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_04_2.pdf
+FILE      4650036 2026-11-20T10:40:36Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_05_2.pdf
+FILE      4658034 2026-11-20T10:40:27Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_03_2.pdf
+FILE      4660376 2026-11-20T10:40:43Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/5_2011_11_2.pdf
+FILE      4664203 2026-11-20T10:40:36Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/5_2011_06_2.pdf
+FILE      4666004 2026-11-20T10:40:23Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/4_2011_01_2.pdf
+FILE      4684389 2026-11-20T10:40:44Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2011/5_2011_10_2.pdf
+FILE      2914370 2026-11-20T10:41:08Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/2012_09_2.pdf
+FILE      4616799 2026-11-20T10:40:59Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_01_2.pdf
+FILE      4647723 2026-11-20T10:40:53Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_03_2.pdf
+FILE      4665458 2026-11-20T10:40:56Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_04_2.pdf
+FILE      4667652 2026-11-20T10:40:53Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_02_2.pdf
+FILE      4675148 2026-11-20T10:41:12Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_10_2.pdf
+FILE      4675610 2026-11-20T10:41:03Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_05_2.pdf
+FILE      4675852 2026-11-20T10:41:05Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/4_2012_07_2.pdf
+FILE      4678577 2026-11-20T10:41:09Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/6_2012_08_2.pdf
+FILE      4683259 2026-11-20T10:41:13Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/5_2012_11_2.pdf
+FILE      4702261 2026-11-20T10:41:16Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/6_2012_12_2.pdf
+FILE      4715165 2026-11-20T10:41:01Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2012/6_2012_06_2.pdf
+FILE      1731221 2026-11-20T10:41:40Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/2_2013_11_2.pdf
+FILE      4626359 2026-11-20T10:41:26Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/4_2013_03_2.pdf
+FILE      4640864 2026-11-20T10:41:18Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/5_2013_02_2.pdf
+FILE      4642401 2026-11-20T10:41:26Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/5_2013_04_2.pdf
+FILE      4644885 2026-11-20T10:41:36Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/3_2013_09_2.pdf
+FILE      4645621 2026-11-20T10:41:18Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/3_2013_01_2.pdf
+FILE      4659813 2026-11-20T10:41:37Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/4_2013_07_2.pdf
+FILE      4660336 2026-11-20T10:41:32Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/3_2013_05_2.pdf
+FILE      4665756 2026-11-20T10:41:28Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/3_2013_06_2.pdf
+FILE      4671272 2026-11-20T10:41:40Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/3_2013_10_2.pdf
+FILE      4674857 2026-11-20T10:41:45Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/6_2013_12_2.pdf
+FILE      4676596 2026-11-20T10:41:39Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2013/5_2013_08_2.pdf
+FILE      1702569 2026-11-20T10:41:43Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/4_2014_02_2.pdf
+FILE      1734616 2026-11-20T10:42:03Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_10_2.pdf
+FILE      4619629 2026-11-20T10:42:01Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/4_2014_03_2.pdf
+FILE      4641263 2026-11-20T10:41:51Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_04_2.pdf
+FILE      4642954 2026-11-20T10:41:47Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_01_2.pdf
+FILE      4652680 2026-11-20T10:41:53Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_05_2.pdf
+FILE      4664757 2026-11-20T10:41:56Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/4_2014_06_2.pdf
+FILE      4669872 2026-11-20T10:42:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/4_2014_07_2.pdf
+FILE      4676459 2026-11-20T10:42:02Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_08_2.pdf
+FILE      4678237 2026-11-20T10:42:11Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/4_2014_12_2.pdf
+FILE      4681543 2026-11-20T10:42:02Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_09_2.pdf
+FILE      4699894 2026-11-20T10:42:11Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2014/3_2014_11_2.pdf
+FILE      1329708 2026-11-20T10:42:24Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_12_2.pdf
+FILE      1334224 2026-11-20T10:42:22Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_11_2.pdf
+FILE      1441029 2026-11-20T10:42:19Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_10_2.pdf
+FILE      1492562 2026-11-20T10:42:16Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_07_2.pdf
+FILE      1502692 2026-11-20T10:42:19Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2_2015_06_2.pdf
+FILE      1715621 2026-11-20T10:42:12Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2_2015_03_2.pdf
+FILE      1750172 2026-11-20T10:42:14Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2_2015_04_2.pdf
+FILE      1778048 2026-11-20T10:42:14Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_05_2.pdf
+FILE      2326712 2026-11-20T10:42:10Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2_2015_01_2.pdf
+FILE      2995508 2026-11-20T10:42:09Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_02_2.pdf
+FILE      4616240 2026-11-20T10:42:27Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_08_2.pdf
+FILE      4639110 2026-11-20T10:42:20Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2015/2015_09_2.pdf
+FILE      1255556 2026-11-20T10:42:25Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_02_2.pdf
+FILE      1284605 2026-11-20T10:42:25Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_01_2.pdf
+FILE      1343201 2026-11-20T10:42:28Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_04_2.pdf
+FILE      1347182 2026-11-20T10:42:27Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_03_2.pdf
+FILE      1348570 2026-11-20T10:42:30Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_06_2.pdf
+FILE      1350380 2026-11-20T10:42:31Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_07_2.pdf
+FILE      1357250 2026-11-20T10:42:28Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_05_2.pdf
+FILE      1357570 2026-11-20T10:42:33Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_10_2.pdf
+FILE      1360018 2026-11-20T10:42:31Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2016_08_2.pdf
+FILE      1365400 2026-11-20T10:42:31Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2_2016_09_2.pdf
+FILE      1373266 2026-11-20T10:42:34Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2_2016_12_2.pdf
+FILE      2225751 2026-11-20T10:42:35Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2016/2_2016_11_2.pdf
+FILE      1048318 2026-11-20T10:42:42Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_09_2.pdf
+FILE      1053522 2026-11-20T10:42:42Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_07_2.pdf
+FILE      1054698 2026-11-20T10:42:39Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_06_2.pdf
+FILE      1059971 2026-11-20T10:42:42Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_10_2.pdf
+FILE      1061641 2026-11-20T10:42:40Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_08_2.pdf
+FILE      1069022 2026-11-20T10:42:35Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_01_2.pdf
+FILE      1342607 2026-11-20T10:42:37Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_03_2.pdf
+FILE      1356056 2026-11-20T10:42:37Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_02_2.pdf
+FILE      777174 2026-11-20T10:42:44Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_12_2.pdf
+FILE      777179 2026-11-20T10:42:43Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_11_2.pdf
+FILE      829031 2026-11-20T10:42:39Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_05_2.pdf
+FILE      961246 2026-11-20T10:42:37Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2017/2017_04_2.pdf
+FILE      1083636 2026-11-20T10:43:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_09_2.pdf
+FILE      7270400 2026-11-20T10:42:57Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_07_2.pdf
+FILE      7274496 2026-11-20T10:43:00Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2_2018_06_2.pdf
+FILE      7288575 2026-11-20T10:43:24Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_12_2.pdf
+FILE      7292131 2026-11-20T10:42:58Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_08_2.pdf
+FILE      7294237 2026-11-20T10:43:16Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_10_2.pdf
+FILE      7299132 2026-11-20T10:43:11Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_11_2.pdf
+FILE      759510 2026-11-20T10:42:45Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_01_2.pdf
+FILE      762586 2026-11-20T10:42:45Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_03_2.pdf
+FILE      762937 2026-11-20T10:42:47Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_04_2.pdf
+FILE      766910 2026-11-20T10:42:45Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_02_2.pdf
+FILE      9035776 2026-11-20T10:43:01Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2018/2018_05_2.pdf
+FILE      631077 2026-11-20T10:43:48Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_12_2.pdf
+FILE      7270719 2026-11-20T10:43:10Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_01_2.pdf
+FILE      7282288 2026-11-20T10:43:30Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_02_2.pdf
+FILE      7309176 2026-11-20T10:43:25Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_03_2.pdf
+FILE      7329935 2026-11-20T10:43:46Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_07_2.pdf
+FILE      7330798 2026-11-20T10:43:32Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_04_2.pdf
+FILE      7331607 2026-11-20T10:43:44Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_08_2.pdf
+FILE      7331667 2026-11-20T10:43:42Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_05_2.pdf
+FILE      7332013 2026-11-20T10:43:33Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_06_2.pdf
+FILE      7333660 2026-11-20T10:44:02Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_10_2.pdf
+FILE      7335122 2026-11-20T10:43:47Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_09_2.pdf
+FILE      7337406 2026-11-20T10:44:02Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2019/2019_11_2.pdf
+FILE      1065806 2026-11-20T10:43:54Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_04_2.pdf
+FILE      1110394 2026-11-20T10:44:05Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_09_2.pdf
+FILE      1146697 2026-11-20T10:44:08Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_12_2.pdf
+FILE      1190331 2026-11-20T10:43:59Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_06_2.pdf
+FILE      1552116 2026-11-20T10:43:56Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_05_2.pdf
+FILE      578414 2026-11-20T10:43:49Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_01_2.pdf
+FILE      613484 2026-11-20T10:43:50Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_02_2.pdf
+FILE      619277 2026-11-20T10:44:01Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_07_2.pdf
+FILE      673617 2026-11-20T10:44:03Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_08_2.pdf
+FILE      7284223 2026-11-20T10:44:05Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_03_2.pdf
+FILE      742645 2026-11-20T10:44:05Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_10_2.pdf
+FILE      743141 2026-11-20T10:44:06Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2020/2020_11_2.pdf
+FILE      11680850 2026-11-20T10:44:47Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_06_2.pdf
+FILE      2793936 2026-11-20T10:44:22Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_12_2.pdf
+FILE      2859290 2026-11-20T10:44:17Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_11_2.pdf
+FILE      3564870 2026-11-20T10:44:13Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_03_2.pdf
+FILE      559572 2026-11-20T10:44:07Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_01_2.pdf
+FILE      589025 2026-11-20T10:44:08Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_02_2.pdf
+FILE      700784 2026-11-20T10:44:12Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_07_2.pdf
+FILE      770019 2026-11-20T10:44:10Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_04_2.pdf
+FILE      827654 2026-11-20T10:44:12Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_08_2.pdf
+FILE      827795 2026-11-20T10:44:15Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_09_2.pdf
+FILE      829061 2026-11-20T10:44:15Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_10_2.pdf
+FILE      841653 2026-11-20T10:44:10Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2021/2021_05_2.pdf
+FILE      2800987 2026-11-20T10:44:35Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_07_2.pdf
+FILE      2807236 2026-11-20T10:44:47Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_12_2.pdf
+FILE      2821560 2026-11-20T10:44:28Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_03_2.pdf
+FILE      2827171 2026-11-20T10:44:24Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_02_2.pdf
+FILE      2836107 2026-11-20T10:44:42Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_11_2.pdf
+FILE      2842663 2026-11-20T10:44:37Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_06_2.pdf
+FILE      2843144 2026-11-20T10:44:29Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_04_2.pdf
+FILE      2845374 2026-11-20T10:44:31Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_05_2.pdf
+FILE      2892617 2026-11-20T10:44:42Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_10_2.pdf
+FILE      2931495 2026-11-20T10:44:45Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_09_2.pdf
+FILE      2956209 2026-11-20T10:44:36Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_08_2.pdf
+FILE      4540507 2026-11-20T10:44:24Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2022/2022_01_2.pdf
+FILE      2811822 2026-11-20T10:44:50Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_02_2.pdf
+FILE      2825183 2026-11-20T10:44:48Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_01_2.pdf
+FILE      2833837 2026-11-20T10:44:52Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_02_3.pdf
+FILE      2838199 2026-11-20T10:44:56Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_07_2.pdf
+FILE      2864567 2026-11-20T10:45:09Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_10_2.pdf
+FILE      2873273 2026-11-20T10:44:55Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_06_2.pdf
+FILE      2886279 2026-11-20T10:44:52Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_04_2.pdf
+FILE      2913160 2026-11-20T10:45:04Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_12_2.pdf
+FILE      2917037 2026-11-20T10:45:02Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_11_2.pdf
+FILE      2938894 2026-11-20T10:44:58Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_08_2.pdf
+FILE      2976974 2026-11-20T10:44:55Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_05_2.pdf
+FILE      7184218 2026-11-20T10:45:15Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2023/2023_09_2.pdf
+FILE      16048250 2026-11-20T10:45:44Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_02_02.pdf
+FILE      2939209 2026-11-20T10:45:32Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_11_02.pdf
+FILE      3345184 2026-11-20T10:45:27Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_08_02.pdf
+FILE      3359967 2026-11-20T10:45:26Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_07_02.pdf
+FILE      3418214 2026-11-20T10:45:14Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_04_02.pdf
+FILE      3430017 2026-11-20T10:45:25Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_03_02.pdf
+FILE      3452588 2026-11-20T10:45:20Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_05_02.pdf
+FILE      3469588 2026-11-20T10:45:09Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_01_02.pdf
+FILE      3525425 2026-11-20T10:45:32Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_09_02.pdf
+FILE      3537890 2026-11-20T10:45:37Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_12_02.pdf
+FILE      3597787 2026-11-20T10:45:34Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_10_02.pdf
+FILE      3617645 2026-11-20T10:45:21Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2024/2024_06_02.pdf
+FILE      2858597 2026-11-20T10:46:01Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_11_02.pdf
+FILE      2924886 2026-11-20T10:46:03Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_12_02.pdf
+FILE      2935955 2026-11-20T10:45:52Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_07_02.pdf
+FILE      2994873 2026-11-20T10:45:40Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_01_02.pdf
+FILE      3010235 2026-11-20T10:45:55Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_08_02.pdf
+FILE      3031357 2026-11-20T10:46:01Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_10_02.pdf
+FILE      3084767 2026-11-20T10:45:57Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_09_02.pdf
+FILE      4830876 2026-11-20T10:45:42Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_02_02.pdf
+FILE      4884840 2026-11-20T10:45:49Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_03_02.pdf
+FILE      4915362 2026-11-20T10:45:46Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_04_02.pdf
+FILE      4929187 2026-11-20T10:45:54Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_05_02.pdf
+FILE      4976188 2026-11-20T10:45:51Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2025/2025_06_02.pdf
+FILE      2868846 2026-11-20T10:46:07Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_02_02.pdf
+FILE      2920113 2026-11-20T10:46:17Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_07_02.pdf
+FILE      2984525 2026-11-20T10:46:10Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_04_02.pdf
+FILE      2992072 2026-11-20T10:46:15Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_06_02.pdf
+FILE      3000787 2026-11-20T10:46:10Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_03_02.pdf
+FILE      3022390 2026-11-20T10:46:12Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_05_02.pdf
+FILE      3039776 2026-11-20T10:46:17Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_08_02.pdf
+FILE      3096283 2026-11-20T10:46:19Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_09_02.pdf
+FILE      4831101 2026-11-20T10:46:08Z dbfs:/Volumes/classic_stable/auto_intelligence/raw_landing/fenabrave/2026/2026_01_02.pdf

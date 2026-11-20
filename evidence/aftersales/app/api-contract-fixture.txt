@@ -1,0 +1,423 @@
+# claim:   /api/aftersales/* follows app/shared/aftersales.ts (validation, invariants, sort, request round-trip)
+# command: python3 -I tests/aftersales/check_api.py --base <local server> --write
+# date:    2026-11-20 17:32 UTC  qa git: e7d95ff
+# result:  PASS  checks=410
+# created request ids (note starts with QA-T6): ['95b41050-6d98-44cb-85d0-78d307c132e4', '500aa7a8-0394-4f3e-8587-62dc8e824d0e']
+
+PASS	GET /filters 200	status=200
+PASS	filters: dealers unique, >1	n=3
+PASS	filters: categories unique	n=2
+PASS	filters: horizons 14/28/56 default 28	
+PASS	filters: meta.synthetic true	
+PASS	meta: forecastDate > dataThrough	2026-11-15 -> 2026-11-16
+PASS	meta: modelVersion uses @champion	aftersales_demand_forecaster@champion v1
+PASS	400 /api/aftersales/summary dealer='NOPE'	status=400 param=dealer
+PASS	400 /api/aftersales/summary dealer=''	status=400 param=dealer
+PASS	400 /api/aftersales/summary category='nope'	status=400 param=category
+PASS	400 /api/aftersales/summary horizon='7'	status=400 param=horizon
+PASS	400 /api/aftersales/summary horizon='abc'	status=400 param=horizon
+PASS	400 /api/aftersales/summary horizon='14.0'	status=400 param=horizon
+PASS	400 /api/aftersales/summary dealer='d001'	status=400 param=dealer
+PASS	400 /api/aftersales/summary repeated dealer	status=400 param=dealer
+PASS	400 /api/aftersales/forecast dealer='NOPE'	status=400 param=dealer
+PASS	400 /api/aftersales/forecast dealer=''	status=400 param=dealer
+PASS	400 /api/aftersales/forecast category='nope'	status=400 param=category
+PASS	400 /api/aftersales/forecast horizon='7'	status=400 param=horizon
+PASS	400 /api/aftersales/forecast horizon='abc'	status=400 param=horizon
+PASS	400 /api/aftersales/forecast horizon='14.0'	status=400 param=horizon
+PASS	400 /api/aftersales/forecast dealer='d001'	status=400 param=dealer
+PASS	400 /api/aftersales/forecast repeated dealer	status=400 param=dealer
+PASS	400 /api/aftersales/risk dealer='NOPE'	status=400 param=dealer
+PASS	400 /api/aftersales/risk dealer=''	status=400 param=dealer
+PASS	400 /api/aftersales/risk category='nope'	status=400 param=category
+PASS	400 /api/aftersales/risk horizon='7'	status=400 param=horizon
+PASS	400 /api/aftersales/risk horizon='abc'	status=400 param=horizon
+PASS	400 /api/aftersales/risk horizon='14.0'	status=400 param=horizon
+PASS	400 /api/aftersales/risk dealer='d001'	status=400 param=dealer
+PASS	400 /api/aftersales/risk repeated dealer	status=400 param=dealer
+PASS	400 /risk limit=0	status=400 param=limit
+PASS	400 /risk limit=201	status=400 param=limit
+PASS	400 /risk limit=-1	status=400 param=limit
+PASS	400 /risk limit=x	status=400 param=limit
+PASS	400 /risk limit=1.5	status=400 param=limit
+PASS	400 /risk minLevel=severe	status=400 param=minLevel
+PASS	/forecast unknown partId rejected or empty	status=400
+PASS	[horizon=14] meta.query echoes applied params	{"dealer": null, "category": null, "horizon": 14}
+PASS	[horizon=14] partsAtRisk == critical+high	0 vs {'critical': 0, 'high': 0, 'medium': 3, 'low': 9}
+PASS	[horizon=14] sum(riskDistribution) == /risk total	12 vs 12
+PASS	[horizon=14] fillRate is a fraction or null	0.9130434782608695
+PASS	[horizon=14] partsAtRisk.previous null or number	
+PASS	[horizon=14] lostSalesAvoidedBrl.previous null or number	
+PASS	[horizon=14] fillRate.previous null or number	
+PASS	[horizon=14] daysOfStock.previous null or number	
+PASS	[horizon=14] /risk rows == min(limit,total)	12/12
+PASS	[horizon=14] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[horizon=14] /risk row invariants (12 rows)	[]
+PASS	[horizon=14] lostSalesAvoided == sum(lostSales, action!=monitor)	540 vs 540.00
+PASS	[horizon=14] daysOfStock == sum(stock)/(sum(fc)/h)	18.900000000000002 vs 18.900000000000002
+PASS	[horizon=14] minLevel=high total == critical+high	0
+PASS	[horizon=28] meta.query echoes applied params	{"dealer": null, "category": null, "horizon": 28}
+PASS	[horizon=28] partsAtRisk == critical+high	12 vs {'critical': 9, 'high': 3, 'medium': 0, 'low': 0}
+PASS	[horizon=28] sum(riskDistribution) == /risk total	12 vs 12
+PASS	[horizon=28] fillRate is a fraction or null	0.9130434782608695
+PASS	[horizon=28] partsAtRisk.previous null or number	
+PASS	[horizon=28] lostSalesAvoidedBrl.previous null or number	
+PASS	[horizon=28] fillRate.previous null or number	
+PASS	[horizon=28] daysOfStock.previous null or number	
+PASS	[horizon=28] /risk rows == min(limit,total)	12/12
+PASS	[horizon=28] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[horizon=28] /risk row invariants (12 rows)	[]
+PASS	[horizon=28] lostSalesAvoided == sum(lostSales, action!=monitor)	25545 vs 25545.00
+PASS	[horizon=28] daysOfStock == sum(stock)/(sum(fc)/h)	10.5 vs 10.5
+PASS	[horizon=28] minLevel=high total == critical+high	12
+PASS	[horizon=56] meta.query echoes applied params	{"dealer": null, "category": null, "horizon": 56}
+PASS	[horizon=56] partsAtRisk == critical+high	12 vs {'critical': 12, 'high': 0, 'medium': 0, 'low': 0}
+PASS	[horizon=56] sum(riskDistribution) == /risk total	12 vs 12
+PASS	[horizon=56] fillRate is a fraction or null	0.9130434782608695
+PASS	[horizon=56] partsAtRisk.previous null or number	
+PASS	[horizon=56] lostSalesAvoidedBrl.previous null or number	
+PASS	[horizon=56] fillRate.previous null or number	
+PASS	[horizon=56] daysOfStock.previous null or number	
+PASS	[horizon=56] /risk rows == min(limit,total)	12/12
+PASS	[horizon=56] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[horizon=56] /risk row invariants (12 rows)	[]
+PASS	[horizon=56] lostSalesAvoided == sum(lostSales, action!=monitor)	50925 vs 50925.00
+PASS	[horizon=56] daysOfStock == sum(stock)/(sum(fc)/h)	14.700000000000001 vs 14.700000000000001
+PASS	[horizon=56] minLevel=high total == critical+high	12
+PASS	[{}] /forecast weeks are unique Mondays ascending	n=34
+PASS	[{}] /forecast has 26 history + 8 future weeks	8
+PASS	[{}] isFuture == weekStart>=forecastDate	
+PASS	[{}] no actuals in future weeks	
+PASS	[{}] lower <= forecast <= upper	
+PASS	[{}] accuracy sane	{"wape": 0.11, "baselineWape": 0.08666666666666667}
+INFO	[{}] chart-level WAPE over 13 backtest weeks=0.1100 (API wape=0.1100, computed at dealer×part grain so it can be larger)
+PASS	[dealer=D001,horizon=14] meta.query echoes applied params	{"dealer": "D001", "category": null, "horizon": 14}
+PASS	[dealer=D001,horizon=14] partsAtRisk == critical+high	0 vs {'critical': 0, 'high': 0, 'medium': 1, 'low': 3}
+PASS	[dealer=D001,horizon=14] sum(riskDistribution) == /risk total	4 vs 4
+PASS	[dealer=D001,horizon=14] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D001,horizon=14] partsAtRisk.previous null or number	
+PASS	[dealer=D001,horizon=14] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D001,horizon=14] fillRate.previous null or number	
+PASS	[dealer=D001,horizon=14] daysOfStock.previous null or number	
+PASS	[dealer=D001,horizon=14] /risk rows == min(limit,total)	4/4
+PASS	[dealer=D001,horizon=14] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D001,horizon=14] /risk row invariants (4 rows)	[]
+PASS	[dealer=D001,horizon=14] lostSalesAvoided == sum(lostSales, action!=monitor)	180 vs 180.00
+PASS	[dealer=D001,horizon=14] daysOfStock == sum(stock)/(sum(fc)/h)	18.9 vs 18.9
+PASS	[dealer=D001,horizon=14] minLevel=high total == critical+high	0
+PASS	[dealer=D001,horizon=28] meta.query echoes applied params	{"dealer": "D001", "category": null, "horizon": 28}
+PASS	[dealer=D001,horizon=28] partsAtRisk == critical+high	4 vs {'critical': 3, 'high': 1, 'medium': 0, 'low': 0}
+PASS	[dealer=D001,horizon=28] sum(riskDistribution) == /risk total	4 vs 4
+PASS	[dealer=D001,horizon=28] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D001,horizon=28] partsAtRisk.previous null or number	
+PASS	[dealer=D001,horizon=28] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D001,horizon=28] fillRate.previous null or number	
+PASS	[dealer=D001,horizon=28] daysOfStock.previous null or number	
+PASS	[dealer=D001,horizon=28] /risk rows == min(limit,total)	4/4
+PASS	[dealer=D001,horizon=28] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D001,horizon=28] /risk row invariants (4 rows)	[]
+PASS	[dealer=D001,horizon=28] lostSalesAvoided == sum(lostSales, action!=monitor)	8515 vs 8515.00
+PASS	[dealer=D001,horizon=28] daysOfStock == sum(stock)/(sum(fc)/h)	10.5 vs 10.5
+PASS	[dealer=D001,horizon=28] minLevel=high total == critical+high	4
+PASS	[dealer=D001,horizon=56] meta.query echoes applied params	{"dealer": "D001", "category": null, "horizon": 56}
+PASS	[dealer=D001,horizon=56] partsAtRisk == critical+high	4 vs {'critical': 4, 'high': 0, 'medium': 0, 'low': 0}
+PASS	[dealer=D001,horizon=56] sum(riskDistribution) == /risk total	4 vs 4
+PASS	[dealer=D001,horizon=56] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D001,horizon=56] partsAtRisk.previous null or number	
+PASS	[dealer=D001,horizon=56] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D001,horizon=56] fillRate.previous null or number	
+PASS	[dealer=D001,horizon=56] daysOfStock.previous null or number	
+PASS	[dealer=D001,horizon=56] /risk rows == min(limit,total)	4/4
+PASS	[dealer=D001,horizon=56] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D001,horizon=56] /risk row invariants (4 rows)	[]
+PASS	[dealer=D001,horizon=56] lostSalesAvoided == sum(lostSales, action!=monitor)	16975 vs 16975.00
+PASS	[dealer=D001,horizon=56] daysOfStock == sum(stock)/(sum(fc)/h)	14.7 vs 14.7
+PASS	[dealer=D001,horizon=56] minLevel=high total == critical+high	4
+PASS	[{'dealer': 'D001'}] /forecast weeks are unique Mondays ascending	n=34
+PASS	[{'dealer': 'D001'}] /forecast has 26 history + 8 future weeks	8
+PASS	[{'dealer': 'D001'}] isFuture == weekStart>=forecastDate	
+PASS	[{'dealer': 'D001'}] no actuals in future weeks	
+PASS	[{'dealer': 'D001'}] lower <= forecast <= upper	
+PASS	[{'dealer': 'D001'}] accuracy sane	{"wape": 0.11, "baselineWape": 0.08666666666666667}
+INFO	[{'dealer': 'D001'}] chart-level WAPE over 13 backtest weeks=0.1100 (API wape=0.1100, computed at dealer×part grain so it can be larger)
+PASS	[dealer=D002,horizon=14] meta.query echoes applied params	{"dealer": "D002", "category": null, "horizon": 14}
+PASS	[dealer=D002,horizon=14] partsAtRisk == critical+high	0 vs {'critical': 0, 'high': 0, 'medium': 1, 'low': 3}
+PASS	[dealer=D002,horizon=14] sum(riskDistribution) == /risk total	4 vs 4
+PASS	[dealer=D002,horizon=14] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D002,horizon=14] partsAtRisk.previous null or number	
+PASS	[dealer=D002,horizon=14] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D002,horizon=14] fillRate.previous null or number	
+PASS	[dealer=D002,horizon=14] daysOfStock.previous null or number	
+PASS	[dealer=D002,horizon=14] /risk rows == min(limit,total)	4/4
+PASS	[dealer=D002,horizon=14] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D002,horizon=14] /risk row invariants (4 rows)	[]
+PASS	[dealer=D002,horizon=14] lostSalesAvoided == sum(lostSales, action!=monitor)	180 vs 180.00
+PASS	[dealer=D002,horizon=14] daysOfStock == sum(stock)/(sum(fc)/h)	18.9 vs 18.9
+PASS	[dealer=D002,horizon=14] minLevel=high total == critical+high	0
+PASS	[dealer=D002,horizon=28] meta.query echoes applied params	{"dealer": "D002", "category": null, "horizon": 28}
+PASS	[dealer=D002,horizon=28] partsAtRisk == critical+high	4 vs {'critical': 3, 'high': 1, 'medium': 0, 'low': 0}
+PASS	[dealer=D002,horizon=28] sum(riskDistribution) == /risk total	4 vs 4
+PASS	[dealer=D002,horizon=28] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D002,horizon=28] partsAtRisk.previous null or number	
+PASS	[dealer=D002,horizon=28] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D002,horizon=28] fillRate.previous null or number	
+PASS	[dealer=D002,horizon=28] daysOfStock.previous null or number	
+PASS	[dealer=D002,horizon=28] /risk rows == min(limit,total)	4/4
+PASS	[dealer=D002,horizon=28] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D002,horizon=28] /risk row invariants (4 rows)	[]
+PASS	[dealer=D002,horizon=28] lostSalesAvoided == sum(lostSales, action!=monitor)	8515 vs 8515.00
+PASS	[dealer=D002,horizon=28] daysOfStock == sum(stock)/(sum(fc)/h)	10.5 vs 10.5
+PASS	[dealer=D002,horizon=28] minLevel=high total == critical+high	4
+PASS	[dealer=D002,horizon=56] meta.query echoes applied params	{"dealer": "D002", "category": null, "horizon": 56}
+PASS	[dealer=D002,horizon=56] partsAtRisk == critical+high	4 vs {'critical': 4, 'high': 0, 'medium': 0, 'low': 0}
+PASS	[dealer=D002,horizon=56] sum(riskDistribution) == /risk total	4 vs 4
+PASS	[dealer=D002,horizon=56] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D002,horizon=56] partsAtRisk.previous null or number	
+PASS	[dealer=D002,horizon=56] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D002,horizon=56] fillRate.previous null or number	
+PASS	[dealer=D002,horizon=56] daysOfStock.previous null or number	
+PASS	[dealer=D002,horizon=56] /risk rows == min(limit,total)	4/4
+PASS	[dealer=D002,horizon=56] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D002,horizon=56] /risk row invariants (4 rows)	[]
+PASS	[dealer=D002,horizon=56] lostSalesAvoided == sum(lostSales, action!=monitor)	16975 vs 16975.00
+PASS	[dealer=D002,horizon=56] daysOfStock == sum(stock)/(sum(fc)/h)	14.7 vs 14.7
+PASS	[dealer=D002,horizon=56] minLevel=high total == critical+high	4
+PASS	[{'dealer': 'D002'}] /forecast weeks are unique Mondays ascending	n=34
+PASS	[{'dealer': 'D002'}] /forecast has 26 history + 8 future weeks	8
+PASS	[{'dealer': 'D002'}] isFuture == weekStart>=forecastDate	
+PASS	[{'dealer': 'D002'}] no actuals in future weeks	
+PASS	[{'dealer': 'D002'}] lower <= forecast <= upper	
+PASS	[{'dealer': 'D002'}] accuracy sane	{"wape": 0.11, "baselineWape": 0.08666666666666667}
+INFO	[{'dealer': 'D002'}] chart-level WAPE over 13 backtest weeks=0.1100 (API wape=0.1100, computed at dealer×part grain so it can be larger)
+PASS	[dealer=D003,horizon=14] meta.query echoes applied params	{"dealer": "D003", "category": null, "horizon": 14}
+PASS	[dealer=D003,horizon=14] partsAtRisk == critical+high	0 vs {'critical': 0, 'high': 0, 'medium': 1, 'low': 3}
+PASS	[dealer=D003,horizon=14] sum(riskDistribution) == /risk total	4 vs 4
+PASS	[dealer=D003,horizon=14] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D003,horizon=14] partsAtRisk.previous null or number	
+PASS	[dealer=D003,horizon=14] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D003,horizon=14] fillRate.previous null or number	
+PASS	[dealer=D003,horizon=14] daysOfStock.previous null or number	
+PASS	[dealer=D003,horizon=14] /risk rows == min(limit,total)	4/4
+PASS	[dealer=D003,horizon=14] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D003,horizon=14] /risk row invariants (4 rows)	[]
+PASS	[dealer=D003,horizon=14] lostSalesAvoided == sum(lostSales, action!=monitor)	180 vs 180.00
+PASS	[dealer=D003,horizon=14] daysOfStock == sum(stock)/(sum(fc)/h)	18.9 vs 18.9
+PASS	[dealer=D003,horizon=14] minLevel=high total == critical+high	0
+PASS	[dealer=D003,horizon=28] meta.query echoes applied params	{"dealer": "D003", "category": null, "horizon": 28}
+PASS	[dealer=D003,horizon=28] partsAtRisk == critical+high	4 vs {'critical': 3, 'high': 1, 'medium': 0, 'low': 0}
+PASS	[dealer=D003,horizon=28] sum(riskDistribution) == /risk total	4 vs 4
+PASS	[dealer=D003,horizon=28] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D003,horizon=28] partsAtRisk.previous null or number	
+PASS	[dealer=D003,horizon=28] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D003,horizon=28] fillRate.previous null or number	
+PASS	[dealer=D003,horizon=28] daysOfStock.previous null or number	
+PASS	[dealer=D003,horizon=28] /risk rows == min(limit,total)	4/4
+PASS	[dealer=D003,horizon=28] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D003,horizon=28] /risk row invariants (4 rows)	[]
+PASS	[dealer=D003,horizon=28] lostSalesAvoided == sum(lostSales, action!=monitor)	8515 vs 8515.00
+PASS	[dealer=D003,horizon=28] daysOfStock == sum(stock)/(sum(fc)/h)	10.5 vs 10.5
+PASS	[dealer=D003,horizon=28] minLevel=high total == critical+high	4
+PASS	[dealer=D003,horizon=56] meta.query echoes applied params	{"dealer": "D003", "category": null, "horizon": 56}
+PASS	[dealer=D003,horizon=56] partsAtRisk == critical+high	4 vs {'critical': 4, 'high': 0, 'medium': 0, 'low': 0}
+PASS	[dealer=D003,horizon=56] sum(riskDistribution) == /risk total	4 vs 4
+PASS	[dealer=D003,horizon=56] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D003,horizon=56] partsAtRisk.previous null or number	
+PASS	[dealer=D003,horizon=56] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D003,horizon=56] fillRate.previous null or number	
+PASS	[dealer=D003,horizon=56] daysOfStock.previous null or number	
+PASS	[dealer=D003,horizon=56] /risk rows == min(limit,total)	4/4
+PASS	[dealer=D003,horizon=56] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D003,horizon=56] /risk row invariants (4 rows)	[]
+PASS	[dealer=D003,horizon=56] lostSalesAvoided == sum(lostSales, action!=monitor)	16975 vs 16975.00
+PASS	[dealer=D003,horizon=56] daysOfStock == sum(stock)/(sum(fc)/h)	14.7 vs 14.7
+PASS	[dealer=D003,horizon=56] minLevel=high total == critical+high	4
+PASS	[{'dealer': 'D003'}] /forecast weeks are unique Mondays ascending	n=34
+PASS	[{'dealer': 'D003'}] /forecast has 26 history + 8 future weeks	8
+PASS	[{'dealer': 'D003'}] isFuture == weekStart>=forecastDate	
+PASS	[{'dealer': 'D003'}] no actuals in future weeks	
+PASS	[{'dealer': 'D003'}] lower <= forecast <= upper	
+PASS	[{'dealer': 'D003'}] accuracy sane	{"wape": 0.11, "baselineWape": 0.08666666666666667}
+INFO	[{'dealer': 'D003'}] chart-level WAPE over 13 backtest weeks=0.1100 (API wape=0.1100, computed at dealer×part grain so it can be larger)
+PASS	[category=filters,horizon=14] meta.query echoes applied params	{"dealer": null, "category": "filters", "horizon": 14}
+PASS	[category=filters,horizon=14] partsAtRisk == critical+high	0 vs {'critical': 0, 'high': 0, 'medium': 0, 'low': 6}
+PASS	[category=filters,horizon=14] sum(riskDistribution) == /risk total	6 vs 6
+PASS	[category=filters,horizon=14] fillRate is a fraction or null	0.9130434782608695
+PASS	[category=filters,horizon=14] partsAtRisk.previous null or number	
+PASS	[category=filters,horizon=14] lostSalesAvoidedBrl.previous null or number	
+PASS	[category=filters,horizon=14] fillRate.previous null or number	
+PASS	[category=filters,horizon=14] daysOfStock.previous null or number	
+PASS	[category=filters,horizon=14] /risk rows == min(limit,total)	6/6
+PASS	[category=filters,horizon=14] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[category=filters,horizon=14] /risk row invariants (6 rows)	[]
+PASS	[category=filters,horizon=14] lostSalesAvoided == sum(lostSales, action!=monitor)	0 vs 0.00
+PASS	[category=filters,horizon=14] daysOfStock == sum(stock)/(sum(fc)/h)	23.1 vs 23.1
+PASS	[category=filters,horizon=14] minLevel=high total == critical+high	0
+PASS	[category=filters,horizon=28] meta.query echoes applied params	{"dealer": null, "category": "filters", "horizon": 28}
+PASS	[category=filters,horizon=28] partsAtRisk == critical+high	6 vs {'critical': 3, 'high': 3, 'medium': 0, 'low': 0}
+PASS	[category=filters,horizon=28] sum(riskDistribution) == /risk total	6 vs 6
+PASS	[category=filters,horizon=28] fillRate is a fraction or null	0.9130434782608695
+PASS	[category=filters,horizon=28] partsAtRisk.previous null or number	
+PASS	[category=filters,horizon=28] lostSalesAvoidedBrl.previous null or number	
+PASS	[category=filters,horizon=28] fillRate.previous null or number	
+PASS	[category=filters,horizon=28] daysOfStock.previous null or number	
+PASS	[category=filters,horizon=28] /risk rows == min(limit,total)	6/6
+PASS	[category=filters,horizon=28] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[category=filters,horizon=28] /risk row invariants (6 rows)	[]
+PASS	[category=filters,horizon=28] lostSalesAvoided == sum(lostSales, action!=monitor)	2925 vs 2925.00
+PASS	[category=filters,horizon=28] daysOfStock == sum(stock)/(sum(fc)/h)	14.700000000000001 vs 14.700000000000001
+PASS	[category=filters,horizon=28] minLevel=high total == critical+high	6
+PASS	[category=filters,horizon=56] meta.query echoes applied params	{"dealer": null, "category": "filters", "horizon": 56}
+PASS	[category=filters,horizon=56] partsAtRisk == critical+high	6 vs {'critical': 6, 'high': 0, 'medium': 0, 'low': 0}
+PASS	[category=filters,horizon=56] sum(riskDistribution) == /risk total	6 vs 6
+PASS	[category=filters,horizon=56] fillRate is a fraction or null	0.9130434782608695
+PASS	[category=filters,horizon=56] partsAtRisk.previous null or number	
+PASS	[category=filters,horizon=56] lostSalesAvoidedBrl.previous null or number	
+PASS	[category=filters,horizon=56] fillRate.previous null or number	
+PASS	[category=filters,horizon=56] daysOfStock.previous null or number	
+PASS	[category=filters,horizon=56] /risk rows == min(limit,total)	6/6
+PASS	[category=filters,horizon=56] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[category=filters,horizon=56] /risk row invariants (6 rows)	[]
+PASS	[category=filters,horizon=56] lostSalesAvoided == sum(lostSales, action!=monitor)	10305 vs 10305.00
+PASS	[category=filters,horizon=56] daysOfStock == sum(stock)/(sum(fc)/h)	11.9 vs 11.9
+PASS	[category=filters,horizon=56] minLevel=high total == critical+high	6
+PASS	[{'category': 'filters'}] /forecast weeks are unique Mondays ascending	n=34
+PASS	[{'category': 'filters'}] /forecast has 26 history + 8 future weeks	8
+PASS	[{'category': 'filters'}] isFuture == weekStart>=forecastDate	
+PASS	[{'category': 'filters'}] no actuals in future weeks	
+PASS	[{'category': 'filters'}] lower <= forecast <= upper	
+PASS	[{'category': 'filters'}] accuracy sane	{"wape": 0.11, "baselineWape": 0.08666666666666667}
+INFO	[{'category': 'filters'}] chart-level WAPE over 13 backtest weeks=0.1100 (API wape=0.1100, computed at dealer×part grain so it can be larger)
+PASS	[category=brakes,horizon=14] meta.query echoes applied params	{"dealer": null, "category": "brakes", "horizon": 14}
+PASS	[category=brakes,horizon=14] partsAtRisk == critical+high	0 vs {'critical': 0, 'high': 0, 'medium': 3, 'low': 3}
+PASS	[category=brakes,horizon=14] sum(riskDistribution) == /risk total	6 vs 6
+PASS	[category=brakes,horizon=14] fillRate is a fraction or null	0.9130434782608695
+PASS	[category=brakes,horizon=14] partsAtRisk.previous null or number	
+PASS	[category=brakes,horizon=14] lostSalesAvoidedBrl.previous null or number	
+PASS	[category=brakes,horizon=14] fillRate.previous null or number	
+PASS	[category=brakes,horizon=14] daysOfStock.previous null or number	
+PASS	[category=brakes,horizon=14] /risk rows == min(limit,total)	6/6
+PASS	[category=brakes,horizon=14] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[category=brakes,horizon=14] /risk row invariants (6 rows)	[]
+PASS	[category=brakes,horizon=14] lostSalesAvoided == sum(lostSales, action!=monitor)	540 vs 540.00
+PASS	[category=brakes,horizon=14] daysOfStock == sum(stock)/(sum(fc)/h)	14.700000000000001 vs 14.700000000000001
+PASS	[category=brakes,horizon=14] minLevel=high total == critical+high	0
+PASS	[category=brakes,horizon=28] meta.query echoes applied params	{"dealer": null, "category": "brakes", "horizon": 28}
+PASS	[category=brakes,horizon=28] partsAtRisk == critical+high	6 vs {'critical': 6, 'high': 0, 'medium': 0, 'low': 0}
+PASS	[category=brakes,horizon=28] sum(riskDistribution) == /risk total	6 vs 6
+PASS	[category=brakes,horizon=28] fillRate is a fraction or null	0.9130434782608695
+PASS	[category=brakes,horizon=28] partsAtRisk.previous null or number	
+PASS	[category=brakes,horizon=28] lostSalesAvoidedBrl.previous null or number	
+PASS	[category=brakes,horizon=28] fillRate.previous null or number	
+PASS	[category=brakes,horizon=28] daysOfStock.previous null or number	
+PASS	[category=brakes,horizon=28] /risk rows == min(limit,total)	6/6
+PASS	[category=brakes,horizon=28] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[category=brakes,horizon=28] /risk row invariants (6 rows)	[]
+PASS	[category=brakes,horizon=28] lostSalesAvoided == sum(lostSales, action!=monitor)	22620 vs 22620.00
+PASS	[category=brakes,horizon=28] daysOfStock == sum(stock)/(sum(fc)/h)	6.3 vs 6.3
+PASS	[category=brakes,horizon=28] minLevel=high total == critical+high	6
+PASS	[category=brakes,horizon=56] meta.query echoes applied params	{"dealer": null, "category": "brakes", "horizon": 56}
+PASS	[category=brakes,horizon=56] partsAtRisk == critical+high	6 vs {'critical': 6, 'high': 0, 'medium': 0, 'low': 0}
+PASS	[category=brakes,horizon=56] sum(riskDistribution) == /risk total	6 vs 6
+PASS	[category=brakes,horizon=56] fillRate is a fraction or null	0.9130434782608695
+PASS	[category=brakes,horizon=56] partsAtRisk.previous null or number	
+PASS	[category=brakes,horizon=56] lostSalesAvoidedBrl.previous null or number	
+PASS	[category=brakes,horizon=56] fillRate.previous null or number	
+PASS	[category=brakes,horizon=56] daysOfStock.previous null or number	
+PASS	[category=brakes,horizon=56] /risk rows == min(limit,total)	6/6
+PASS	[category=brakes,horizon=56] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[category=brakes,horizon=56] /risk row invariants (6 rows)	[]
+PASS	[category=brakes,horizon=56] lostSalesAvoided == sum(lostSales, action!=monitor)	40620 vs 40620.00
+PASS	[category=brakes,horizon=56] daysOfStock == sum(stock)/(sum(fc)/h)	17.5 vs 17.5
+PASS	[category=brakes,horizon=56] minLevel=high total == critical+high	6
+PASS	[{'category': 'brakes'}] /forecast weeks are unique Mondays ascending	n=34
+PASS	[{'category': 'brakes'}] /forecast has 26 history + 8 future weeks	8
+PASS	[{'category': 'brakes'}] isFuture == weekStart>=forecastDate	
+PASS	[{'category': 'brakes'}] no actuals in future weeks	
+PASS	[{'category': 'brakes'}] lower <= forecast <= upper	
+PASS	[{'category': 'brakes'}] accuracy sane	{"wape": 0.11, "baselineWape": 0.08666666666666667}
+INFO	[{'category': 'brakes'}] chart-level WAPE over 13 backtest weeks=0.1100 (API wape=0.1100, computed at dealer×part grain so it can be larger)
+PASS	[dealer=D001,category=filters,horizon=14] meta.query echoes applied params	{"dealer": "D001", "category": "filters", "horizon": 14}
+PASS	[dealer=D001,category=filters,horizon=14] partsAtRisk == critical+high	0 vs {'critical': 0, 'high': 0, 'medium': 0, 'low': 2}
+PASS	[dealer=D001,category=filters,horizon=14] sum(riskDistribution) == /risk total	2 vs 2
+PASS	[dealer=D001,category=filters,horizon=14] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D001,category=filters,horizon=14] partsAtRisk.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=14] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=14] fillRate.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=14] daysOfStock.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=14] /risk rows == min(limit,total)	2/2
+PASS	[dealer=D001,category=filters,horizon=14] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D001,category=filters,horizon=14] /risk row invariants (2 rows)	[]
+PASS	[dealer=D001,category=filters,horizon=14] lostSalesAvoided == sum(lostSales, action!=monitor)	0 vs 0.00
+PASS	[dealer=D001,category=filters,horizon=14] daysOfStock == sum(stock)/(sum(fc)/h)	23.099999999999998 vs 23.099999999999998
+PASS	[dealer=D001,category=filters,horizon=14] minLevel=high total == critical+high	0
+PASS	[dealer=D001,category=filters,horizon=28] meta.query echoes applied params	{"dealer": "D001", "category": "filters", "horizon": 28}
+PASS	[dealer=D001,category=filters,horizon=28] partsAtRisk == critical+high	2 vs {'critical': 1, 'high': 1, 'medium': 0, 'low': 0}
+PASS	[dealer=D001,category=filters,horizon=28] sum(riskDistribution) == /risk total	2 vs 2
+PASS	[dealer=D001,category=filters,horizon=28] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D001,category=filters,horizon=28] partsAtRisk.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=28] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=28] fillRate.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=28] daysOfStock.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=28] /risk rows == min(limit,total)	2/2
+PASS	[dealer=D001,category=filters,horizon=28] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D001,category=filters,horizon=28] /risk row invariants (2 rows)	[]
+PASS	[dealer=D001,category=filters,horizon=28] lostSalesAvoided == sum(lostSales, action!=monitor)	975 vs 975.00
+PASS	[dealer=D001,category=filters,horizon=28] daysOfStock == sum(stock)/(sum(fc)/h)	14.7 vs 14.7
+PASS	[dealer=D001,category=filters,horizon=28] minLevel=high total == critical+high	2
+PASS	[dealer=D001,category=filters,horizon=56] meta.query echoes applied params	{"dealer": "D001", "category": "filters", "horizon": 56}
+PASS	[dealer=D001,category=filters,horizon=56] partsAtRisk == critical+high	2 vs {'critical': 2, 'high': 0, 'medium': 0, 'low': 0}
+PASS	[dealer=D001,category=filters,horizon=56] sum(riskDistribution) == /risk total	2 vs 2
+PASS	[dealer=D001,category=filters,horizon=56] fillRate is a fraction or null	0.9130434782608695
+PASS	[dealer=D001,category=filters,horizon=56] partsAtRisk.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=56] lostSalesAvoidedBrl.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=56] fillRate.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=56] daysOfStock.previous null or number	
+PASS	[dealer=D001,category=filters,horizon=56] /risk rows == min(limit,total)	2/2
+PASS	[dealer=D001,category=filters,horizon=56] /risk sorted lostSales desc, prob desc, key asc	
+PASS	[dealer=D001,category=filters,horizon=56] /risk row invariants (2 rows)	[]
+PASS	[dealer=D001,category=filters,horizon=56] lostSalesAvoided == sum(lostSales, action!=monitor)	3435 vs 3435.00
+PASS	[dealer=D001,category=filters,horizon=56] daysOfStock == sum(stock)/(sum(fc)/h)	11.9 vs 11.9
+PASS	[dealer=D001,category=filters,horizon=56] minLevel=high total == critical+high	2
+PASS	[{'dealer': 'D001', 'category': 'filters'}] /forecast weeks are unique Mondays ascending	n=34
+PASS	[{'dealer': 'D001', 'category': 'filters'}] /forecast has 26 history + 8 future weeks	8
+PASS	[{'dealer': 'D001', 'category': 'filters'}] isFuture == weekStart>=forecastDate	
+PASS	[{'dealer': 'D001', 'category': 'filters'}] no actuals in future weeks	
+PASS	[{'dealer': 'D001', 'category': 'filters'}] lower <= forecast <= upper	
+PASS	[{'dealer': 'D001', 'category': 'filters'}] accuracy sane	{"wape": 0.11, "baselineWape": 0.08666666666666667}
+INFO	[{'dealer': 'D001', 'category': 'filters'}] chart-level WAPE over 13 backtest weeks=0.1100 (API wape=0.1100, computed at dealer×part grain so it can be larger)
+PASS	400 POST quantity=0	status=400 param=quantity
+PASS	400 POST quantity=-1	status=400 param=quantity
+PASS	400 POST quantity=1.5	status=400 param=quantity
+PASS	400 POST quantity="5"	status=400 param=quantity
+PASS	400 POST quantity=100001	status=400 param=quantity
+PASS	400 POST quantity=null	status=400 param=quantity
+PASS	400 POST dealerId="NOPE"	status=400 param=dealerId
+PASS	400 POST partId="NOPE"	status=400 param=partId
+PASS	400 POST type="steal"	status=400 param=type
+PASS	400 POST fromDealerId="D001"	status=400 param=fromDealerId
+PASS	400 POST fromDealerId=null	status=400 param=fromDealerId
+PASS	400 POST fromDealerId="D003"	status=400 param=fromDealerId
+PASS	400 POST fromDealerId="NOPE"	status=400 param=fromDealerId
+PASS	400 POST note="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx	status=400 param=note
+PASS	400 POST note="a\u0000b"	status=400 param=note
+PASS	400 POST isAdmin=true	status=400 param=isAdmin
+PASS	400 POST malformed JSON	status=400 param=body
+PASS	400 POST text/plain	status=400 param=body
+PASS	POST 20 KB body rejected	status=400
+PASS	POST 10 parallel duplicates -> 1x201 9x409	[201, 409, 409, 409, 409, 409, 409, 409, 409, 409]
+PASS	409 code duplicate_request	
+PASS	201 Location header	/api/aftersales/requests/95b41050-6d98-44cb-85d0-78d307c132e4
+PASS	201 body: open/local-dev/trimmed note	{"id": "95b41050-6d98-44cb-85d0-78d307c132e4", "dealerId": "D003", "dealerName": "Aurora Motors Recife", "partId": "P002", "partName": "Disco de freio dianteiro", "type": "reorder", "quantity": 5, "fromDealerId": null, "note": "QA-T6 race", "horizonDays": 28, "riskLevel": "critical", "lostSalesBrl":
+PASS	201 body: snapshot of the default-horizon risk row	28 critical 4480 vs critical 4480
+PASS	id is a UUID	
+PASS	GET /requests/:id == POST body	status=200
+PASS	GET /requests newest first includes it	
+PASS	GET /requests sorted createdAt desc	
+PASS	/risk openRequest reflects the new request	{"id": "95b41050-6d98-44cb-85d0-78d307c132e4", "status": "open", "type": "reorder"}
+PASS	400 POST transfer qty = donor stock + 1	status=400 param=quantity
+PASS	POST valid transfer (qty 1 from a donor with stock) 201	status=201
+PASS	400 GET /requests status=bogus	status=400 param=status
+PASS	400 GET /requests status=x	status=400 param=status
+PASS	400 GET /requests/not-a-uuid	status=400 param=id
+PASS	GET /requests/<random uuid> 404	status=404
+PASS	GET /requests/<sql injection> 400	status=400

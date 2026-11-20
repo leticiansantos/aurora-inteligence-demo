@@ -1,0 +1,37 @@
+# claim:    expected months (2003-01..max ref_month) vs present; gaps vs market.known_missing_months []; no-brand-table months [2004-01-01]
+# command:  tests/market/run_market_checks.sh (info queries below)
+# target:   demo (classic_stable.auto_intelligence)
+# git_sha:  ebddd10
+# date:     2026-11-20 15:01 UTC
+# result:   INFO
+
+## window and counts
+first_expected,last_expected,expected_months,present_months,absent_months
+2003-01-01,2026-09-01,285,285,0
+
+## absent months (must be empty or allow-listed)
+ref_month
+
+## months without brand or model table
+ref_month,segment,brand_table_found,model_table_found,source_file
+2004-01-01,automoveis,false,false,2004_01_2.pdf
+2004-01-01,comerciais_leves,false,false,2004_01_2.pdf
+
+## months resolved from more than one file (latest source_last_modified wins)
+ref_month,n_files,files
+
+## documents whose month differs from the URL/file name month
+file_name,ref_month,month_source
+2023_02_3.pdf,2023-03-01,p6_header
+
+## documents not parsed ok (month_resolved warn; never selected)
+file_name,parse_status,ref_month,is_selected,parse_dialect
+
+## month_source and parse_status distribution
+month_source,parse_status,parse_dialect,n
+p6_header,ok,A_modelo,143
+p6_header,ok,B_upper,12
+p6_header,ok,C_fabricante,96
+p6_header,ok,D_2024,33
+title,ok,previa,1
+

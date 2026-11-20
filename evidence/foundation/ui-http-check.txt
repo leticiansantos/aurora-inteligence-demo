@@ -1,0 +1,29 @@
+# claim:    UI is auth-gated, serves the pt-BR shell and assets, and the served bundle holds the section copy and no secrets
+# command:  curl with/without the caller's OAuth token (token not recorded)
+# git_sha:  6755b83
+# date:     2026-11-20 12:31 UTC
+# result:   see checks
+
+no token  GET /            -> 302  (expect 302 to login)
+no token  GET /api/health  -> 401  (expect 401)
+token     GET /            -> 200
+  <html lang="pt-BR">
+  <title>Aurora Motors · Auto Intelligence</title>
+token     GET /assets/index-DGnbYDZK.css -> 200 (125199 bytes)
+token     GET /assets/index-DVkR-1RZ.js -> 200 (441894 bytes)
+token     GET /favicon.svg -> 200 (522 bytes)
+token     GET /site.webmanifest -> 200 (300 bytes)
+token     GET /mercado -> 200
+token     GET /pos-venda -> 200
+token     GET /motorista -> 200
+token     GET /genie -> 200
+
+## served JS bundle content
+  contains "Visão de Mercado": yes
+  contains "Pós-venda": yes
+  contains "Visão do Motorista": yes
+  contains "Genie": yes
+  contains "Benefícios": yes
+  contains "Aurora Motors": yes
+  real-brand words: 0 (expect 0)
+  token patterns:   0 (expect 0)

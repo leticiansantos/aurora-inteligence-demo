@@ -1,0 +1,26 @@
+# claim:   aftersales tables satisfy the frozen contract (docs/data-model/aftersales.md) and the QA oracles
+# command: python3 -I tests/aftersales/run_sql_checks.py --catalog classic_stable --schema auto_intelligence --only 05
+# date:    2026-11-20 20:03 UTC  qa git: 44b938e
+# result:  PASS  checks=19
+
+## 05_forecast_backtest.sql
+PASS	forecast: 34 rows per series (26 history + 8 future)	720 series 34..34
+PASS	forecast: history weeks 2026-05-18..2026-11-09, future 2026-11-16..2027-01-04	
+PASS	forecast: holdout = last 13 history weeks (after cutoff 2026-08-16), horizon_week 1..13	rows=9360 min_week=2026-08-17
+PASS	forecast: pre-holdout history has null forecast/interval/baseline	rows=9360
+PASS	forecast: future rows have no actual/sold/baseline, horizon_week 1..8	
+PASS	forecast: history actual/sold == demand_weekly demand/sold	bad=0
+PASS	forecast: 0 <= lower <= forecast <= upper, forecast >= 0	bad=0
+PASS	forecast: interval = max(0, f +/- 1.2816 * max(holdout RMSE, 0.5))	bad=0
+PASS	forecast: baseline = seasonal naive (value 52 weeks earlier)	bad=0 (REPORT: confirm baseline rule with ADR D4)
+PASS	metrics: exactly one champion, forecast_date 2026-11-16, cutoff 2026-08-16, 13 holdout weeks, 720 series	[{"model_version":"4","wape":0.200374082727132,"baseline_wape":0.3014963994659766}]
+PASS	metrics: champion WAPE recomputed from holdout rows	recomputed=0.200374 table=0.200374
+PASS	metrics: champion baseline WAPE recomputed	recomputed=0.301496
+PASS	metrics: champion bias recomputed	recomputed=0.033414
+PASS	metrics: model beats seasonal-naive baseline	wape=0.2004 baseline=0.3015
+PASS	forecast: every row (holdout and future) carries the champion version N, one forecast_date	["4"]
+## 05a_ml_keys.sql
+PASS	forecast_weekly pk	rows=24480
+PASS	model_metrics pk	rows=2
+PASS	stockout_risk pk	rows=2160
+PASS	referential: every risk part exists	orphans in daily_sales/stockout_risk

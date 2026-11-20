@@ -1,0 +1,8 @@
+# claim:    statements on the warehouse after the smoke call were executed as the app SP
+# command:  databricks api get /api/2.0/sql/history/queries (filter warehouse 754bcdfc4beaaaa1)
+# git_sha:  6755b83
+# date:     2026-11-20 12:31 UTC
+# result:   see rows
+
+executed_as	status	start_utc	(query text is redacted by the API for other principals)
+9d41f279-1e55-4654-9579-3587ef47e5e8	FINISHED	2026-11-20T12:32:11Z

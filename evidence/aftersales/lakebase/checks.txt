@@ -1,0 +1,28 @@
+# claim:   Lakebase serving tables match Delta; OLTP constraints and app SP least privilege per ADR 002 D6
+# command: tests/aftersales/check_lakebase.sh aftersales_app_dev
+# project: projects/auto-intelligence-aftersales/branches/production  serving schema: auto_intelligence  app schema: aftersales_app_dev
+# date:    2026-11-20 20:02 UTC  qa git: 6638500
+# result:  PASS
+
+PASS	aftersales_lb_dealers == aftersales_dealers (count, sums, max scored_at)	pg=12 1 delta=12 1.0
+PASS	aftersales_lb_parts == aftersales_parts (count, sums, max scored_at)	pg=60 15060 18 delta=60 15060 18
+PASS	aftersales_lb_forecast_weekly == aftersales_forecast_weekly (count, sums, max scored_at)	pg=24480 340345.358 374918 2026-11-20 19:54:08 delta=24480 340345.358 374918 2026-11-20 19:54:08
+PASS	aftersales_lb_stockout_risk == aftersales_stockout_risk (count, sums, max scored_at)	pg=2160 3645689.18 40440 254 2026-11-20 19:54:08 delta=2160 3645689.18 40440 254 2026-11-20 19:54:08
+PASS	aftersales_lb_model_metrics == aftersales_model_metrics (count, sums, max scored_at)	pg=2 4 0.400748 delta=2 4 0.400748
+PASS	aftersales_lb_dealers primary key == source PK	dealer_id
+PASS	aftersales_lb_parts primary key == source PK	part_id
+PASS	aftersales_lb_forecast_weekly primary key == source PK	dealer_id,part_id,week_start
+PASS	aftersales_lb_stockout_risk primary key == source PK	dealer_id,horizon_days,part_id
+PASS	aftersales_lb_model_metrics primary key == source PK	model_version
+INFO	risk vs forecast scored_at gap (min)	0.0
+PASS	partial unique index (dealer, part, type) on active statuses	CREATE UNIQUE INDEX aftersales_requests_one_active ON aftersales_app_dev.aftersales_replenishment_requests USING btree (dealer_id, part_id, type) WHERE (status = ANY (ARRAY['open'::text, 'approved'::text, 'in_transit'::text]))
+PASS	CHECK constraint contains 'reorder'	
+PASS	CHECK constraint contains '100000'	
+PASS	CHECK constraint contains 'from_dealer_id IS NOT NULL'	
+PASS	CHECK constraint contains '<> dealer_id'	
+PASS	CHECK constraint contains 'cancelled'	
+PASS	CHECK constraint contains '500'	
+INFO	owner of schema aftersales_app_dev	"<user>"
+PASS	requested_by only 'app'/'local-dev' (no PII)	
+DEFERRED	SP role 9d41f279-1e55-4654-9579-3587ef47e5e8 not in Postgres: app deploy with the postgres resource is follow-up F1 (ADR D8 step 6); not a failure	
+INFO	QA-T6 request rows (id, dealer, part, type, qty, status, requested_by, horizon, risk_level, lost_sales, forecast_date)	

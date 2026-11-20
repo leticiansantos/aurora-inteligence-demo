@@ -1,0 +1,151 @@
+# claim:   aftersales_* tables are commented, tagged synthetic/aid_domain/layer, free of real brands and legacy CSV data
+# command: python3 -I tests/aftersales/check_data_rules.py --catalog classic_stable --schema auto_intelligence --legacy-dir <old demo CSVs>
+# date:    2026-11-20 19:42 UTC  git: 8578054
+# result:  FAIL (20)  checks=143
+# ruling:  the 20 FAIL lines all concern the 5 synced aftersales_lb_* UC objects (no tags/column comments).
+#          FINDING -> scoped out per ADR D9 (eeb8018): D9 covers the 16 Delta tables; tagging lb_* is follow-up F7.
+#          All 16 Delta aftersales_* tables PASS tags (synthetic, aid_domain, layer) and comments; leak scans PASS.
+
+PASS	aftersales tables exist	n=21
+PASS	aftersales_daily_sales: table comment	MATERIALIZED_VIEW
+PASS	aftersales_daily_sales: tag synthetic=true	got=true
+PASS	aftersales_daily_sales: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_daily_sales: tag layer in raw/silver/gold/ml	got=silver
+PASS	aftersales_daily_sales: every column commented	
+PASS	aftersales_dealers: table comment	MATERIALIZED_VIEW
+PASS	aftersales_dealers: tag synthetic=true	got=true
+PASS	aftersales_dealers: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_dealers: tag layer in raw/silver/gold/ml	got=silver
+PASS	aftersales_dealers: every column commented	
+PASS	aftersales_demand_weekly: table comment	MATERIALIZED_VIEW
+PASS	aftersales_demand_weekly: tag synthetic=true	got=true
+PASS	aftersales_demand_weekly: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_demand_weekly: tag layer in raw/silver/gold/ml	got=gold
+PASS	aftersales_demand_weekly: every column commented	
+PASS	aftersales_fleet_monthly: table comment	MATERIALIZED_VIEW
+PASS	aftersales_fleet_monthly: tag synthetic=true	got=true
+PASS	aftersales_fleet_monthly: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_fleet_monthly: tag layer in raw/silver/gold/ml	got=silver
+PASS	aftersales_fleet_monthly: every column commented	
+PASS	aftersales_forecast_weekly: table comment	MANAGED
+PASS	aftersales_forecast_weekly: tag synthetic=true	got=true
+PASS	aftersales_forecast_weekly: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_forecast_weekly: tag layer in raw/silver/gold/ml	got=ml
+PASS	aftersales_forecast_weekly: every column commented	
+PASS	aftersales_lb_dealers: table comment	FOREIGN
+FAIL	aftersales_lb_dealers: tag synthetic=true	got=None
+FAIL	aftersales_lb_dealers: tag aid_domain=aftersales	got=None
+FAIL	aftersales_lb_dealers: tag layer in raw/silver/gold/ml	got=None
+FAIL	aftersales_lb_dealers: every column commented	missing=['dealer_id', 'dealer_name', 'city', 'state', 'region', 'opened_on', 'fleet_share']
+PASS	aftersales_lb_forecast_weekly: table comment	FOREIGN
+FAIL	aftersales_lb_forecast_weekly: tag synthetic=true	got=None
+FAIL	aftersales_lb_forecast_weekly: tag aid_domain=aftersales	got=None
+FAIL	aftersales_lb_forecast_weekly: tag layer in raw/silver/gold/ml	got=None
+FAIL	aftersales_lb_forecast_weekly: every column commented	missing=['dealer_id', 'part_id', 'week_start', 'is_future', 'horizon_week', 'actual_units', 'sold_units', 'forecast_units', 'lower_units', 'upper_units']
+PASS	aftersales_lb_model_metrics: table comment	FOREIGN
+FAIL	aftersales_lb_model_metrics: tag synthetic=true	got=None
+FAIL	aftersales_lb_model_metrics: tag aid_domain=aftersales	got=None
+FAIL	aftersales_lb_model_metrics: tag layer in raw/silver/gold/ml	got=None
+FAIL	aftersales_lb_model_metrics: every column commented	missing=['model_name', 'model_version', 'run_id', 'cutoff_date', 'forecast_date', 'holdout_weeks', 'n_series', 'wape', 'baseline_wape', 'bias']
+PASS	aftersales_lb_parts: table comment	FOREIGN
+FAIL	aftersales_lb_parts: tag synthetic=true	got=None
+FAIL	aftersales_lb_parts: tag aid_domain=aftersales	got=None
+FAIL	aftersales_lb_parts: tag layer in raw/silver/gold/ml	got=None
+FAIL	aftersales_lb_parts: every column commented	missing=['part_id', 'part_name', 'category_id', 'category_name', 'unit_price_brl', 'unit_cost_brl', 'is_critical']
+PASS	aftersales_lb_stockout_risk: table comment	FOREIGN
+FAIL	aftersales_lb_stockout_risk: tag synthetic=true	got=None
+FAIL	aftersales_lb_stockout_risk: tag aid_domain=aftersales	got=None
+FAIL	aftersales_lb_stockout_risk: tag layer in raw/silver/gold/ml	got=None
+FAIL	aftersales_lb_stockout_risk: every column commented	missing=['dealer_id', 'part_id', 'horizon_days', 'forecast_date', 'stock_units', 'on_order_units', 'available_units', 'lead_time_days', 'forecast_units', 'forecast_sigma_units']
+PASS	aftersales_lead_times: table comment	MATERIALIZED_VIEW
+PASS	aftersales_lead_times: tag synthetic=true	got=true
+PASS	aftersales_lead_times: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_lead_times: tag layer in raw/silver/gold/ml	got=silver
+PASS	aftersales_lead_times: every column commented	
+PASS	aftersales_model_metrics: table comment	MANAGED
+PASS	aftersales_model_metrics: tag synthetic=true	got=true
+PASS	aftersales_model_metrics: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_model_metrics: tag layer in raw/silver/gold/ml	got=ml
+PASS	aftersales_model_metrics: every column commented	
+PASS	aftersales_parts: table comment	MATERIALIZED_VIEW
+PASS	aftersales_parts: tag synthetic=true	got=true
+PASS	aftersales_parts: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_parts: tag layer in raw/silver/gold/ml	got=silver
+PASS	aftersales_parts: every column commented	
+PASS	aftersales_raw_daily_sales: table comment	STREAMING_TABLE
+PASS	aftersales_raw_daily_sales: tag synthetic=true	got=true
+PASS	aftersales_raw_daily_sales: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_raw_daily_sales: tag layer in raw/silver/gold/ml	got=raw
+PASS	aftersales_raw_dealers: table comment	STREAMING_TABLE
+PASS	aftersales_raw_dealers: tag synthetic=true	got=true
+PASS	aftersales_raw_dealers: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_raw_dealers: tag layer in raw/silver/gold/ml	got=raw
+PASS	aftersales_raw_lead_times: table comment	STREAMING_TABLE
+PASS	aftersales_raw_lead_times: tag synthetic=true	got=true
+PASS	aftersales_raw_lead_times: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_raw_lead_times: tag layer in raw/silver/gold/ml	got=raw
+PASS	aftersales_raw_parts: table comment	STREAMING_TABLE
+PASS	aftersales_raw_parts: tag synthetic=true	got=true
+PASS	aftersales_raw_parts: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_raw_parts: tag layer in raw/silver/gold/ml	got=raw
+PASS	aftersales_raw_stock_snapshots: table comment	STREAMING_TABLE
+PASS	aftersales_raw_stock_snapshots: tag synthetic=true	got=true
+PASS	aftersales_raw_stock_snapshots: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_raw_stock_snapshots: tag layer in raw/silver/gold/ml	got=raw
+PASS	aftersales_stock_position: table comment	MATERIALIZED_VIEW
+PASS	aftersales_stock_position: tag synthetic=true	got=true
+PASS	aftersales_stock_position: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_stock_position: tag layer in raw/silver/gold/ml	got=gold
+PASS	aftersales_stock_position: every column commented	
+PASS	aftersales_stock_snapshots: table comment	MATERIALIZED_VIEW
+PASS	aftersales_stock_snapshots: tag synthetic=true	got=true
+PASS	aftersales_stock_snapshots: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_stock_snapshots: tag layer in raw/silver/gold/ml	got=silver
+PASS	aftersales_stock_snapshots: every column commented	
+PASS	aftersales_stockout_risk: table comment	MANAGED
+PASS	aftersales_stockout_risk: tag synthetic=true	got=true
+PASS	aftersales_stockout_risk: tag aid_domain=aftersales	got=aftersales
+PASS	aftersales_stockout_risk: tag layer in raw/silver/gold/ml	got=ml
+PASS	aftersales_stockout_risk: every column commented	
+PASS	aftersales_daily_sales: no real brand in string columns	needles=89 cols=2
+PASS	aftersales_daily_sales: no legacy CSV value in string columns	needles=186 cols=2
+PASS	aftersales_dealers: no real brand in string columns	needles=89 cols=5
+PASS	aftersales_dealers: no legacy CSV value in string columns	needles=186 cols=5
+PASS	aftersales_demand_weekly: no real brand in string columns	needles=89 cols=2
+PASS	aftersales_demand_weekly: no legacy CSV value in string columns	needles=186 cols=2
+PASS	aftersales_fleet_monthly: no real brand in string columns	needles=89 cols=2
+PASS	aftersales_fleet_monthly: no legacy CSV value in string columns	needles=186 cols=2
+PASS	aftersales_forecast_weekly: no real brand in string columns	needles=89 cols=3
+PASS	aftersales_forecast_weekly: no legacy CSV value in string columns	needles=186 cols=3
+PASS	aftersales_lb_dealers: no real brand in string columns	needles=89 cols=5
+PASS	aftersales_lb_dealers: no legacy CSV value in string columns	needles=186 cols=5
+PASS	aftersales_lb_forecast_weekly: no real brand in string columns	needles=89 cols=3
+PASS	aftersales_lb_forecast_weekly: no legacy CSV value in string columns	needles=186 cols=3
+PASS	aftersales_lb_model_metrics: no real brand in string columns	needles=89 cols=3
+PASS	aftersales_lb_model_metrics: no legacy CSV value in string columns	needles=186 cols=3
+PASS	aftersales_lb_parts: no real brand in string columns	needles=89 cols=4
+PASS	aftersales_lb_parts: no legacy CSV value in string columns	needles=186 cols=4
+PASS	aftersales_lb_stockout_risk: no real brand in string columns	needles=89 cols=6
+PASS	aftersales_lb_stockout_risk: no legacy CSV value in string columns	needles=186 cols=6
+PASS	aftersales_lead_times: no real brand in string columns	needles=89 cols=2
+PASS	aftersales_lead_times: no legacy CSV value in string columns	needles=186 cols=2
+PASS	aftersales_model_metrics: no real brand in string columns	needles=89 cols=3
+PASS	aftersales_model_metrics: no legacy CSV value in string columns	needles=186 cols=3
+PASS	aftersales_parts: no real brand in string columns	needles=89 cols=4
+PASS	aftersales_parts: no legacy CSV value in string columns	needles=186 cols=4
+PASS	aftersales_raw_daily_sales: no real brand in string columns	needles=89 cols=7
+PASS	aftersales_raw_daily_sales: no legacy CSV value in string columns	needles=186 cols=7
+PASS	aftersales_raw_dealers: no real brand in string columns	needles=89 cols=8
+PASS	aftersales_raw_dealers: no legacy CSV value in string columns	needles=186 cols=8
+PASS	aftersales_raw_lead_times: no real brand in string columns	needles=89 cols=4
+PASS	aftersales_raw_lead_times: no legacy CSV value in string columns	needles=186 cols=4
+PASS	aftersales_raw_parts: no real brand in string columns	needles=89 cols=8
+PASS	aftersales_raw_parts: no legacy CSV value in string columns	needles=186 cols=8
+PASS	aftersales_raw_stock_snapshots: no real brand in string columns	needles=89 cols=6
+PASS	aftersales_raw_stock_snapshots: no legacy CSV value in string columns	needles=186 cols=6
+PASS	aftersales_stock_position: no real brand in string columns	needles=89 cols=2
+PASS	aftersales_stock_position: no legacy CSV value in string columns	needles=186 cols=2
+PASS	aftersales_stock_snapshots: no real brand in string columns	needles=89 cols=2
+PASS	aftersales_stock_snapshots: no legacy CSV value in string columns	needles=186 cols=2
+PASS	aftersales_stockout_risk: no real brand in string columns	needles=89 cols=6
+PASS	aftersales_stockout_risk: no legacy CSV value in string columns	needles=186 cols=6

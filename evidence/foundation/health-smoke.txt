@@ -1,0 +1,40 @@
+# claim:    /api/health ran a live UC query as the app service principal and found the schema
+# command:  tests/smoke/health_smoke.sh classic-stable-new auto-intelligence --schema classic_stable.auto_intelligence
+# git_sha:  6755b83
+# date:     2026-11-20 12:31 UTC
+# result:   PASS
+
+app:            auto-intelligence
+url:            https://auto-intelligence-7405606279083366.6.azure.databricksapps.com
+app_state:      RUNNING
+compute_state:  ACTIVE
+sp_client_id:   9d41f279-1e55-4654-9579-3587ef47e5e8
+http_status:    200
+response:
+{
+  "status": "ok",
+  "timestamp": "2026-11-20T12:32:12.192Z",
+  "unityCatalog": {
+    "catalog": "classic_stable",
+    "currentCatalog": "classic_stable",
+    "error": null,
+    "identity": "9d41f279-1e55-4654-9579-3587ef47e5e8",
+    "latencyMs": 1184,
+    "reachable": true,
+    "schema": "auto_intelligence",
+    "schemaExists": true
+  },
+  "version": "1.0.0"
+}
+PASS: HTTP 200
+PASS: status is ok (not degraded/down)
+PASS: version reported
+PASS: UC probe reachable, no error
+PASS: identity is not a human user
+PASS: identity == app SP client id (9d41f279-1e55-4654-9579-3587ef47e5e8)
+PASS: catalog == classic_stable
+PASS: schema == auto_intelligence
+PASS: schemaExists == true (live UC query)
+PASS: probe latency measured
+
+SMOKE TEST PASSED

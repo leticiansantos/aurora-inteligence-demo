@@ -1,0 +1,26 @@
+@import "@databricks/appkit-ui/styles.css";
+@import "@fontsource/barlow/400.css";
+@import "@fontsource/barlow/500.css";
+@import "@fontsource/barlow/600.css";
+@import "@fontsource/barlow-semi-condensed/500.css";
+@import "@fontsource/barlow-semi-condensed/600.css";
+
+/* Brand palette tokens are injected at runtime by src/brand/applyBrand.ts. */
+
+/* Typography: Barlow (road-signage grotesk) for UI, Semi Condensed for display. */
+@theme {
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Semi Condensed", "Barlow", ui-sans-serif, system-ui, sans-serif;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+}
+
+/* The app is light-only (see applyBrand.ts). Graphite masthead, like an instrument binnacle. */
+:root {
+  --masthead: #1b2128;
+  --masthead-foreground: #c9d1d9;
+}

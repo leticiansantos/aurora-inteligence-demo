@@ -1,0 +1,165 @@
+{
+ "label": "before-rerun",
+ "taken_at": "2026-11-20 19:45 UTC",
+ "tables": {
+  "aftersales_daily_sales": {
+   "rows": 2070720,
+   "fingerprint": "4969956431549064852052",
+   "excluded": []
+  },
+  "aftersales_dealers": {
+   "rows": 12,
+   "fingerprint": "-13982627645167050189",
+   "excluded": []
+  },
+  "aftersales_demand_weekly": {
+   "rows": 295200,
+   "fingerprint": "-4382683112036980823580",
+   "excluded": []
+  },
+  "aftersales_fleet_monthly": {
+   "rows": 3348,
+   "fingerprint": "151236193234545227150",
+   "excluded": []
+  },
+  "aftersales_forecast_weekly": {
+   "rows": 24480,
+   "fingerprint": "1106613916356295987302",
+   "excluded": [
+    "model_version",
+    "scored_at"
+   ]
+  },
+  "aftersales_lead_times": {
+   "rows": 720,
+   "fingerprint": "35128741052992055031",
+   "excluded": []
+  },
+  "aftersales_model_metrics": {
+   "rows": 1,
+   "fingerprint": "4041769221428036927",
+   "excluded": [
+    "logged_at",
+    "model_version",
+    "run_id"
+   ]
+  },
+  "aftersales_parts": {
+   "rows": 60,
+   "fingerprint": "22294815206828947395",
+   "excluded": []
+  },
+  "aftersales_raw_daily_sales": {
+   "rows": 2070720,
+   "fingerprint": "-2509147489220545568549",
+   "excluded": [
+    "_ingested_at",
+    "_source_file"
+   ]
+  },
+  "aftersales_raw_dealers": {
+   "rows": 12,
+   "fingerprint": "-1226331241301548588",
+   "excluded": [
+    "_ingested_at",
+    "_source_file"
+   ]
+  },
+  "aftersales_raw_lead_times": {
+   "rows": 720,
+   "fingerprint": "-233562991796603093836",
+   "excluded": [
+    "_ingested_at",
+    "_source_file"
+   ]
+  },
+  "aftersales_raw_parts": {
+   "rows": 60,
+   "fingerprint": "30022725546557068353",
+   "excluded": [
+    "_ingested_at",
+    "_source_file"
+   ]
+  },
+  "aftersales_raw_stock_snapshots": {
+   "rows": 295920,
+   "fingerprint": "2031834874497993991507",
+   "excluded": [
+    "_ingested_at",
+    "_source_file"
+   ]
+  },
+  "aftersales_stock_position": {
+   "rows": 720,
+   "fingerprint": "23846322921539791481",
+   "excluded": []
+  },
+  "aftersales_stock_snapshots": {
+   "rows": 295920,
+   "fingerprint": "603052796911211224024",
+   "excluded": []
+  },
+  "aftersales_stockout_risk": {
+   "rows": 2160,
+   "fingerprint": "-67358710957789287868",
+   "excluded": [
+    "model_version",
+    "scored_at"
+   ]
+  }
+ },
+ "model_versions": [
+  {
+   "is_champion": "true",
+   "model_name": "classic_stable.auto_intelligence.aftersales_demand_forecaster",
+   "model_version": "3"
+  }
+ ],
+ "ml_model_version_in_tables": [
+  {
+   "t": "forecast",
+   "v": "3"
+  },
+  {
+   "t": "risk",
+   "v": "3"
+  }
+ ],
+ "uc_model": {
+  "aliases": {
+   "champion": "3"
+  },
+  "versions": [
+   "1",
+   "2",
+   "3"
+  ]
+ },
+ "postgres": {
+  "aftersales_lb_dealers": {
+   "rows": "12",
+   "fingerprint": "f69e822dd814ab3d026c5f5618ef8de8"
+  },
+  "aftersales_lb_parts": {
+   "rows": "60",
+   "fingerprint": "41d761678647a56f18bff481c15d041f"
+  },
+  "aftersales_lb_forecast_weekly": {
+   "rows": "24480",
+   "fingerprint": "001341d44990d5eb4be2b540e4660a34"
+  },
+  "aftersales_lb_stockout_risk": {
+   "rows": "2160",
+   "fingerprint": "30d9e3a41addf7d0c4b6daf97fdf8bd0"
+  },
+  "aftersales_lb_model_metrics": {
+   "rows": "1",
+   "fingerprint": "b855b1bc97d6e8a3278124c825def45d"
+  }
+ },
+ "landing": {
+  "files": 194,
+  "tree_sha256": "b15a1b78e86afeb351c60c1abbac99cc642c3541faa23fa92b3800d611579fb5",
+  "bytes": 63689279
+ }
+}

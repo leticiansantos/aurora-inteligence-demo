@@ -1,0 +1,29 @@
+# claim:   aftersales_stockout_risk == independent re-implementation of ADR 002 D5 (all 2160 rows, every field)
+# command: python3 -I tests/aftersales/risk_oracle.py --catalog classic_stable --schema auto_intelligence
+# date:    2026-11-20 20:03 UTC  qa git: 44b938e
+# result:  PASS
+
+PASS	same keys (dealer, part, horizon)	expected=2160 got=2160 missing=[] extra=[]
+PASS	stock_units	mismatches=0
+PASS	on_order_units	mismatches=0
+PASS	available_units	mismatches=0
+PASS	lead_time_days	mismatches=0
+PASS	forecast_units	mismatches=0
+PASS	forecast_sigma_units	mismatches=0
+PASS	safety_stock_units	mismatches=0
+PASS	days_of_stock	mismatches=0
+PASS	days_to_stockout	mismatches=0
+PASS	stockout_probability	mismatches=0
+PASS	risk_level	mismatches=0
+PASS	shortfall_units	mismatches=0
+PASS	lost_sales_brl	mismatches=0
+PASS	action	mismatches=0
+PASS	recommended_qty	mismatches=0
+PASS	transfer_from_dealer_id	mismatches=0
+PASS	transfer_from_excess_units	mismatches=0
+PASS	forecast_date 2026-11-16 and model_version == champion	{"champ": "4", "fd": "2026-11-16", "mv": "4", "nfd": "1", "nmv": "1"}
+FINDING	original D1 target critical+high 3%..12% at h=28	14.167% (102/720) -> deviation accepted in ADR D1 (3a6e17f)
+PASS	D1 target (revised, ADR 3a6e17f): critical+high 3%..15% at h=28	14.167%
+PASS	D1 target: >= 10 transfer recommendations at h=28	133
+INFO	distribution (horizon, level, action) -> rows	{"14|critical|transfer": 11, "14|high|transfer": 3, "14|low|monitor": 694, "14|medium|transfer": 12, "28|critical|reorder": 4, "28|critical|transfer": 9, "28|high|reorder": 14, "28|high|transfer": 75, "28|low|monitor": 564, "28|medium|reorder": 5, "28|medium|transfer": 49, "56|critical|reorder": 13, "56|high|reorder": 360, "56|high|transfer": 67, "56|low|monitor": 219, "56|medium|reorder": 33, "56|medium|transfer": 28}
+PASS	no transfer exceeds the donor on_hand	0 e.g. []

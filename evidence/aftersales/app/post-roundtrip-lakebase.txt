@@ -1,0 +1,43 @@
+# claim:   POST /api/aftersales/requests rows land in Lakebase exactly once, with server-side snapshot, no PII
+# command: psql (READ ONLY txn) on projects/auto-intelligence-aftersales/branches/production/endpoints/primary, schema aftersales_app_qa_dev (QA local instance, dev fixture aftersales_lb_dev)
+# date:    2026-11-20 17:32 UTC  backend code: team/pos1-backend 1cd8da0
+
+## rows by (dealer, part, type, status): every race produced exactly 1 row
+dealer_id | part_id | type | status | n | notes
+D001 | P002 | reorder | open | 1 | QA-T6 race
+D001 | P002 | transfer | open | 1 | QA-T6 transfer
+D002 | P002 | reorder | open | 1 | QA-T6 race
+D003 | P002 | reorder | open | 1 | QA-T6 race
+(4 rows)
+
+## rows created by the last run (ids from api-contract-fixture.txt)
+id | dealer_id | part_id | type | quantity | from_dealer_id | status | requested_by | horizon_days | risk_level | lost_sales_brl | forecast_date | note
+95b41050-6d98-44cb-85d0-78d307c132e4 | D003 | P002 | reorder | 5 |  | open | local-dev | 28 | critical | 4480.00 | 2026-11-16 | QA-T6 race
+500aa7a8-0394-4f3e-8587-62dc8e824d0e | D001 | P002 | transfer | 1 | D002 | open | local-dev | 28 | critical | 4480.00 | 2026-11-16 | QA-T6 transfer
+(2 rows)
+
+## risk row the snapshot was copied from (h=28)
+dealer_id | part_id | horizon_days | risk_level | lost_sales_brl | forecast_date
+D003 | P002 | 28 | critical | 4480 | 2026-11-16
+(1 row)
+
+## constraints and index
+indexdef
+CREATE UNIQUE INDEX aftersales_replenishment_requests_pkey ON aftersales_app_qa_dev.aftersales_replenishment_requests USING btree (id)
+CREATE UNIQUE INDEX aftersales_requests_one_active ON aftersales_app_qa_dev.aftersales_replenishment_requests USING btree (dealer_id, part_id, type) WHERE (status = ANY (ARRAY['open'::text, 'approved'::text, 'in_transit'::text]))
+(2 rows)
+pg_get_constraintdef
+CHECK (((from_dealer_id IS NULL) OR (from_dealer_id <> dealer_id)))
+CHECK (((note IS NULL) OR (char_length(note) <= 500)))
+CHECK (((quantity >= 1) AND (quantity <= 100000)))
+CHECK (((type = 'transfer'::text) = (from_dealer_id IS NOT NULL)))
+CHECK ((horizon_days = ANY (ARRAY[14, 28, 56])))
+CHECK ((status = ANY (ARRAY['open'::text, 'approved'::text, 'in_transit'::text, 'fulfilled'::text, 'cancelled'::text])))
+CHECK ((type = ANY (ARRAY['reorder'::text, 'transfer'::text])))
+PRIMARY KEY (id)
+(8 rows)
+
+## PII: requested_by values
+requested_by | count
+local-dev | 4
+(1 row)

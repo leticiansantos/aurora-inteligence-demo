@@ -1,0 +1,17 @@
+# NOT deployed in this run (ADR section 7, follow-up F1). Not matched by the `resources/*.yml` include glob.
+# To enable Lakebase for the deployed app, merge these two hunks into resources/app.yml, then follow
+# scripts/lakebase/README.md (section "Enable Lakebase in the deployed app").
+#
+# 1) under resources.apps.app.config.env:
+#      - name: LAKEBASE_ENDPOINT
+#        value_from: postgres
+#      - name: AFTERSALES_APP_SCHEMA
+#        value: aftersales_app
+#
+# 2) under resources.apps.app.resources (PG* variables are injected by the platform for this resource):
+resources_hunk:
+  - name: postgres
+    postgres:
+      branch: projects/auto-intelligence-aftersales/branches/production
+      database: projects/auto-intelligence-aftersales/branches/production/databases/databricks-postgres
+      permission: CAN_CONNECT_AND_CREATE

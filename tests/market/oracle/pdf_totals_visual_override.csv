@@ -1,0 +1,6 @@
+month,source_file,autos_month,light_commercial_month,autos_plus_lc_month,autos_prev_month,light_commercial_prev_month,autos_ytd,light_commercial_ytd,parse_status
+2020-04-01,2020_04_2.pdf,39498,11864,51362,131249,24558,490431,93474,manual_visual_read
+2020-05-01,2020_05_2.pdf,44139,12500,56639,39493,11862,534554,105971,manual_visual_read
+2020-06-01,2020_06_2.pdf,102400,20372,122772,44138,12497,636943,126337,manual_visual_read
+2023-09-01,2023_09_2.pdf,145682,41751,187433,153478,43401,1209293,325190,manual_visual_read
+2024-01-01,2024_01_02.pdf,118507,33555,152062,187746,48844,118507,33555,manual_visual_read

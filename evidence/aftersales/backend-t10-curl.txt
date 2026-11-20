@@ -1,0 +1,18 @@
+## A) Lakebase configured (dev fixture schemas)
+GET filters -> 200
+GET risk?limit=1&minLevel=high -> 200
+GET summary -> 200
+POST (D002/P004 reorder) -> {"request":{"id":"9ed21b0c-89cb-4e6e-a850-6b6f27001a27","dealerId":"D002","dealerName":"Aurora Motors Curitiba","partId"
+market summary -> 200
+## B) Lakebase NOT configured (as the deployable app.yml)
+aftersales filters -> 404 (route not registered)
+market summary -> 200
+health -> 200
+## C) Lakebase configured but broken (bad endpoint/host)
+aftersales filters -> {"error":{"code":"lakebase_unavailable","message":"Banco operacional (Lakebase) indisponível. Tente novamente."}} [503]
+market summary -> 200
+health -> 200
+## B') Lakebase NOT configured, after making the stub unconditional
+aftersales filters -> {"error":{"code":"lakebase_unavailable","message":"Banco operacional (Lakebase) indisponível. Tente novamente."}} [503]
+aftersales POST -> {"error":{"code":"lakebase_unavailable","message":"Banco operacional (Lakebase) indisponível. Tente novamente."}} [503]
+market summary -> 200

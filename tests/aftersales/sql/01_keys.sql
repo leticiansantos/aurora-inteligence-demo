@@ -1,0 +1,10 @@
+-- PK uniqueness and non-null keys for every contract table (docs/data-model/aftersales.md §4)
+SELECT 'dealers pk' AS check, count(*) = count(DISTINCT dealer_id) AND count_if(dealer_id IS NULL) = 0 AS ok, concat('rows=', count(*)) AS detail FROM __T__aftersales_dealers
+UNION ALL SELECT 'parts pk', count(*) = count(DISTINCT part_id) AND count_if(part_id IS NULL) = 0, concat('rows=', count(*)) FROM __T__aftersales_parts
+UNION ALL SELECT 'lead_times pk', count(*) = count(DISTINCT dealer_id, part_id) AND count_if(dealer_id IS NULL OR part_id IS NULL) = 0, concat('rows=', count(*)) FROM __T__aftersales_lead_times
+UNION ALL SELECT 'daily_sales pk', count(*) = count(DISTINCT sale_date, dealer_id, part_id) AND count_if(sale_date IS NULL OR dealer_id IS NULL OR part_id IS NULL) = 0, concat('rows=', count(*)) FROM __T__aftersales_daily_sales
+UNION ALL SELECT 'stock_snapshots pk', count(*) = count(DISTINCT snapshot_date, dealer_id, part_id) AND count_if(snapshot_date IS NULL OR dealer_id IS NULL OR part_id IS NULL) = 0, concat('rows=', count(*)) FROM __T__aftersales_stock_snapshots
+UNION ALL SELECT 'fleet_monthly pk', count(*) = count(DISTINCT ref_month, dealer_id, model) AND count_if(ref_month IS NULL OR dealer_id IS NULL OR model IS NULL) = 0, concat('rows=', count(*)) FROM __T__aftersales_fleet_monthly
+UNION ALL SELECT 'demand_weekly pk', count(*) = count(DISTINCT week_start, dealer_id, part_id) AND count_if(week_start IS NULL OR dealer_id IS NULL OR part_id IS NULL) = 0, concat('rows=', count(*)) FROM __T__aftersales_demand_weekly
+UNION ALL SELECT 'stock_position pk', count(*) = count(DISTINCT dealer_id, part_id) AND count(*) = 720, concat('rows=', count(*)) FROM __T__aftersales_stock_position
+UNION ALL SELECT 'referential: every daily_sales dealer/part exists', (SELECT count(*) FROM __T__aftersales_daily_sales s LEFT ANTI JOIN __T__aftersales_dealers d USING (dealer_id)) + (SELECT count(*) FROM __T__aftersales_daily_sales s LEFT ANTI JOIN __T__aftersales_parts p USING (part_id)) = 0, 'orphans in daily_sales'

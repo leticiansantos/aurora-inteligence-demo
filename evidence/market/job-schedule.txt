@@ -1,0 +1,50 @@
+# claim:    the market job schedule ships PAUSED (runs are triggered manually)
+# command:  databricks jobs get 289664164561831
+# git_sha:  37fb5d6
+# date:     2026-11-20 14:45 UTC
+# result:   PASS
+
+{
+  "name": "[demo] market-monthly",
+  "schedule": {
+    "pause_status": "PAUSED",
+    "quartz_cron_expression": "0 0 7 1-15 * ?",
+    "timezone_id": "America/Sao_Paulo"
+  },
+  "tasks": [
+    {
+      "task_key": "download",
+      "depends_on": null,
+      "condition_task": null,
+      "pipeline_task": null
+    },
+    {
+      "task_key": "has_new_files",
+      "depends_on": [
+        {
+          "task_key": "download"
+        }
+      ],
+      "condition_task": {
+        "left": "{{tasks.download.values.new_files}}",
+        "op": "GREATER_THAN",
+        "right": "0"
+      },
+      "pipeline_task": null
+    },
+    {
+      "task_key": "pipeline",
+      "depends_on": [
+        {
+          "outcome": "true",
+          "task_key": "has_new_files"
+        }
+      ],
+      "condition_task": null,
+      "pipeline_task": {
+        "full_refresh": false,
+        "pipeline_id": "3ee6d2a9-398c-4b85-87d6-b313809c81f5"
+      }
+    }
+  ]
+}

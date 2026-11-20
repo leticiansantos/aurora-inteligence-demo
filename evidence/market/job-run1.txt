@@ -1,0 +1,30 @@
+# claim:    first job run: download task succeeded, pipeline task ran and succeeded
+# command:  databricks jobs get-run 941856964050794; jobs get-run-output; pipelines get-update / list-pipeline-events
+# target:   demo
+# git_sha:  8ac108f
+# date:     2026-11-20 14:17 UTC
+# result:   FAIL
+
+## run
+job_id=289664164561831 run_id=941856964050794 trigger=ONE_TIME state=INTERNAL_ERROR/FAILED start=2026-11-20T13:36:18Z duration_s=2200.23
+
+## tasks (task_key, life_cycle_state, result_state, condition_outcome, task_run_id)
+download	TERMINATED	SUCCESS	-	640563148987704
+pipeline	TERMINATED	FAILED	-	13616413037856
+has_new_files	TERMINATED	SUCCESS	true	317744977427987
+
+## condition outcome: true · pipeline task: FAILED
+
+## download task output (logs tail + task values)
+candidates to probe: 307 (manifest rows: 0)
+run summary: {'downloaded': 285, 'not_found': 22}
+new_files=285
+
+error=-
+
+## pipeline 3ee6d2a9-398c-4b85-87d6-b313809c81f5: latest updates
+d2028843-e92d-4d3a-8b75-6b5733742f7d	INITIALIZING	API_CALL	false	2026-11-20T14:17:02Z
+4200de64-06c4-4f58-9e27-e22970d24cf6	FAILED	RETRY_ON_FAILURE	false	2026-11-20T14:06:06Z
+ddd896ed-40d3-4a46-a18f-59de9aebb897	FAILED	RETRY_ON_FAILURE	false	2026-11-20T14:01:58Z
+
+## pipeline flow progress (rows written, expectation results) for the latest update

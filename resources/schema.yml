@@ -1,0 +1,20 @@
+resources:
+  schemas:
+    demo_schema:
+      catalog_name: ${var.catalog}
+      name: ${var.schema}
+      comment: Auto Intelligence demo (aftersales parts forecast, market and driver data).
+
+  volumes:
+    raw_landing:
+      catalog_name: ${var.catalog}
+      schema_name: ${resources.schemas.demo_schema.name}
+      name: raw_landing
+      volume_type: MANAGED
+      comment: Raw landing zone for Lakeflow ingestion (public PDFs and synthetic CSVs).
+    manuals:
+      catalog_name: ${var.catalog}
+      schema_name: ${resources.schemas.demo_schema.name}
+      name: manuals
+      volume_type: MANAGED
+      comment: Owner manuals fetched by script from public URLs (never committed).

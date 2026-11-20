@@ -1,0 +1,48 @@
+# claim:    synthetic rows only in Aurora tables/rows; real totals unchanged with and without Aurora
+# command:  tests/market/run_market_checks.sh (info queries below)
+# target:   demo (classic_stable.auto_intelligence)
+# git_sha:  ebddd10
+# date:     2026-11-20 15:01 UTC
+# result:   INFO
+
+## rows by is_synthetic in gold and views
+tbl,is_synthetic,n_rows,units
+market_brand_monthly,false,11707,58609228
+market_brand_monthly,true,93,380258
+market_model_monthly,false,27151,55004846
+market_model_monthly,true,279,380258
+market_share_real,false,11707,58609228
+market_share_with_aurora,false,11707,58609228
+market_share_with_aurora,true,93,380258
+
+## Aurora brand name in real silver tables (must be 0)
+in_brand_silver,in_model_silver,in_real_view
+0,0,0
+
+## automoveis per year: published total, real view, with-Aurora view, Aurora share (Dec)
+yr,published,real_view,with_aurora,aurora_units,aurora_share_pct
+2003,1214393,1214393,1214393,0,0.0
+2004,1311922,1311922,1311922,0,0.0
+2005,1439138,1439138,1439138,0,0.0
+2006,1632199,1632199,1632199,0,0.0
+2007,2085385,2085385,2085385,0,0.0
+2008,2341981,2341981,2341981,0,0.0
+2009,2644610,2644610,2644610,0,0.0
+2010,2857839,2857839,2857839,0,0.0
+2011,2902153,2902153,2902153,0,0.0
+2012,3094140,3094140,3094140,0,0.0
+2013,3041863,3041863,3041863,0,0.0
+2014,2795134,2795134,2795134,0,0.0
+2015,2101719,2101719,2101719,0,0.0
+2016,1687907,1687907,1687907,0,0.0
+2017,1856179,1856179,1856179,0,0.0
+2018,2101566,2101566,2101566,0,0.0
+2019,2262220,2262220,2272795,10575,0.47
+2020,1615782,1615782,1639524,23742,1.45
+2021,1558185,1558185,1597290,39105,2.45
+2022,1574554,1574554,1628133,53579,3.29
+2023,1720961,1720961,1779940,58979,3.31
+2024,1948404,1948404,2013865,65461,3.25
+2025,1996751,1996751,2064979,68228,3.3
+2026,1728507,1728507,1789096,60589,3.39
+

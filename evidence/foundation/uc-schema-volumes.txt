@@ -1,0 +1,20 @@
+# claim:    schema classic_stable.auto_intelligence and its managed volumes exist
+# command:  databricks schemas get classic_stable.auto_intelligence; databricks volumes list classic_stable auto_intelligence
+# git_sha:  6755b83
+# date:     2026-11-20 12:31 UTC
+# result:   PASS
+
+## schema
+{
+  "full_name": "classic_stable.auto_intelligence",
+  "catalog_name": "classic_stable",
+  "name": "auto_intelligence",
+  "comment": "Auto Intelligence demo (aftersales parts forecast, market and driver data).",
+  "owner": "<deploy-user>",
+  "created_at": "2026-11-20T12:16:40Z"
+}
+
+## volumes
+full_name	volume_type	comment
+classic_stable.auto_intelligence.manuals	MANAGED	Owner manuals fetched by script from public URLs (never committed).
+classic_stable.auto_intelligence.raw_landing	MANAGED	Raw landing zone for Lakeflow ingestion (public PDFs and synthetic CSVs).

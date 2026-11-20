@@ -1,0 +1,36 @@
+# Root bundle for the Auto Intelligence demo foundation (Unity Catalog objects + Databricks App).
+# Always deploy with an explicit profile: ./deploy.sh --profile classic-stable-new
+bundle:
+  name: auto-intelligence-demo
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: Unity Catalog catalog that hosts the demo schema (must already exist).
+    default: classic_stable
+  schema:
+    description: Single schema for the demo; tables are prefixed market_/aftersales_/driver_.
+    default: auto_intelligence
+  warehouse_id:
+    description: SQL warehouse the app queries (Serverless Starter Warehouse).
+    default: 754bcdfc4beaaaa1
+  app_name:
+    description: Databricks App name (workspace-unique).
+    default: auto-intelligence
+
+# No `mode: development` on purpose: it would prefix the schema/volume names
+# (dev_<user>_...) and break the fixed classic_stable.auto_intelligence contract.
+targets:
+  demo:
+    default: true
+    workspace:
+      host: https://adb-7405606279083366.6.azuredatabricks.net
+
+  dev:
+    workspace:
+      host: https://adb-7405606279083366.6.azuredatabricks.net
+    variables:
+      schema: auto_intelligence_dev
+      app_name: auto-intelligence-dev

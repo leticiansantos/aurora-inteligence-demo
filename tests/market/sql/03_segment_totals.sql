@@ -1,0 +1,29 @@
+-- claim: market_segment_totals has exactly one positive row per (month, segment), both segments, with table-found
+--        flags consistent with the silver ranking tables; a month without a model table must be allow-listed
+-- returns: duplicate keys, missing segments, non-positive or unknown values, inconsistent flags
+WITH months AS (SELECT DISTINCT ref_month FROM __T__market_segment_totals),
+segs AS (SELECT explode(array('automoveis', 'comerciais_leves')) AS segment),
+models AS (SELECT DISTINCT ref_month, segment FROM __T__market_registrations_model),
+no_model_ok AS (  -- runner fills this from MARKET_KNOWN_NO_MODEL_TABLE_MONTHS (p6 really has no ranking)
+  SELECT to_date(m) AS ref_month FROM (SELECT explode(split('__KNOWN_NO_MODEL__', ',')) AS m) WHERE m <> ''
+)
+SELECT 'duplicate_key' AS violation, CAST(ref_month AS STRING) AS ref_month, segment, count(*) AS n
+FROM __T__market_segment_totals GROUP BY ref_month, segment HAVING count(*) > 1
+UNION ALL
+SELECT 'missing_month_segment', CAST(months.ref_month AS STRING), segs.segment, 0
+FROM months CROSS JOIN segs
+LEFT ANTI JOIN __T__market_segment_totals t ON t.ref_month = months.ref_month AND t.segment = segs.segment
+UNION ALL
+SELECT 'bad_value', CAST(ref_month AS STRING), segment, units
+FROM __T__market_segment_totals
+WHERE units IS NULL OR units <= 0 OR segment NOT IN ('automoveis', 'comerciais_leves')
+   OR ref_month IS NULL OR day(ref_month) <> 1 OR ref_month < DATE'2003-01-01'
+   OR brand_table_found IS NULL OR model_table_found IS NULL OR source_file IS NULL
+UNION ALL
+SELECT 'model_flag_inconsistent', CAST(t.ref_month AS STRING), t.segment, CAST(t.model_table_found AS INT)
+FROM __T__market_segment_totals t LEFT JOIN models m USING (ref_month, segment)
+WHERE t.model_table_found <> (m.ref_month IS NOT NULL)
+UNION ALL
+SELECT 'model_table_missing_not_allow_listed', CAST(ref_month AS STRING), segment, 0
+FROM __T__market_segment_totals
+WHERE NOT model_table_found AND ref_month NOT IN (SELECT ref_month FROM no_model_ok)

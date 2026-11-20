@@ -1,0 +1,55 @@
+# Monthly Fenabrave registrations: download task -> (new files?) -> SDP pipeline.
+# The pipeline resource `market_pipeline` is defined in resources/market_pipeline.yml (owner: parser).
+resources:
+  jobs:
+    market_monthly:
+      name: "[${bundle.target}] market-monthly"
+      description: "Downloads new Fenabrave monthly registration PDFs and refreshes the market pipeline only when new files arrived."
+
+      # PDFs show up between day 1 and ~13 of the following month; the run is a no-op when nothing is new.
+      schedule:
+        quartz_cron_expression: "0 0 7 1-15 * ?"
+        timezone_id: America/Sao_Paulo
+        pause_status: PAUSED   # manual `bundle run market_monthly` only; unpause when the schedule should go live
+
+      max_concurrent_runs: 1
+
+      parameters:
+        - name: catalog
+          default: ${var.catalog}
+        - name: schema
+          default: ${var.schema}
+
+      environments:
+        - environment_key: download_env
+          spec:
+            client: "1"   # stdlib only: no extra dependencies
+
+      tasks:
+        - task_key: download
+          environment_key: download_env
+          max_retries: 2
+          min_retry_interval_millis: 60000
+          spark_python_task:
+            python_file: ../src/market/download/main.py
+            parameters:
+              - "--catalog"
+              - "{{job.parameters.catalog}}"
+              - "--schema"
+              - "{{job.parameters.schema}}"
+
+        - task_key: has_new_files
+          depends_on:
+            - task_key: download
+          condition_task:
+            op: GREATER_THAN
+            left: "{{tasks.download.values.new_files}}"
+            right: "0"
+
+        - task_key: pipeline
+          depends_on:
+            - task_key: has_new_files
+              outcome: "true"
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.market_pipeline.id}
+            full_refresh: false

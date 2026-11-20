@@ -1,0 +1,34 @@
+# claim:    app is RUNNING with an active SUCCEEDED deployment and its own service principal
+# command:  databricks apps get auto-intelligence; databricks apps list-deployments auto-intelligence
+# git_sha:  6755b83
+# date:     2026-11-20 12:31 UTC
+# result:   RUNNING
+
+{
+  "name": "auto-intelligence",
+  "url": "https://auto-intelligence-7405606279083366.6.azure.databricksapps.com",
+  "app_status": {
+    "message": "App has status: App is running",
+    "state": "RUNNING"
+  },
+  "compute_status": {
+    "message": "App compute is running.",
+    "state": "ACTIVE"
+  },
+  "service_principal_client_id": "9d41f279-1e55-4654-9579-3587ef47e5e8",
+  "service_principal_name": "app-3kt0yp auto-intelligence",
+  "active_deployment": {
+    "deployment_id": "01f1e4dd00441518adcedb62efe0d819",
+    "status": {
+      "message": "App started successfully",
+      "state": "SUCCEEDED"
+    },
+    "create_time": "2026-11-20T12:22:06Z"
+  },
+  "pending_deployment": null,
+  "update_time": "2026-11-20T12:22:06Z"
+}
+
+## deployments
+01f1e4dd00441518adcedb62efe0d819	SUCCEEDED	2026-11-20T12:22:06Z
+01f1e4dc908b172d9a5bc3db2982240d	SUCCEEDED	2026-11-20T12:18:59Z

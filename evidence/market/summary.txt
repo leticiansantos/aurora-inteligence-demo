@@ -1,0 +1,21 @@
+# claim:    market validation suite: all checks
+# command:  tests/market/run_market_checks.sh classic-stable-new demo
+# target:   demo (classic_stable.auto_intelligence)
+# git_sha:  ebddd10
+# date:     2026-11-20 15:01 UTC
+# result:   PASS
+
+PASS   01_coverage
+PASS   02_manifest_unique
+PASS   03_segment_totals
+PASS   04_brand_silver
+PASS   05_model_silver
+PASS   06_brand_residual
+PASS   07_gold_brand_exact
+PASS   08_synthetic_rules
+PASS   09_views_isolation
+PASS   10_share_sanity
+PASS   11_documents
+PASS   reconciliation_segment_totals
+PASS   reconciliation_gold_brand
+PASS   brand_masking

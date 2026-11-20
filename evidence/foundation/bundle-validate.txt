@@ -1,0 +1,14 @@
+# claim:    the bundle validates in strict mode
+# command:  databricks bundle validate --strict -t demo --profile classic-stable-new
+# git_sha:  6755b83
+# date:     2026-11-20 12:31 UTC
+# result:   PASS
+
+Name: auto-intelligence-demo
+Target: demo
+Workspace:
+  Host: https://adb-7405606279083366.6.azuredatabricks.net
+  User: <deploy-user>
+  Path: /Workspace/Users/<deploy-user>/.bundle/auto-intelligence-demo/demo
+
+Validation OK!

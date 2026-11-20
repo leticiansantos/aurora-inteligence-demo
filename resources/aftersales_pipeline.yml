@@ -1,0 +1,16 @@
+# Lakeflow Spark Declarative Pipeline for the aftersales vision (synthetic CSVs -> raw/silver/gold).
+# Triggered by the aftersales_daily job (resources/aftersales_job.yml) after the generate task.
+resources:
+  pipelines:
+    aftersales_pipeline:
+      name: aftersales_pipeline_${bundle.target}
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      continuous: false
+      root_path: ../src/aftersales/pipeline
+      libraries:
+        - glob:
+            include: ../src/aftersales/pipeline/transformations/**
+      configuration:
+        aftersales.landing_path: /Volumes/${var.catalog}/${var.schema}/raw_landing/aftersales/

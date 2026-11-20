@@ -1,0 +1,91 @@
+# Aftersales end-to-end job (ADR 002 / D7): generate -> pipeline -> train -> score -> govern -> sync.
+# The pipeline resource `aftersales_pipeline` is defined in resources/aftersales_pipeline.yml (owner: data-eng).
+resources:
+  experiments:
+    aftersales_forecast_experiment:
+      name: /Shared/auto-intelligence-demo/aftersales_demand_forecast_${bundle.target}
+
+  jobs:
+    aftersales_daily:
+      name: "[${bundle.target}] aftersales-daily"
+      description: "Synthetic aftersales parts: generate raw files, refresh the SDP pipeline, train/backtest the demand forecaster (UC model @champion gate), score forecast + stockout risk, apply UC tags, refresh Lakebase synced tables."
+
+      schedule:
+        quartz_cron_expression: "0 0 6 * * ?"
+        timezone_id: America/Sao_Paulo
+        pause_status: PAUSED   # manual `bundle run aftersales_daily` only; unpause when the schedule should go live
+
+      max_concurrent_runs: 1
+
+      parameters:
+        - name: catalog
+          default: ${var.catalog}
+        - name: schema
+          default: ${var.schema}
+
+      environments:
+        - environment_key: base_env
+          spec:
+            client: "2"   # no extra dependencies (generate, govern, sync)
+        - environment_key: ml_env
+          spec:
+            client: "2"
+            dependencies:
+              - mlflow>=3.0
+              - scikit-learn>=1.5
+              - pyarrow
+
+      tasks:
+        - task_key: generate
+          environment_key: base_env
+          max_retries: 1
+          spark_python_task:
+            python_file: ../src/aftersales/synthetic/main.py
+            parameters: ["--catalog", "{{job.parameters.catalog}}", "--schema", "{{job.parameters.schema}}"]
+
+        - task_key: pipeline
+          depends_on:
+            - task_key: generate
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.aftersales_pipeline.id}
+            full_refresh: false
+
+        - task_key: train
+          depends_on:
+            - task_key: pipeline
+          environment_key: ml_env
+          spark_python_task:
+            python_file: ../src/aftersales/ml/train.py
+            parameters:
+              - "--src"
+              - "${workspace.file_path}/src"
+              - "--catalog"
+              - "{{job.parameters.catalog}}"
+              - "--schema"
+              - "{{job.parameters.schema}}"
+              - "--experiment"
+              - "${resources.experiments.aftersales_forecast_experiment.name}"
+
+        - task_key: score
+          depends_on:
+            - task_key: train
+          environment_key: ml_env
+          spark_python_task:
+            python_file: ../src/aftersales/ml/score.py
+            parameters: ["--src", "${workspace.file_path}/src", "--catalog", "{{job.parameters.catalog}}", "--schema", "{{job.parameters.schema}}"]
+
+        - task_key: govern
+          environment_key: base_env
+          depends_on:
+            - task_key: score
+          spark_python_task:
+            python_file: ../src/aftersales/governance/apply_tags.py
+            parameters: ["--catalog", "{{job.parameters.catalog}}", "--schema", "{{job.parameters.schema}}"]
+
+        - task_key: sync
+          environment_key: base_env
+          depends_on:
+            - task_key: govern
+          spark_python_task:
+            python_file: ../src/aftersales/serving/refresh_synced_tables.py
+            parameters: ["--catalog", "{{job.parameters.catalog}}", "--schema", "{{job.parameters.schema}}"]

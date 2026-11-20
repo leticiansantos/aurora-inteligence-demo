@@ -1,0 +1,14 @@
+# Synthetic generator local run (proxy for the job task 'generate'; no workspace writes)
+date: 2026-11-20; registrations read read-only from market_synthetic_registrations (279 rows)
+version aftersales-gen-1.0.0 seed 20261120
+row_counts {'dealers': 12, 'parts': 60, 'lead_times': 720, 'daily_sales': 2070720, 'stock_snapshots': 295920}
+files 194 tree sha256 6418ea3eb43b1f009f8fd102e13c886d0da6e4b97060e464e4598e534c03f9f7
+rerun identical True secs 17
+source registrations {'IPE': 171545.0, 'JATOBA': 132608.0, 'AROEIRA': 76105.0} 380258.0
+fleet oracle sum_dealers(fleet@2026-09) 380258.0 abs diff 0.0
+
+# Plausibility proxy at forecast_date 2026-11-16 (D1 targets), true expected demand used as forecast; the ML forecast will shift these slightly
+secs 7.668452739715576 fill all 0.979568869904246 fill4w 0.9030884606080155 dem4 62005
+14 {'low': 694, 'critical': 11, 'medium': 13, 'high': 2} crit+high 0.018055555555555554 transfers~ 25
+28 {'low': 577, 'critical': 13, 'high': 65, 'medium': 65} crit+high 0.10833333333333334 transfers~ 124
+56 {'high': 398, 'critical': 13, 'medium': 59, 'low': 250} crit+high 0.5708333333333333 transfers~ 106

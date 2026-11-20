@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.databricks/
+.venv/
+__pycache__/
+.DS_Store
+.team/
+CLAUDE.local.md
+
+# Local-only brand denylist used by checks (never published)
+tests/.brand-denylist.local

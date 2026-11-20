@@ -1,0 +1,22 @@
+# claim:   classic_stable.auto_intelligence.aftersales_demand_forecaster @champion passes the D3 gate, its MLflow run matches aftersales_model_metrics, and the scored tables use it
+# command: python3 -I tests/aftersales/check_model.py
+# date:    2026-11-20 20:03 UTC  qa git: 44b938e
+# result:  PASS
+
+PASS	@champion alias exists	{"champion": "4"}
+PASS	model has a comment	Synthetic aftersales weekly demand forecaster (global HistGradientBoosting, dire
+PASS	exactly one is_champion row in aftersales_model_metrics	n=1
+INFO	version 1: orphan (no alias, no metrics row; allowed by ADR D3)	run b8fa6f2075ff48a59847988d8be340c9
+INFO	version 2: orphan (no alias, no metrics row; allowed by ADR D3)	run 6bf91d136fa849deb9595bfc9f68fe4e
+PASS	version 3: READY	READY
+PASS	version 3: run params match D3	{"cutoff": "2026-08-16", "holdout_weeks": "13", "n_series": "720", "season": "52", "seed": "42", "gate_factor": "0.95", "strategy": "direct"}
+PASS	version 3: gate WAPE < 0.95 x baseline	wape=0.200374082727132 baseline=0.3014963994659766 ratio=0.6645985924941167
+PASS	version 3: metrics table row == MLflow run metrics	table wape=0.200374082727132 run wape=0.200374082727132 run_id_match=True
+PASS	version 3: is_champion matches alias	
+PASS	version 4 (@champion): READY	READY
+PASS	version 4 (@champion): run params match D3	{"cutoff": "2026-08-16", "holdout_weeks": "13", "n_series": "720", "season": "52", "seed": "42", "gate_factor": "0.95", "strategy": "direct"}
+PASS	version 4 (@champion): gate WAPE < 0.95 x baseline	wape=0.200374082727132 baseline=0.3014963994659766 ratio=0.6645985924941167
+PASS	version 4 (@champion): metrics table row == MLflow run metrics	table wape=0.200374082727132 run wape=0.200374082727132 run_id_match=True
+PASS	version 4 (@champion): is_champion matches alias	
+PASS	aftersales_forecast: model_version == champion 4	["4"]
+PASS	aftersales_risk: model_version == champion 4	["4"]

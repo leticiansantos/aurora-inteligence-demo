@@ -1,0 +1,38 @@
+# claim:   a full rerun of the aftersales job leaves every aftersales_* table unchanged (rows + content)
+# command: python3 -I tests/aftersales/snapshot.py diff before-rerun after-rerun
+# before:  2026-11-20 19:45 UTC   after: 2026-11-20 20:00 UTC
+# excluded run-time columns: ['_ingested_at', '_rescued_data', '_source_file', 'logged_at', 'model_version', 'run_id', 'scored_at']
+# result:  PASS  tables=25
+
+PASS	aftersales_daily_sales	rows 2070720 -> 2070720	fp same
+PASS	aftersales_dealers	rows 12 -> 12	fp same
+PASS	aftersales_demand_weekly	rows 295200 -> 295200	fp same
+PASS	aftersales_fleet_monthly	rows 3348 -> 3348	fp same
+PASS	aftersales_forecast_weekly	rows 24480 -> 24480	fp same
+PASS	aftersales_lead_times	rows 720 -> 720	fp same
+PASS	aftersales_model_metrics	rows 1 -> 2 (expected +1)	content changes by design
+PASS	aftersales_parts	rows 60 -> 60	fp same
+PASS	aftersales_raw_daily_sales	rows 2070720 -> 2070720	fp same
+PASS	aftersales_raw_dealers	rows 12 -> 12	fp same
+PASS	aftersales_raw_lead_times	rows 720 -> 720	fp same
+PASS	aftersales_raw_parts	rows 60 -> 60	fp same
+PASS	aftersales_raw_stock_snapshots	rows 295920 -> 295920	fp same
+PASS	aftersales_stock_position	rows 720 -> 720	fp same
+PASS	aftersales_stock_snapshots	rows 295920 -> 295920	fp same
+PASS	aftersales_stockout_risk	rows 2160 -> 2160	fp same
+PASS	postgres aftersales_lb_dealers	rows 12 -> 12	md5 same
+PASS	postgres aftersales_lb_forecast_weekly	rows 24480 -> 24480	md5 same
+PASS	postgres aftersales_lb_model_metrics	rows 1 -> 2 (expected +1)	
+PASS	postgres aftersales_lb_parts	rows 60 -> 60	md5 same
+PASS	postgres aftersales_lb_stockout_risk	rows 2160 -> 2160	md5 same
+PASS	landing files byte-identical	194 files 63689279 B sha b15a1b78e86afeb3 -> 194 files sha b15a1b78e86afeb3
+PASS	UC model: one new version and @champion moved to it	versions ['1', '2', '3'] -> ['1', '2', '3', '4'], @champion 3 -> 4
+PASS	aftersales_model_metrics gains 1 row, single is_champion = new version	1 -> 2 rows, champion rows ['4']
+PASS	forecast/risk model_version == new champion	{'forecast': '4', 'risk': '4'}
+
+## Proof the rerun was not a no-op (job 59628329788041, run 1069050395869220, all 6 tasks SUCCESS, code c41cfb3)
+- scored_at: Delta forecast/risk 2026-11-20 18:17:34 -> 19:54:08.734883; Postgres aftersales_lb_stockout_risk 19:54:08.734883, model_version 4
+- raw tables: max(_ingested_at) still 2026-11-20 17:46 with 1 distinct ingest batch -> Auto Loader ingested 0 new rows from the overwritten byte-identical files
+- retrain reproducible: model_metrics v3 wape 0.200374 (run 21423ab9…, is_champion false) and v4 wape 0.200374 (run f00111eb…, is_champion true)
+- forecast_weekly and stockout_risk content identical v3 -> v4 (only scored_at/model_version differ): scoring is deterministic for the same data + seed
+- check_lakebase re-run after the rerun: PASS (evidence/aftersales/lakebase/checks.txt)

@@ -1,0 +1,23 @@
+# claim:    re-run: has_new_files outcome is false and the pipeline task is skipped (no new downloads)
+# command:  databricks jobs get-run 474836116913433; jobs get-run-output; pipelines get-update / list-pipeline-events
+# target:   demo
+# git_sha:  37fb5d6
+# date:     2026-11-20 14:45 UTC
+# result:   PASS
+
+## run
+job_id=289664164561831 run_id=474836116913433 trigger=ONE_TIME state=TERMINATED/SUCCESS start=2026-11-20T14:42:20Z duration_s=60.828
+
+## tasks (task_key, life_cycle_state, result_state, condition_outcome, task_run_id)
+download	TERMINATED	SUCCESS	-	400940490284244
+pipeline	SKIPPED	EXCLUDED	-	1005512102804295
+has_new_files	TERMINATED	SUCCESS	false	707521861032975
+
+## condition outcome: false · pipeline task: EXCLUDED
+
+## download task output (logs tail + task values)
+candidates to probe: 8 (manifest rows: 307)
+run summary: {'not_found': 8}
+new_files=0
+
+error=-

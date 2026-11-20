@@ -1,0 +1,31 @@
+# claim:    deployed bundle resources (schema, 2 volumes, app) and their ids
+# command:  databricks bundle summary -t demo --profile classic-stable-new
+# git_sha:  6755b83
+# date:     2026-11-20 12:31 UTC
+# result:   PASS
+
+Name: auto-intelligence-demo
+Target: demo
+Workspace:
+  Host: https://adb-7405606279083366.6.azuredatabricks.net
+  User: <deploy-user>
+  Path: /Workspace/Users/<deploy-user>/.bundle/auto-intelligence-demo/demo
+Resources:
+  Apps:
+    app:
+      Name: auto-intelligence
+      URL:  (not deployed)
+  Schemas:
+    demo_schema:
+      Name: auto_intelligence
+      URL:  https://adb-7405606279083366.6.azuredatabricks.net/explore/data/classic_stable/auto_intelligence
+  Volumes:
+    manuals:
+      Name: manuals
+      URL:  https://adb-7405606279083366.6.azuredatabricks.net/explore/data/volumes/classic_stable/auto_intelligence/manuals
+    raw_landing:
+      Name: raw_landing
+      URL:  https://adb-7405606279083366.6.azuredatabricks.net/explore/data/volumes/classic_stable/auto_intelligence/raw_landing
+
+# note: the app URL reads from local deploy state; when collected from a checkout other than
+# the one that deployed it prints (not deployed). See app-status.txt for the live URL.

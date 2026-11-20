@@ -1,0 +1,20 @@
+resources:
+  apps:
+    app:
+      name: ${var.app_name}
+      description: Auto Intelligence demo app (AppKit).
+      source_code_path: ../app
+      config:
+        command: ['npm', 'run', 'start']
+        env:
+          - name: DATABRICKS_WAREHOUSE_ID
+            value_from: sql-warehouse
+          - name: DATABRICKS_CATALOG
+            value: ${var.catalog}
+          - name: DATABRICKS_SCHEMA
+            value: ${var.schema}
+      resources:
+        - name: sql-warehouse
+          sql_warehouse:
+            id: ${var.warehouse_id}
+            permission: CAN_USE

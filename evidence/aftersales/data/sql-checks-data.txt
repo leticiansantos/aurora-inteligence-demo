@@ -1,0 +1,54 @@
+# claim:   aftersales tables satisfy the frozen contract (docs/data-model/aftersales.md) and the QA oracles
+# command: python3 -I tests/aftersales/run_sql_checks.py --catalog classic_stable --schema auto_intelligence --only 01,02,03,04,06
+# date:    2026-11-20 17:56 UTC  qa git: 52c66c7
+# result:  PASS  checks=44
+
+## 01_keys.sql
+PASS	dealers pk	rows=12
+PASS	parts pk	rows=60
+PASS	lead_times pk	rows=720
+PASS	daily_sales pk	rows=2070720
+PASS	stock_snapshots pk	rows=295920
+PASS	fleet_monthly pk	rows=3348
+PASS	demand_weekly pk	rows=295200
+PASS	stock_position pk	rows=720
+PASS	referential: every daily_sales dealer/part exists	orphans in daily_sales
+## 02_silver_rules.sql
+PASS	dealers: 12 rows, ids D001..D012	n=12
+PASS	dealers: >=2 per region, 4 regions	[{"region":"Sul","n":3},{"region":"Sudeste","n":4},{"region":"Centro-Oeste","n":2},{"region":"Nordeste","n":3}]
+PASS	dealers: sum(fleet_share) = 1	1.0
+PASS	dealers: name "Aurora Motors <Cidade>", UF 2 letters	bad=0
+PASS	parts: 60 rows P001..P060	n=60
+PASS	parts: 0 < cost < price	bad=0
+PASS	parts: 8 categories from the contract list	["suspension","electrical","cooling","lighting","brakes","filters","air_conditioning","engine"]
+PASS	parts: category_id -> category_name 1:1	
+PASS	parts: names unique, no digits-only codes	
+PASS	lead_times: 720 rows, 3..30 days	720 rows, 3..29
+PASS	daily_sales: range 2019-01-01..2026-11-15	2019-01-01..2026-11-15
+PASS	daily_sales: dense grid 720 x days	2070720 vs 2070720
+PASS	daily_sales: lost = demand - sold >= 0, sold >= 0	bad=0
+PASS	daily_sales: Sunday demand = 0	bad=0
+PASS	stock_snapshots: Sundays only, >= 0	max=2026-11-15 bad=0
+PASS	stock_snapshots: every Sunday has 720 rows	411 sundays, 720..720
+## 03_fleet_oracle.sql
+PASS	fleet: per-model total == source registrations	[{"model":"AROEIRA","fl":76105.00000000003,"su":76105},{"model":"JATOBA","fl":132608.00000000003,"su":132608},{"model":"IPE","fl":171545.0000000001,"su":171545}]
+PASS	fleet: grand total == 380258 (sum of source)	380258.00000000047
+PASS	fleet: row-level == units x fleet_share and cumulative active fleet	mismatch=0 rows=3348
+PASS	fleet: range 2019-01..2026-09	2019-01-01..2026-09-01
+## 04_gold_demand.sql
+PASS	demand_weekly: same keys as weekly re-aggregation	only_oracle=0 only_gold=0
+PASS	demand_weekly: demand/sold/lost equal	bad=0
+PASS	demand_weekly: lost_sales_brl = lost x price	bad=0
+PASS	demand_weekly: fill_rate = sold/demand, null when demand 0	bad=0
+PASS	demand_weekly: active_fleet_units = dealer fleet of week month (2026-09 frozen)	bad=0
+PASS	stock_position = latest snapshot + lead time	bad=0
+## 06_plausibility.sql
+PASS	QA-judgement: yearly demand grows with the active fleet (corr > 0.8)	corr=0.998 [{"y":2022,"d":166952},{"y":2025,"d":585547},{"y":2021,"d":76685},{"y":2024,"d":439016},{"y":2019,"d":2903},{"y":2023,"d":285268},{"y":2020,"d":22071}]
+PASS	D1 target: fill rate of the last 4 weeks (2026-10-19..11-15) between 0.88 and 0.97	fill=0.9031
+WARN	QA-judgement: last-year lost sales between 1% and 20% of demand	lost_share=0.0075
+PASS	QA-judgement: seasonality present (max/min monthly index of 2023-2025 >= 1.10)	ratio=1.681
+PASS	QA-judgement: not every series is identical (cv of series totals > 0.3)	cv=1.613
+PASS	QA-judgement: < 20% of series have zero demand in the last 26 weeks	zero_series=0
+PASS	QA-judgement: current stock spread (some at risk, some surplus)	zero_stock=4 of 720
+PASS	QA-judgement: prices in a sane BRL range (5..10000), margin 10%..70%	price 12.9..1199.9 margin 0.36..0.6
+PASS	QA-judgement: no demand before dealer opened_on	bad=0

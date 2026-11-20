@@ -1,0 +1,41 @@
+# claim:    the real view has no synthetic rows and its totals equal the published totals; the with-Aurora view
+# command:  tests/market/sql/09_views_isolation.sql (violations query: 0 rows = PASS)
+# target:   demo (classic_stable.auto_intelligence)
+# git_sha:  ebddd10
+# date:     2026-11-20 15:01 UTC
+# result:   PASS
+
+## violations: 0
+violation,ref_month,segment,expected,actual
+
+## sql
+-- claim: the real view has no synthetic rows and its totals equal the published totals; the with-Aurora view
+--        = real + Aurora; Aurora share of the with-Aurora total is in [0,4%] in 2019-2021 and [3%,4%] from 2022
+-- returns: offending month x segment rows
+WITH real_tot AS (
+  SELECT ref_month, segment, sum(units) AS u, min(segment_total_units) AS d_min, max(segment_total_units) AS d_max
+  FROM classic_stable.auto_intelligence.market_share_real GROUP BY ref_month, segment
+), wa_tot AS (
+  SELECT ref_month, segment, sum(units) AS u, min(segment_total_units) AS d_min, max(segment_total_units) AS d_max,
+         sum(CASE WHEN is_synthetic THEN units ELSE 0 END) AS aurora
+  FROM classic_stable.auto_intelligence.market_share_with_aurora GROUP BY ref_month, segment
+), syn AS (
+  SELECT ref_month, segment, sum(units) AS u FROM classic_stable.auto_intelligence.market_synthetic_registrations GROUP BY ref_month, segment
+)
+SELECT 'synthetic_in_real_view' AS violation, CAST(ref_month AS STRING) AS ref_month, segment, units AS expected, units AS actual
+FROM classic_stable.auto_intelligence.market_share_real WHERE upper(brand) LIKE '%AURORA%' OR coalesce(is_synthetic, true)
+UNION ALL
+SELECT 'real_view_ne_total', CAST(t.ref_month AS STRING), t.segment, t.units, r.u
+FROM classic_stable.auto_intelligence.market_segment_totals t LEFT JOIN real_tot r USING (ref_month, segment)
+WHERE r.u IS NULL OR r.u <> t.units OR r.d_min <> t.units OR r.d_max <> t.units
+UNION ALL
+SELECT 'with_aurora_ne_real_plus_synthetic', CAST(t.ref_month AS STRING), t.segment, t.units + coalesce(s.u, 0), w.u
+FROM classic_stable.auto_intelligence.market_segment_totals t
+LEFT JOIN wa_tot w USING (ref_month, segment) LEFT JOIN syn s USING (ref_month, segment)
+WHERE w.u IS NULL OR w.u <> t.units + coalesce(s.u, 0) OR w.aurora <> coalesce(s.u, 0)
+   OR w.d_min <> t.units + coalesce(s.u, 0) OR w.d_max <> t.units + coalesce(s.u, 0)
+UNION ALL
+SELECT 'aurora_share_out_of_band', CAST(ref_month AS STRING), segment, 0, round(100 * aurora / u, 3)
+FROM wa_tot
+WHERE aurora / u > 0.04 + 0.0001  -- 1e-4 tolerance: whole-unit rounding of the clamped share (TL)
+   OR (ref_month >= DATE'2022-01-01' AND segment = 'automoveis' AND aurora / u < 0.03 - 0.0001)

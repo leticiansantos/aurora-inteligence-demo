@@ -1,0 +1,29 @@
+# claim:    the app service principal (9d41f279-1e55-4654-9579-3587ef47e5e8) holds exactly the intended UC privileges
+# command:  databricks grants get catalog|schema|volume ...; databricks warehouses get-permissions 754bcdfc4beaaaa1
+# git_sha:  6755b83
+# date:     2026-11-20 12:31 UTC
+# result:   PASS
+
+## app SP summary
+catalog classic_stable:          USE_CATALOG   (expected USE_CATALOG)
+schema  classic_stable.auto_intelligence:  READ_VOLUME,SELECT,USE_SCHEMA   (expected READ_VOLUME,SELECT,USE_SCHEMA)
+warehouse 754bcdfc4beaaaa1 explicit ACL: CAN_USE   (declared CAN_USE via app resource)
+
+## catalog classic_stable (all principals)
+9d41f279-1e55-4654-9579-3587ef47e5e8	USE_CATALOG
+_workspace_users_classic_stable_7405606279083366	USE_CATALOG
+
+## schema classic_stable.auto_intelligence (all principals)
+9d41f279-1e55-4654-9579-3587ef47e5e8	READ_VOLUME,SELECT,USE_SCHEMA
+
+## volume classic_stable.auto_intelligence.manuals (direct grants)
+
+## volume classic_stable.auto_intelligence.raw_landing (direct grants)
+
+## warehouse 754bcdfc4beaaaa1 ACL
+9d41f279-1e55-4654-9579-3587ef47e5e8	CAN_USE
+users	CAN_USE
+admins	CAN_MANAGE(inherited)
+
+## app resource declaration
+[{"name":"sql-warehouse","sql_warehouse":{"id":"754bcdfc4beaaaa1","permission":"CAN_USE"}}]

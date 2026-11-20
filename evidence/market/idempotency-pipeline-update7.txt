@@ -1,0 +1,43 @@
+# claim:    a no-change pipeline update re-ingests nothing and leaves every table's rows and contents identical (counts + xxhash64 fingerprints)
+# command:  diff evidence/market/snapshots/s6-after-update6.txt evidence/market/snapshots/s7-after-update7.txt
+# target:   demo (classic_stable.auto_intelligence)
+# git_sha:  ebddd10
+# date:     2026-11-20 15:00 UTC
+# result:   PASS
+
+## before: # snapshot s6-after-update6 · classic_stable.auto_intelligence · 2026-11-20 14:54 UTC · git 609ffc3
+## after:  # snapshot s7-after-update7 · classic_stable.auto_intelligence · 2026-11-20 14:59 UTC · git ebddd10
+## table_rows (before → after)
+market_download_manifest: 307 → 307
+market_raw_documents: 285 → 285
+market_documents: 285 → 285
+market_segment_totals: 570 → 570
+market_registrations_brand: 11137 → 11137
+market_registrations_model: 27151 → 27151
+market_synthetic_registrations: 279 → 279
+market_brand_monthly: 11800 → 11800
+market_model_monthly: 27430 → 27430
+market_share_real: 11707 → 11707
+market_share_with_aurora: 11800 → 11800
+## content fingerprints (count, sum of xxhash64 over all columns; bronze excludes the VARIANT payload): ## content fingerprints (count, sum of xxhash64 over all columns; bronze excludes the VARIANT payload) → 
+market_documents: 285 16544189869105576874 → 285 16544189869105576874
+market_segment_totals: 570 -111552562397054569389 → 570 -111552562397054569389
+market_registrations_brand: 11137 -127317925659706232889 → 11137 -127317925659706232889
+market_registrations_model: 27151 484973649937211705611 → 27151 484973649937211705611
+market_synthetic_registrations: 279 -115011292680116653687 → 279 -115011292680116653687
+market_brand_monthly: 11800 -579685695603635828172 → 11800 -579685695603635828172
+market_model_monthly: 27430 -59153299055136917337 → 27430 -59153299055136917337
+market_share_real: 11707 245093020849256917774 → 11707 245093020849256917774
+market_share_with_aurora: 11800 -119805355622224437836 → 11800 -119805355622224437836
+market_raw_documents: 285 -33151992780321763352 → 285 -33151992780321763352
+
+## diff (empty = identical)
+
+
+## context
+## pipeline 3ee6d2a9-398c-4b85-87d6-b313809c81f5 · update 6 5145a05c (14:51:02Z → 14:53:29Z) · S6 taken after it completed
+## update 7 a9f8064f (normal start-update, no full refresh, no code or file change; 14:55:54Z → 14:58:25Z) · S7 taken after it completed
+## bronze market_raw_documents: DESCRIBE HISTORY latest version = 3 (2026-11-20T13:54:03Z, STREAMING UPDATE) before
+## and after updates 6 and 7, so Auto Loader re-ingested no file (allowOverwrites=false; 285 files, mtimes unchanged).
+## supporting only: baseline-u5 (14:51–14:52:51Z) equals S6 as well, but update 6's silver flows committed between
+## 14:52:24Z and 14:52:51Z, inside that window, so that pair is not used as proof (see pipeline event log).

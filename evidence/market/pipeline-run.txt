@@ -1,0 +1,207 @@
+# claim:    pipeline updates 9ff1e300-59be-4159-9f7e-9dd238394454 70a3fcd7-2eb2-400e-a1dc-80d3a108b618 6c4146f3-efff-4c48-919b-df84357a723a 5145a05c-2e76-49aa-b443-52a41af8c885 a9f8064f-9c25-4765-b162-be153c993c4e completed; expectation results per flow (0 failed records except informational brand_matched, reported in quality.txt)
+# command:  databricks pipelines list-updates 3ee6d2a9-398c-4b85-87d6-b313809c81f5; SELECT ... FROM event_log(...)
+# git_sha:  ebddd10
+# date:     2026-11-20 15:00 UTC
+# result:   FAIL (0 expectation rows with failed records)
+
+## all updates (update_id, state, cause, full_refresh, created)
+a9f8064f-9c25-4765-b162-be153c993c4e	COMPLETED	API_CALL	false	2026-11-20T14:55:54Z
+5145a05c-2e76-49aa-b443-52a41af8c885	COMPLETED	API_CALL	false	2026-11-20T14:51:02Z
+6c4146f3-efff-4c48-919b-df84357a723a	COMPLETED	API_CALL	false	2026-11-20T14:43:56Z
+70a3fcd7-2eb2-400e-a1dc-80d3a108b618	COMPLETED	API_CALL	false	2026-11-20T14:32:48Z
+9ff1e300-59be-4159-9f7e-9dd238394454	COMPLETED	API_CALL	false	2026-11-20T14:24:20Z
+d2028843-e92d-4d3a-8b75-6b5733742f7d	COMPLETED	API_CALL	false	2026-11-20T14:17:02Z
+4200de64-06c4-4f58-9e27-e22970d24cf6	FAILED	RETRY_ON_FAILURE	false	2026-11-20T14:06:06Z
+ddd896ed-40d3-4a46-a18f-59de9aebb897	FAILED	RETRY_ON_FAILURE	false	2026-11-20T14:01:58Z
+68088200-74fe-4931-9cb8-e40faecfc82f	FAILED	RETRY_ON_FAILURE	false	2026-11-20T13:59:06Z
+1f1117d2-9758-456d-b589-c249001d91ae	FAILED	RETRY_ON_FAILURE	false	2026-11-20T13:56:59Z
+88e0ac16-9d73-4716-a1eb-5342f39c35ee	FAILED	RETRY_ON_FAILURE	false	2026-11-20T13:55:10Z
+af9c2e92-6ecc-4f10-ac94-ac27d2f8a2b5	FAILED	JOB_TASK	false	2026-11-20T13:47:14Z
+
+## first error of each failed update
+update_id,at,first_error
+69e4b44a-b129-4b34-b1b5-3f751750255d,2026-11-20T13:32:08.958Z,Failed to resolve flow: 'classic_stable.auto_intelligence.market_parsed_documents'.
+af9c2e92-6ecc-4f10-ac94-ac27d2f8a2b5,2026-11-20T13:55:06.602Z,Flow 'classic_stable.auto_intelligence.market_parsed_documents' has FAILED.
+88e0ac16-9d73-4716-a1eb-5342f39c35ee,2026-11-20T13:56:55.144Z,Flow 'classic_stable.auto_intelligence.market_parsed_documents' has FAILED.
+1f1117d2-9758-456d-b589-c249001d91ae,2026-11-20T13:59:03.327Z,Flow 'classic_stable.auto_intelligence.market_parsed_documents' has FAILED.
+68088200-74fe-4931-9cb8-e40faecfc82f,2026-11-20T14:01:54.162Z,Flow 'classic_stable.auto_intelligence.market_parsed_documents' has FAILED.
+ddd896ed-40d3-4a46-a18f-59de9aebb897,2026-11-20T14:06:02.854Z,Flow 'classic_stable.auto_intelligence.market_parsed_documents' has FAILED.
+4200de64-06c4-4f58-9e27-e22970d24cf6,2026-11-20T14:12:53.702Z,Flow 'classic_stable.auto_intelligence.market_parsed_documents' has FAILED.
+
+## update 9ff1e300-59be-4159-9f7e-9dd238394454: rows written per flow (COMPLETED)
+flow,rows_out
+market_brand_monthly,11766
+market_brand_residual,570
+market_documents,285
+market_model_monthly,27237
+market_parsed_documents,285
+market_rank_checks,1132
+market_raw_documents,
+market_registrations_brand,11103
+market_registrations_model,26958
+market_segment_totals,570
+market_share_real,11673
+market_share_with_aurora,11766
+market_synthetic_registrations,279
+
+## update 9ff1e300-59be-4159-9f7e-9dd238394454: expectations (flow, expectation, passed, failed)
+flow,expectation,passed,failed
+market_brand_residual,listed_not_above_total,570,0
+market_brand_residual,residual_in_range,570,0
+market_documents,month_resolved,285,0
+market_parsed_documents,month_sources_agree,285,0
+market_parsed_documents,one_file_per_month,285,0
+market_rank_checks,rank_sequence_ok,1132,0
+market_registrations_brand,rank_positive,11103,0
+market_registrations_brand,segment_valid,11103,0
+market_registrations_brand,units_non_negative,11103,0
+market_registrations_model,brand_matched,26345,613
+market_registrations_model,rank_positive,26958,0
+market_registrations_model,segment_valid,26958,0
+market_registrations_model,units_non_negative,26958,0
+market_segment_totals,brand_table_found_or_known,570,0
+market_segment_totals,segment_valid,570,0
+market_segment_totals,units_non_negative,570,0
+
+## update 70a3fcd7-2eb2-400e-a1dc-80d3a108b618: rows written per flow (COMPLETED)
+flow,rows_out
+market_brand_monthly,11800
+market_brand_residual,570
+market_documents,285
+market_model_monthly,27237
+market_parsed_documents,285
+market_rank_checks,1132
+market_raw_documents,
+market_registrations_brand,11137
+market_registrations_model,26958
+market_segment_totals,570
+market_share_real,11707
+market_share_with_aurora,11800
+market_synthetic_registrations,279
+
+## update 70a3fcd7-2eb2-400e-a1dc-80d3a108b618: expectations (flow, expectation, passed, failed)
+flow,expectation,passed,failed
+market_brand_residual,listed_not_above_total,570,0
+market_brand_residual,residual_in_range,570,0
+market_documents,month_resolved,285,0
+market_parsed_documents,month_sources_agree,285,0
+market_parsed_documents,one_file_per_month,285,0
+market_rank_checks,rank_sequence_ok,1132,0
+market_registrations_brand,rank_positive,11137,0
+market_registrations_brand,segment_valid,11137,0
+market_registrations_brand,units_non_negative,11137,0
+market_registrations_model,brand_matched,26345,613
+market_registrations_model,rank_positive,26958,0
+market_registrations_model,segment_valid,26958,0
+market_registrations_model,units_non_negative,26958,0
+market_segment_totals,brand_table_found_or_known,570,0
+market_segment_totals,segment_valid,570,0
+market_segment_totals,units_non_negative,570,0
+
+## update 6c4146f3-efff-4c48-919b-df84357a723a: rows written per flow (COMPLETED)
+flow,rows_out
+market_brand_monthly,11800
+market_brand_residual,570
+market_documents,285
+market_model_monthly,27430
+market_parsed_documents,285
+market_rank_checks,1136
+market_raw_documents,
+market_registrations_brand,11137
+market_registrations_model,27151
+market_segment_totals,570
+market_share_real,11707
+market_share_with_aurora,11800
+market_synthetic_registrations,279
+
+## update 6c4146f3-efff-4c48-919b-df84357a723a: expectations (flow, expectation, passed, failed)
+flow,expectation,passed,failed
+market_brand_residual,listed_not_above_total,570,0
+market_brand_residual,residual_in_range,570,0
+market_documents,month_resolved,285,0
+market_parsed_documents,month_sources_agree,285,0
+market_parsed_documents,one_file_per_month,285,0
+market_rank_checks,rank_sequence_ok,1136,0
+market_registrations_brand,rank_positive,11137,0
+market_registrations_brand,segment_valid,11137,0
+market_registrations_brand,units_non_negative,11137,0
+market_registrations_model,brand_matched,26536,615
+market_registrations_model,rank_positive,27151,0
+market_registrations_model,segment_valid,27151,0
+market_registrations_model,units_non_negative,27151,0
+market_segment_totals,brand_table_found_or_known,570,0
+market_segment_totals,model_table_found_or_known,570,0
+market_segment_totals,segment_valid,570,0
+market_segment_totals,units_non_negative,570,0
+
+## update 5145a05c-2e76-49aa-b443-52a41af8c885: rows written per flow (COMPLETED)
+flow,rows_out
+market_brand_monthly,11800
+market_brand_residual,570
+market_documents,285
+market_model_monthly,27430
+market_parsed_documents,285
+market_rank_checks,1136
+market_raw_documents,
+market_registrations_brand,11137
+market_registrations_model,27151
+market_segment_totals,570
+market_share_real,11707
+market_share_with_aurora,11800
+market_synthetic_registrations,279
+
+## update 5145a05c-2e76-49aa-b443-52a41af8c885: expectations (flow, expectation, passed, failed)
+flow,expectation,passed,failed
+market_brand_residual,listed_not_above_total,570,0
+market_brand_residual,residual_in_range,570,0
+market_documents,month_resolved,285,0
+market_parsed_documents,month_sources_agree,285,0
+market_parsed_documents,one_file_per_month,285,0
+market_rank_checks,rank_sequence_ok,1136,0
+market_registrations_brand,rank_positive,11137,0
+market_registrations_brand,segment_valid,11137,0
+market_registrations_brand,units_non_negative,11137,0
+market_registrations_model,brand_matched,26536,615
+market_registrations_model,rank_positive,27151,0
+market_registrations_model,segment_valid,27151,0
+market_registrations_model,units_non_negative,27151,0
+market_segment_totals,brand_table_found_or_known,570,0
+market_segment_totals,model_table_found_or_known,570,0
+market_segment_totals,segment_valid,570,0
+market_segment_totals,units_non_negative,570,0
+
+## update a9f8064f-9c25-4765-b162-be153c993c4e: rows written per flow (COMPLETED)
+flow,rows_out
+market_brand_monthly,11800
+market_brand_residual,570
+market_documents,285
+market_model_monthly,27430
+market_parsed_documents,285
+market_rank_checks,1136
+market_raw_documents,
+market_registrations_brand,11137
+market_registrations_model,27151
+market_segment_totals,570
+market_share_real,11707
+market_share_with_aurora,11800
+market_synthetic_registrations,279
+
+## update a9f8064f-9c25-4765-b162-be153c993c4e: expectations (flow, expectation, passed, failed)
+flow,expectation,passed,failed
+market_brand_residual,listed_not_above_total,570,0
+market_brand_residual,residual_in_range,570,0
+market_documents,month_resolved,285,0
+market_parsed_documents,month_sources_agree,285,0
+market_parsed_documents,one_file_per_month,285,0
+market_rank_checks,rank_sequence_ok,1136,0
+market_registrations_brand,rank_positive,11137,0
+market_registrations_brand,segment_valid,11137,0
+market_registrations_brand,units_non_negative,11137,0
+market_registrations_model,brand_matched,26536,615
+market_registrations_model,rank_positive,27151,0
+market_registrations_model,segment_valid,27151,0
+market_registrations_model,units_non_negative,27151,0
+market_segment_totals,brand_table_found_or_known,570,0
+market_segment_totals,model_table_found_or_known,570,0
+market_segment_totals,segment_valid,570,0
+market_segment_totals,units_non_negative,570,0
